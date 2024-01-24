@@ -38,7 +38,7 @@
 
                         </label>
                         <div class="preview w-64 h-64 border-2 border-gray-300 border-dashed rounded-l">
-                            <img id="preview-selected-image" />
+                            <img id="preview-selected-image" class="w-64 h-64" />
                         </div>
                     </div>
 
