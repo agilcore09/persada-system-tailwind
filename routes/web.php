@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,9 @@ Route::get('/daftarsmk', function () {
 Route::get('/daftarsmp', function () {
     return view('landing.smp');
 });
+
+// pendaftaran custom route
+Route::post('/daftarsmk', [PendaftaranController::class, 'store']);
 
 
 
