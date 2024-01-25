@@ -13,7 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('pendaftaran', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama')->nullable();
+            $table->string('tanggal_lahir')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->string('no_wa')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('nama_wali')->nullable();
+            $table->string('no_wa_wali')->nullable();
+            $table->enum('jurusan', ["Teknik Komputer Jaringan", "Teknik Kendaraan Ringan", "SMP"])->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
