@@ -34,7 +34,10 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $validated = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
+        ]);
     }
 
     /**

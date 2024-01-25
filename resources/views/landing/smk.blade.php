@@ -37,7 +37,6 @@
                             </div>
                             <input id="dropzone-file" type="file" class="hidden" accept="image/*"
                                 onchange="previewImage(event);" name="gambar" />
-
                         </label>
                         <div class="preview w-64 h-64 border-2 border-gray-300 border-dashed rounded-l">
                             <img id="preview-selected-image" class="w-64 h-64 p-3 rounded" />
