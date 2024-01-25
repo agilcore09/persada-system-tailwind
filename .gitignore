@@ -5,6 +5,7 @@
 /storage/*.key
 /vendor
 /public/foto_siswa
+/public/pendaftar
 .env
 .env.backup
 .env.production

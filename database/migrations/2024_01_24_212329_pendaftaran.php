@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('no_wa')->nullable();
             $table->string('alamat')->nullable();
             $table->string('nama_wali')->nullable();
-            $table->string('no_wa_wali')->nullable();
+            $table->string('wa_wali')->nullable();
             $table->enum('jurusan', ["Teknik Komputer Jaringan", "Teknik Kendaraan Ringan", "SMP"])->nullable();
             $table->timestamps();
         });
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('pendaftaran');
     }
 };

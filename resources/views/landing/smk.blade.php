@@ -17,7 +17,7 @@
                         MAKASSAR</span></h3>
             </div>
             <div class="form mt-14">
-                <form class="max-w-md mx-auto" method="post">
+                <form class="max-w-md mx-auto" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
                     <div class="flex items-center w-full">
