@@ -42,6 +42,7 @@ Route::get('/daftarsmp', function () {
 
 // pendaftaran custom route
 Route::post('/daftarsmk', [PendaftaranController::class, 'store']);
+Route::post('/daftarsmp', [PendaftaranController::class, 'store']);
 
 
 

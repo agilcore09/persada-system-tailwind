@@ -10,5 +10,5 @@ class PendaftaranModel extends Model
     use HasFactory;
 
     protected $table = "pendaftaran";
-    protected $fillable = ["id"];
+    protected $guarded = ["id"];
 }

@@ -59,10 +59,11 @@ class PendaftaranController extends Controller
 
         $namaLengkap = $request->nama_depan . " " . $request->nama_belakang;
 
-        $pendaftar = PendaftaranModel::create([
+        PendaftaranModel::create([
             "gambar" => $nama_file,
             "nama" => $namaLengkap,
             "tanggal_lahir" => $request->tanggal_lahir,
+            "tempat_lahir" => $request->tempat_lahir,
             "no_wa" => $request->no_wa,
             "alamat" => $request->alamat,
             "nama_wali" => $request->nama_wali,
