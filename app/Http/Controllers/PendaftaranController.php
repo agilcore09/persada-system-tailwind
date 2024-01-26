@@ -16,7 +16,8 @@ class PendaftaranController extends Controller
      */
     public function index()
     {
-        return view('pendaftaran.index');
+        $data = PendaftaranModel::all();
+        return view('pendaftaran.index', compact("data"));
     }
 
     /**
