@@ -6,6 +6,7 @@ use App\Models\PendaftaranModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class PendaftaranController extends Controller
 {
@@ -14,9 +15,10 @@ class PendaftaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = PendaftaranModel::paginate(10);
+
+        $data = DB::table('pendaftaran')->orderBy('created_at', 'DESC')->paginate(10);
         return view('pendaftaran.index', compact("data"));
     }
 
