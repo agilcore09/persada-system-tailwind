@@ -116,10 +116,11 @@
                                 </thead>
 
                                 <tbody class="bg-white" id="tbody">
+                                    <?php $no = 1; ?>
                                     @foreach ($data as $item)
                                         <tr class="text-gray-700 text-center">
                                             <td class="px-4 py-3 text-ms border">
-                                                1
+                                                {{ $no++ }}
                                             </td>
                                             <td class="px-4 py-3 text-ms border">
                                                 <img src="{{ asset('/pendaftar' . '/' . $item->gambar) }}" alt="">
@@ -153,6 +154,9 @@
                                 </tbody>
                             </table>
 
+                            <div class="container my-5 px-5">
+                                {{ $data->links() }}
+                            </div>
 
                         </div>
 

@@ -16,7 +16,7 @@ class PendaftaranController extends Controller
      */
     public function index()
     {
-        $data = PendaftaranModel::all();
+        $data = PendaftaranModel::paginate(10);
         return view('pendaftaran.index', compact("data"));
     }
 
@@ -68,6 +68,7 @@ class PendaftaranController extends Controller
             "no_wa" => $request->no_wa,
             "alamat" => $request->alamat,
             "nama_wali" => $request->nama_wali,
+            "jurusan" => $request->jurusan,
             "wa_wali" => $request->wa_wali,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
