@@ -15,6 +15,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/tagihan/{nis}', [SiswaController::class, 'ShowTagihan']);
     Route::get('/cetak/{nis}', [SiswaController::class, 'nota']);
     Route::resource('/pembayaran', PembayaranController::class);
+    Route::get('/show-pendaftar', [PendaftaranController::class, 'index']);
 });
 
 Route::middleware('auth')->group(function () {
