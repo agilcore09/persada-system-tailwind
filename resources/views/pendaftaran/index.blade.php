@@ -122,7 +122,7 @@
                                                 1
                                             </td>
                                             <td class="px-4 py-3 text-ms border">
-                                                {{ $item->foto }}
+                                                <img src="{{ asset('/pendaftar' . '/' . $item->gambar) }}" alt="">
                                             </td>
                                             <td class="px-4 py-3 text-ms border">
                                                 {{ $item->nama }}
@@ -137,9 +137,9 @@
                                             <td class="px-4 py-3 text-ms border">Rp. {{ $item->created_at }}</td>
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
-                                                    <a href="{{ url('/pembayaran' . '/' . $item->id . '/edit') }}"><i
+                                                    <a href="{{ url('/pendaftar' . '/' . $item->id . '/edit') }}"><i
                                                             class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="{{ url('/pembayaran' . '/' . $item->id) }}"
+                                                    <form action="{{ url('/pendaftar' . '/' . $item->id) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')

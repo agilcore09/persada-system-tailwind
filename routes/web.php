@@ -16,6 +16,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/cetak/{nis}', [SiswaController::class, 'nota']);
     Route::resource('/pembayaran', PembayaranController::class);
     Route::get('/show-pendaftar', [PendaftaranController::class, 'index']);
+    Route::delete('/pendaftar/{id}', [PendaftaranController::class, 'destroy']);
 });
 
 Route::middleware('auth')->group(function () {

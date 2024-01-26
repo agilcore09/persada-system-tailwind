@@ -179,7 +179,6 @@ class PembayaranController extends Controller
      */
     public function destroy(PembayaranModel $pembayaranModel, $id)
     {
-
         $pembayaranModel->where('id', '=', $id)->delete();
         return redirect()->to("/pembayaran")->with("success", "Berhasil Menghapus Data");
     }

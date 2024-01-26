@@ -113,7 +113,9 @@ class PendaftaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, PendaftaranModel $pendaftar)
     {
+        $pendaftar->where('id', '=', $id)->delete();
+        return redirect()->to("/show-pendaftar")->with("success", "Berhasil Menghapus Data");
     }
 }
