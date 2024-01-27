@@ -142,9 +142,9 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="grid gap-4">
                         <div>
-                            <a href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg">
-                                <img class="h-auto max-w-full rounded-lg"
-                                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
+                            <a data-fslightbox="first-lightbox" href="{{ asset('sertivikasi/mikrotik.jpg') }}">
+                                <img class="h-auto max-w-full rounded-lg" src="{{ asset('sertivikasi/mikrotik.jpg') }}"
+                                    alt="">
                             </a>
                         </div>
                         <div>
@@ -239,10 +239,9 @@
                 </div>
                 <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
                     <div class="w-full flex justify-center self-end p-5">
-                        <img src="{{ asset('/sertivikasi/mikrotik.jpg') }}" class="w-full hover:grayscale"
-                            alt="">
+                        <img src="{{ asset('/sertivikasi/redhat.jpg') }}" class="w-full hover:grayscale" alt="">
                     </div>
-                    <h3 class="font-bold text-center">Mikrotik Academy</h3>
+                    <h3 class="font-bold text-center">Redhat Academy</h3>
                 </div>
                 <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
                     <div class="w-full flex justify-center self-end p-5">

@@ -19,6 +19,7 @@
 
     <script src="jquery.js"></script>
     <script src="custom.js"></script>
+    <script src="{{ asset('lightbox/fslightbox.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('jquery.js') }}"></script>
@@ -31,6 +32,14 @@
                 $(".list").slideUp();
             }
         });
+
+
+        // var a = document.createElement("a");
+        // a.setAttribute("data-fslightbox", "gallery");
+        // a.setAttribute("href", "/sertivikasi/mikrotik.jpg");
+        // document.body.appendChild(a);
+        // refreshFsLightbox();
+        //fsLightbox.open();
     </script>
 </body>
 
