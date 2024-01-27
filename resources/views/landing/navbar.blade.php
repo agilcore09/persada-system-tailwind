@@ -1,4 +1,4 @@
-<nav class="bg-blue-950 w-screen py-5 col-span-12">
+<nav class="bg-blue-950 py-5 col-span-12">
     <div class="grid grid-cols-12">
         <div class="col-span-5">
             <div class="container sm:flex">

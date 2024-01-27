@@ -1,15 +1,18 @@
 @extends('landing.core')
 @section('body')
-    <div class="grid grid-cols-12" id="home">
-        {{-- navbar section --}}
+    {{-- navbar section --}}
+    <div class="grid md:grid-cols-12 grid-cols-12">
         @include('landing.navbar')
+    </div>
+    <div class="grid md:grid-cols-12 grid-cols-12" id="home">
+
         {{-- end navbar section --}}
         {{-- jumbotron section --}}
         @include('landing.jumbotron')
         {{-- end jumbotron --}}
     </div>
     {{-- start why --}}
-    <div class="grid grid-cols-12">
+    <div class="grid md:grid-cols-12 grid-cols-12">
         <div class="col-span-10 col-start-2 font-body">
             <div class="kenapa mt-14">
                 <h3 class="font-bold text-2xl text-center">Kenapa Harus <span class="text-blue-950 font-bold">SMK PERSADA
@@ -17,7 +20,7 @@
                 <p class="text-center text-lg">alasan kenapa harus memilih untuk mendaftar di <span
                         class="text-blue-950 font-bold">SMK PERSADA MAKASSAR</span></p>
             </div>
-            <div class="alasan grid grid-cols-12 mt-12">
+            <div class="alasan grid md:grid-cols-12 grid-cols-12 mt-12">
                 <div class="col-span-12 my-5 px-9 md:col-span-3">
                     <div class="icons flex justify-center">
                         <i class="fa-solid fa-handshake fa-3x text-blue-950"></i>
@@ -56,16 +59,16 @@
     {{-- end why --}}
 
     {{-- sambutan kepsek --}}
-    <div class="grid grid-cols-12 bg-blue-950 text-white mt-14">
+    <div class="grid md:grid-cols-12 grid-cols-12 bg-blue-950 text-white mt-14">
         <div class="col-span-10 col-start-2">
             <div class="grid grid-cols-10">
                 <div class="col-span-10 md:col-span-5 py-14">
                     <div class="container font-body">
                         <div>
-                            <h3 class="text-5xl font-bold pt-14 mb-5">Assalamualaikum Wr. Wb</h3>
+                            <h3 class="text-3xl font-bold pt-14 mb-5">Assalamualaikum Wr. Wb</h3>
                         </div>
                         <div class="md:pt-14">
-                            <p class="text-xl">Selamat datang di SMK PERSADA MAKASSAR. Sekolah menengah kejuruan yang
+                            <p class="text-lg">Selamat datang di SMK PERSADA MAKASSAR. Sekolah menengah kejuruan yang
                                 memiliki
                                 visi
                                 “Menyiapkan
@@ -78,7 +81,7 @@
                                 global</p>
                         </div>
                         <div>
-                            <h3 class="text-4xl mt-10 font-bold text-orange-500">- Ir. H. Zainuddin B Ilyas -</h3>
+                            <h3 class="text-lg mt-10 font-bold text-orange-500">- Ir. H. Zainuddin B Ilyas -</h3>
                         </div>
                         <div class="mt-5">
                             <a href="#"
@@ -98,7 +101,7 @@
     {{-- end sambutan kepsek --}}
 
     {{-- jurusan --}}
-    <div class="grid grid-cols-12 my-14">
+    <div class="grid md:grid-cols-12 grid-cols-12 my-14">
         <div class="col-span-10 col-start-2">
             <div class="mt-14">
                 <h3 class="font-bold text-2xl text-center">Program <span class="text-blue-950 font-bold">Keahlian</span>
@@ -106,7 +109,7 @@
                 <p class="text-center text-sm">Pilih Program keahlian yang kamu sukai</p>
             </div>
             <div class="col-span-10">
-                <div class="grid grid-cols-12">
+                <div class="grid md:grid-cols-12 grid-cols-12">
                     <div class="col-span-12 sm:col-span-12 p-10 md:col-span-3 md:col-start-4">
                         <div class="icons flex justify-center ">
                             <i class="fa-solid fa-server fa-3x text-blue-950"></i>
@@ -128,7 +131,7 @@
     {{-- end jurusan --}}
 
     {{-- gallery --}}
-    <div class="grid grid-cols-12 my-14">
+    <div class="grid md:grid-cols-12 grid-cols-12 my-14">
         <div class="col-span-10 col-start-2">
             <div class="mt-14">
                 <h3 class="font-bold text-2xl text-center">Gallery <span class="text-blue-950 font-bold">Kami</span>
@@ -202,6 +205,63 @@
     </div>
     {{-- end gallery --}}
 
+
+    <div class="grid md:grid-cols-12 grid-cols-12 my-14">
+        <div class="col-span-10 col-start-2">
+            <div class="mt-14">
+                <h3 class="font-bold text-2xl text-center">Sertivikasi<span class="text-blue-950 font-bold">
+                        Internasional</span>
+                </h3>
+                <p class="text-center text-sm">Kami memiliki dan telah bekerja sama dengan beberapa perusahaan
+                    internasional</p>
+            </div>
+
+            {{-- grid sertivikasi --}}
+            <div class="grid md:grid-cols-12 grid-cols-12">
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/mikrotik.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Mikrotik Academy</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/google.jpg') }}" class="w-full hover:grayscale" alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Google Suite</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/365.jpg') }}" class="w-full hover:grayscale" alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Microsoft 365</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/mikrotik.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Mikrotik Academy</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/mikrotik.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Mikrotik Academy</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/mikrotik.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Mikrotik Academy</h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     @include('landing.footer')
 @endsection
