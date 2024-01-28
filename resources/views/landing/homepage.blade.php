@@ -143,12 +143,12 @@
                     <div class="grid gap-4">
                         <div>
                             <a data-fslightbox="first-lightbox" href="{{ asset('sertivikasi/mikrotik.jpg') }}">
-                                <img class="h-auto max-w-full rounded-lg" src="{{ asset('sertivikasi/mikrotik.jpg') }}"
-                                    alt="">
+                                <img class="h-auto max-w-full rounded-lg hover:grayscale"
+                                    src="{{ asset('sertivikasi/mikrotik.jpg') }}" alt="">
                             </a>
                         </div>
                         <div>
-                            <img class="h-auto max-w-full rounded-lg"
+                            <img class="h-auto max-w-full rounded-lg  hover:grayscale"
                                 src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
                         </div>
                         <div>
