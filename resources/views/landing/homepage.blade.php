@@ -245,17 +245,70 @@
                 </div>
                 <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
                     <div class="w-full flex justify-center self-end p-5">
-                        <img src="{{ asset('/sertivikasi/mikrotik.jpg') }}" class="w-full hover:grayscale"
+                        <img src="{{ asset('/sertivikasi/fortinet.jpg') }}" class="w-full hover:grayscale"
                             alt="">
                     </div>
-                    <h3 class="font-bold text-center">Mikrotik Academy</h3>
+                    <h3 class="font-bold text-center">Fortinet Academy</h3>
                 </div>
                 <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
                     <div class="w-full flex justify-center self-end p-5">
-                        <img src="{{ asset('/sertivikasi/mikrotik.jpg') }}" class="w-full hover:grayscale"
+                        <img src="{{ asset('/sertivikasi/paloalto.jpg') }}" class="w-full hover:grayscale"
                             alt="">
                     </div>
-                    <h3 class="font-bold text-center">Mikrotik Academy</h3>
+                    <h3 class="font-bold text-center">Paloalto Network</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/oracle-academy.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Oracle Academy</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/vmware.jpg') }}" class="w-full hover:grayscale" alt="">
+                    </div>
+                    <h3 class="font-bold text-center">VMWARE IT Academy</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/ndg.jpg') }}" class="w-full hover:grayscale" alt="">
+                    </div>
+                    <h3 class="font-bold text-center">NDG</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/Bootstrap.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Bootstrap Studio</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/autodesk.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Autodesk</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/lucidchart.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Lucidchart</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/jetbrain.jpg') }}" class="w-full hover:grayscale"
+                            alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Jetbrain For Student</h3>
+                </div>
+                <div class="col-span-6 sm:col-span-3 md:col-span-3 my-5">
+                    <div class="w-full flex justify-center self-end p-5">
+                        <img src="{{ asset('/sertivikasi/canva.png') }}" class="w-full hover:grayscale" alt="">
+                    </div>
+                    <h3 class="font-bold text-center">Canva For Education</h3>
                 </div>
 
             </div>
