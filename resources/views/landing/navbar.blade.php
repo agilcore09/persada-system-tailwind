@@ -10,6 +10,7 @@
                 </div>
             </div>
         </div>
+
         {{-- yang tampil jika layar besar --}}
         <div class="hidden md:col-span-7 md:flex md:self-center justify-end pr-5">
             <ul class="flex mr-5 font-body font-semi-bold">

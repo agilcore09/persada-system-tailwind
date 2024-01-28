@@ -20,8 +20,8 @@
                 <p class="text-center text-lg">alasan kenapa harus memilih untuk mendaftar di <span
                         class="text-blue-950 font-bold">SMK PERSADA MAKASSAR</span></p>
             </div>
-            <div class="alasan grid md:grid-cols-12 grid-cols-12 mt-12" data-aos="fade-up">
-                <div class="col-span-12 my-5 px-9 md:col-span-3">
+            <div class="alasan grid md:grid-cols-12 grid-cols-12 mt-12">
+                <div class="col-span-12 my-5 px-9 md:col-span-3" data-aos="fade-up">
                     <div class="icons flex justify-center">
                         <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i>
                     </div>
@@ -29,7 +29,7 @@
                     <p class="text-center text-sm font-body">Kami telah bekerja sama dengan beberapa perusahaan terkenal dan
                         terpercaya</p>
                 </div>
-                <div class="col-span-12 my-5 px-9 md:col-span-3 ">
+                <div class="col-span-12 my-5 px-9 md:col-span-3 " data-aos="fade-up">
                     <div class="icons flex justify-center">
                         <i class="fa-solid fa-laptop fa-3x text-blue-950 hover:text-blue-900"></i>
                     </div>
@@ -37,14 +37,14 @@
                     <p class="text-center text-sm font-body">Penunjang pembelajaran dan praktikum dengan kualitas yang
                         premium</p>
                 </div>
-                <div class="col-span-12 my-5 px-9 md:col-span-3">
+                <div class="col-span-12 my-5 px-9 md:col-span-3" data-aos="fade-up">
                     <div class="icons flex justify-center">
                         <i class="fa-solid fa-school fa-3x text-blue-950 hover:text-blue-900"></i>
                     </div>
                     <h3 class="text-center text-blue-950 font-bold text-xl mt-3 font-body">Lingkungan Yang Nyaman</h3>
                     <p class="text-center text-sm font-body">Berada di lingkungan yang kondusif dan asri</p>
                 </div>
-                <div class="col-span-12 my-5 px-9 md:col-span-3">
+                <div class="col-span-12 my-5 px-9 md:col-span-3" data-aos="fade-up">
                     <div class="icons flex justify-center ">
                         <i class="fa-solid fa-person-chalkboard fa-3x text-blue-950 hover:text-blue-900"></i>
                     </div>
@@ -91,8 +91,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-10 md:col-span-5 pt-14" data-aos="fade-left">
-                    <img src="{{ asset('kepsek.png') }}" alt="kepsek.jpg">
+                <div class="col-span-10 md:col-span-5 pt-14">
+                    <img src="{{ asset('kepsek.png') }}" alt="kepsek.jpg" data-aos="fade-left">
                 </div>
 
             </div>

@@ -13,6 +13,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>SMK PERSADA</title>
 </head>
+<style>
+    /* script blank page AOS */
+    @media (max-width: 768px) {
+        .hideOverflowOnMobile {
+            overflow: hidden;
+        }
+    }
+</style>
 
 <body>
 
@@ -37,6 +45,8 @@
             }
         });
 
+        // inisialiasi jika aos dalam keadaan mobile untuk mengatasi blank page
+        $('[data-aos]').parent().addClass('hideOverflowOnMobile');
 
         // var a = document.createElement("a");
         // a.setAttribute("data-fslightbox", "gallery");
