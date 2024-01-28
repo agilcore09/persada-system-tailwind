@@ -47,13 +47,6 @@
 
         // inisialiasi jika aos dalam keadaan mobile untuk mengatasi blank page
         $('[data-aos]').parent().addClass('hideOverflowOnMobile');
-
-        // var a = document.createElement("a");
-        // a.setAttribute("data-fslightbox", "gallery");
-        // a.setAttribute("href", "/sertivikasi/mikrotik.jpg");
-        // document.body.appendChild(a);
-        // refreshFsLightbox();
-        //fsLightbox.open();
     </script>
 </body>
 

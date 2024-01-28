@@ -34,22 +34,22 @@
             </div>
 
             <ul class="list hidden absolute bg-blue-950 pb-8 z-10 top-20 font-body font-semi-bold">
-                <li class="w-full py-5 text-xl px-5 text-white hover:bg-blue-500"><a href=""
+                <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
                         class="px-5 py-5">Home</a>
                 </li>
-                <li class="w-full py-5 text-xl px-5 text-white hover:bg-blue-500"><a href=""
+                <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
                         class="px-5 py-5">About</a>
                 </li>
-                <li class="w-full py-5 text-xl px-5 text-white hover:bg-blue-500"><a href=""
+                <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
                         class="px-5 py-5">Contact
                         Us</a></li>
-                <li class="w-full py-5 text-xl px-5 text-white hover:bg-blue-500"><a href=""
+                <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
                         class="px-5 py-5">Exam
                         Persada</a></li>
-                <li class="w-full py-5 text-xl px-5 text-white hover:bg-blue-500"><a href=""
+                <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
                         class="px-5 py-5">Ujian</a>
                 </li>
-                <li class="w-full py-5 text-xl px-5 text-white hover:bg-blue-500"><a href=""
+                <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
                         class="px-5 py-5">Virtual
                         Lab</a></li>
             </ul>
