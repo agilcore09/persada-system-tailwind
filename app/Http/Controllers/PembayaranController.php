@@ -116,7 +116,6 @@ class PembayaranController extends Controller
      */
     public function show(PembayaranModel $pembayaranModel)
     {
-        //
     }
 
     /**

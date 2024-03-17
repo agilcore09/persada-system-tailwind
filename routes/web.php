@@ -6,9 +6,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/pembayaran', \App\Http\Livewire\Pembayaran::class);
-
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/home', function () {
         return view('core.dashboard');
@@ -17,8 +14,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/data-siswa/profile/{nis}', [SiswaController::class, 'ShowProfile']);
     Route::get('/tagihan/{nis}', [SiswaController::class, 'ShowTagihan']);
     Route::get('/cetak/{nis}', [SiswaController::class, 'nota']);
-
-    // Route::resource('/pembayaran', PembayaranController::class);
+    Route::resource('/pembayaran', PembayaranController::class);
     Route::get('/show-pendaftar', [PendaftaranController::class, 'index']);
     Route::delete('/pendaftar/{id}', [PendaftaranController::class, 'destroy']);
 });
