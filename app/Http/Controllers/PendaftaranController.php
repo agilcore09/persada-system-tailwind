@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PendaftaranController extends Controller
 {
@@ -54,6 +55,7 @@ class PendaftaranController extends Controller
 
         ]);
 
+        if(!is_null($request->gambar)){
         // save pendaftar
         $gambar = $request->file('gambar');
         $nama_file = time() . "_" . $gambar->getClientOriginalName();
@@ -75,9 +77,29 @@ class PendaftaranController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
+        } else {
+            $namaLengkap = $request->nama_depan . " " . $request->nama_belakang;
+            PendaftaranModel::create([
+                "nama" => $namaLengkap,
+                "tanggal_lahir" => $request->tanggal_lahir,
+                "tempat_lahir" => $request->tempat_lahir,
+                "no_wa" => $request->no_wa,
+                "alamat" => $request->alamat,
+                "nama_wali" => $request->nama_wali,
+                "jurusan" => $request->jurusan,
+                "wa_wali" => $request->wa_wali,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ]);
+        }
 
+    
+        Alert::success('Success Mendaftar', 'Silahkan tunggu pesan admin');
+        // return redirect()->back();
+        session()->flash('status', 'Silahkan tunggu pesan admin');
         return redirect()->back();
-    }
+
+        }
 
     /**
      * Display the specified resource.

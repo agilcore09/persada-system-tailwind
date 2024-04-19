@@ -9,11 +9,21 @@
         {{-- end jumbotron --}}
     </div>
     {{-- start why --}}
+
+    @if(session()->has('status'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+       Swal.fire({
+            title: "Berhasil Mendaftar",
+            text: "Silahkan tunggu chat/arahan admin",
+            icon: "success"
+            });
+    </script>
+    @endif
     <div class="grid grid-cols-12 mb-28 mt-10">
         <div class="col-span-10 col-start-2 font-body">
             <div class="kenapa mt-14">
-                <h3 class="font-bold text-xl text-center">FORM PENDAFTARAN <span class="text-blue-950 font-bold">SM
-                        p
+                <h3 class="font-bold text-xl text-center">FORM PENDAFTARAN <span class="text-blue-950 font-bold">SMP
                         PERSADA
                         MAKASSAR</span></h3>
             </div>

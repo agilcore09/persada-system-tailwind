@@ -9,6 +9,18 @@
         {{-- end jumbotron --}}
     </div>
     {{-- start why --}}
+
+
+    @if(session()->has('status'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+       Swal.fire({
+            title: "Berhasil Mendaftar",
+            text: "Silahkan tunggu chat/arahan admin",
+            icon: "success"
+            });
+    </script>
+    @endif
     <div class="grid grid-cols-12 mb-28 mt-10">
         <div class="col-span-10 col-start-2 font-body">
             <div class="kenapa mt-14">
@@ -162,6 +174,7 @@
             }
         };
     </script>
+   
 
     @include('landing.footer')
 @endsection
