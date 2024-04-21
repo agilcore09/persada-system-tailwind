@@ -16,9 +16,21 @@ class GuruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = User::where('role_id', 2)->paginate(10);
+        if ($request->guru != null) {
+            $data = User::where('name', $request->search)
+                ->where('role_id', 2)
+                ->get();
+
+            return response()->json([
+                "data" => $data,
+                "message" => "berhasil tangkap",
+                "success" => true
+            ]);
+        } else {
+            $data = User::where('role_id', 2)->paginate(10);
+        }
         $jurusan = CategoryModel::all();
         $kelasSiswa = TypeModel::all();
         return view('Guru.index', compact("data", "jurusan", "kelasSiswa"));

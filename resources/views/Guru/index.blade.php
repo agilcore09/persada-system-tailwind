@@ -80,7 +80,7 @@
                     <div class="pt-2 relative mx-auto text-gray-900">
                         <input
                             class="border-2 border-gray-900 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                            type="text" name="search" placeholder="Cari Nama" autocomplete="off" id="search-nis">
+                            type="text" name="guru" placeholder="Cari Nama" autocomplete="off" id="search-guru">
                         <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
                             <svg class="text-gray-900 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -116,7 +116,7 @@
                                 <thead class="sticky top-0">
                                     <tr
                                         class="text-md font-semibold tracking-wide text-center text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                                        <th class="px-5  py-3">No</th>
+                                        
                                         <th class="px-20 py-3">Nama</th>
                                         <th class="px-20 py-3">Email</th>
                                         <th class="px-4 py-3">Action</th>
@@ -124,11 +124,11 @@
                                 </thead>
 
                                 <tbody class="bg-white" id="tbody">
-                                    <?php $no = 1; ?>
+                                  
                                     @foreach ($data as $item)
                                         <tr class="text-gray-700 text-center">
 
-                                            <td class="px-4 py-3 text-ms border">{{ $no++ }}</td>
+                                            
                                             <td class="px-4 py-3 text-ms border">{{ $item->name }}</td>
                                             <td class="px-4 py-3 text-ms border">{{ $item->email }}</td>
                                             <td class="px-4 py-3 text-ms border">
