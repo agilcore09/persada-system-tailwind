@@ -1,9 +1,9 @@
 @extends('core.index')
 @section('content')
     <div class="container display-add bg-white shadow-xl p-9">
-        <form method="POST">
+        <form method="POST" action="{{ url('data-guru/' . $data->id) }}">
             @csrf
-            @method('POST')
+            @method('PUT')
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-base font-semibold leading-7 text-gray-900">Update Data data guru</h2>

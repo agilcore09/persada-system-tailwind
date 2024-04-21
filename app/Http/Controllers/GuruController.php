@@ -6,6 +6,7 @@ use App\Models\CategoryModel;
 use App\Models\GuruModel;
 use App\Models\TypeModel;
 use App\Models\User;
+use FontLib\Table\Type\name;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
@@ -41,8 +42,9 @@ class GuruController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'nama' => 'required',
             'email' => 'required|unique:users',
+            'password' => 'required',
         ]);
 
         User::insert([
@@ -84,9 +86,26 @@ class GuruController extends Controller
      * @param  \App\Models\GuruModel  $guruModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GuruModel $guruModel)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'email' => 'required',
+
+        ]);
+
+        if (is_null($request->password)) {
+            User::where('id', $id)->update([
+                'name' => $request->nama,
+                'email' => $request->email
+            ]);
+        } else {
+            User::where('id', $id)->update([
+                'name' => $request->name,
+                'password' => bcrypt($request->password),
+                'email' => $request->email
+            ]);
+        }
     }
 
     /**
