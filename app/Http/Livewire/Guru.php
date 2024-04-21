@@ -2,15 +2,19 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\CategoryModel;
+use App\Models\TypeModel;
+use App\Models\User;
 use Livewire\Component;
 
 class Guru extends Component
 {
-
-    public $title = "Guru Page";
-
     public function render()
     {
-        return view('livewire.guru')->layoutData(['title' => 'Halaman Guru']);
+        $data = User::where('role_id', 2)->get();
+        $jurusan = CategoryModel::all();
+        $kelasSiswa = TypeModel::all();
+
+        return view('livewire.guru', compact("data", "jurusan", "kelasSiswa"))->layoutData(['title' => 'Halaman Guru']);
     }
 }
