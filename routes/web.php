@@ -4,6 +4,10 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiswaController;
+
+use App\Http\Livewire\Guru;
+
+use App\Http\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth', 'verified')->group(function () {
@@ -45,6 +49,14 @@ Route::get('/daftarsmp', function () {
 // pendaftaran custom route
 Route::post('/daftarsmk', [PendaftaranController::class, 'store']);
 Route::post('/daftarsmp', [PendaftaranController::class, 'store']);
+
+
+
+ 
+Route::get('/counter', Counter::class);
+Route::get('/guru', Guru::class);
+
+
 
 
 
