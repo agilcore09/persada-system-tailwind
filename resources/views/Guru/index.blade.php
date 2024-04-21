@@ -23,13 +23,13 @@
                                     class="flex items-center text-blue-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-blue-500">
                                     <p
                                         class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
-                                        List Guru</p>
+                                        Guru</p>
                                 </li>
                             </ol>
                         </nav>
                         <h6
                             class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-gray-900">
-                            Guru</h6>
+                            List Guru</h6>
                     </div>
 
                 </div>
