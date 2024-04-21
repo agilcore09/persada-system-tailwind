@@ -22,10 +22,26 @@ class DatabaseSeeder extends Seeder
 
 
 
+        DB::table('role')->insert([
+            'roles' => "admin",
+        ]);
+
+        DB::table('role')->insert([
+            'roles' => "guru",
+        ]);
+
         DB::table('users')->insert([
             'name' => "admin",
             'email' => 'root@gmail.com',
+            'role_id' => 1,
             'password' => bcrypt('root')
+        ]);
+
+        DB::table('users')->insert([
+            'name' => "irman",
+            'email' => 'irman@gmail.com',
+            'role_id' => 2,
+            'password' => bcrypt('irman')
         ]);
 
         $this->call([

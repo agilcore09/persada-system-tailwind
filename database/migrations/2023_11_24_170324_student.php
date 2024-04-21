@@ -22,8 +22,10 @@ return new class extends Migration
             $table->enum('kelas', ["VII A", "VII B", "VIII A", "VIII B", "IX A", "IX B", "X", "XI", "XII"]);
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('type_id');
+            $table->unsignedBigInteger('users_id')->nullable();
             $table->foreign('category_id')->references('id')->on('category');
             $table->foreign('type_id')->references('id')->on('type');
+            $table->foreign('users_id')->references('id')->on('users')->nullable();
             $table->timestamps();
         });
     }

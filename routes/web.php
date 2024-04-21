@@ -50,14 +50,6 @@ Route::get('/daftarsmp', function () {
 Route::post('/daftarsmk', [PendaftaranController::class, 'store']);
 Route::post('/daftarsmp', [PendaftaranController::class, 'store']);
 
-
-
- 
-Route::get('/counter', Counter::class);
-Route::get('/guru', Guru::class);
-
-
-
-
+Route::get('/data-guru', Guru::class);
 
 require __DIR__ . '/auth.php';
