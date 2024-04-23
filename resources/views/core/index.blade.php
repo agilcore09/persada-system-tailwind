@@ -146,6 +146,114 @@
             })
         })
 
+        $('#pencarian-guru').on('input', () => {
+            let search = $('#pencarian-guru').val();
+            console.log(search)
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: `/data-siswa?search=${search}`,
+                type: 'GET',
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    const tbody = $('#tbody');
+                    const data = response.data;
+                    console.log(response)
+                    tbody.empty()
+                    if (search != "" || search != null || search != empty) {
+                        for (const datas of data) {
+                            console.log(datas)
+
+                            tbody.append(`
+                                            <tr class="text-gray-700">
+                                                                        <td class="px-4 py-3 border">
+                                                                            <div class="flex items-center text-sm">
+                                                                                <div class="relative w-8 h-8 mr-3 rounded-full md:block">
+                                                                                    <img class="object-cover w-full h-full rounded-full"
+                                                                                        src="foto_siswa/${datas.gambar}" alt=""
+                                                                                        loading="lazy" />
+                                                                                    <div class="absolute inset-0 rounded-full shadow-inner"
+                                                                                        aria-hidden="true"></div>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <p class="font-semibold text-black">${datas.nama_siswa}</p>
+                                                                                    <p class="text-xs text-gray-600">${datas.nis}</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="px-4 py-3 text-ms font-semibold border">${datas.kelas}</td>
+                                                                        <td class="px-4 py-3 text-ms font-semibold border">${datas.nisn}</td>
+                                                                        <td class="px-4 py-3 text-xs border">
+                                                                            <span
+                                                                                class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm">
+                                                                                ${datas.nama_jurusan}</span>
+                                                                        </td>
+                                                                        <td class="px-4 py-3 text-sm border">${datas.type_name}</td>
+                                                                        <td class="px-4 py-3 text-sm border">
+                                                                            <div class="flex justify-center">
+                                                                                <a href="/data-siswa/profile/${datas.nis}"><i
+                                                                                    class="fa-solid fa-circle-info ml-1 mr-1 text-blue-500 hover:text-blue-900"></i></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                `)
+                        }
+                    }
+
+                    // end if
+                    else {
+                        for (const datas of data) {
+                            tbody.empty()
+                            tbody.append(`
+                                            <tr class="text-gray-700">
+                                                                        <td class="px-4 py-3 border">
+                                                                            <div class="flex items-center text-sm">
+                                                                                <div class="relative w-8 h-8 mr-3 rounded-full md:block">
+                                                                                    <img class="object-cover w-full h-full rounded-full"
+                                                                                        src="foto_siswa/${datas.gambar}" alt=""
+                                                                                        loading="lazy" />
+                                                                                    <div class="absolute inset-0 rounded-full shadow-inner"
+                                                                                        aria-hidden="true"></div>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <p class="font-semibold text-black">${datas.nama_siswa}</p>
+                                                                                    <p class="text-xs text-gray-600">${datas.nis}</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="px-4 py-3 text-ms font-semibold border">${datas.kelas}</td>
+                                                                        <td class="px-4 py-3 text-xs border">
+                                                                            <span
+                                                                                class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm">
+                                                                                nama_jurusan </span>
+                                                                        </td>
+                                                                        <td class="px-4 py-3 text-sm border">kelas siswa</td>
+                                                                        <td class="px-4 py-3 text-sm border">
+                                                                            <div class="flex justify-center">
+                                                                                <form action="/data-siswa/'${datas . nis}"
+                                                                                    method="post">
+                                                                                    @csrf
+                                                                                    @method('DELETE')
+                                                                                    <button type="submit"><i
+                                                                                            class="fa-solid fa-trash mr-1 text-red-500 hover:text-red-900"></i></button>
+                                                                                </form>
+                                                                                <a href="/data-siswa/${datas . nis}/edit"
+                                                                                    class="btn-update"><i
+                                                                                        class="fa-solid
+                                                                                    fa-pen ml-1 text-green-500 hover:text-green-900"></i></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                        `)
+                        };
+
+                    }
+                }
+            })
+        })
+
 
         // pencarian by nis
         $('#search-nis').on('input', () => {
@@ -216,7 +324,7 @@
         // pencarian by nama guru
         $('#search-guru').on('input', () => {
             let search = $('#search-guru').val();
-          
+
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -230,7 +338,7 @@
                     const tbody = $('#tbody');
                     const data = response.data;
                     tbody.empty()
-                   
+
                     if (search != "" || search != null || search != empty) {
                         for (const datas of data) {
                             tbody.append(`
@@ -264,8 +372,6 @@
                 }
             })
         })
-
-      
     </script>
 
 
