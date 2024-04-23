@@ -15,10 +15,10 @@
 <body>
 
     <div class="grid grid-cols-12  ">
-        <div class="col-span-3">
+        <div class="col-span-12 sm:col-span-3 md:col-span-3">
             @include('core.sidebar')
         </div>
-        <div class="col-span-9">
+        <div class="col-span-12 sm:col-span-9 md-col-span-9">
             @yield('content')
         </div>
     </div>
@@ -28,6 +28,13 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('jquery.js') }}"></script>
     <script>
+        // navbar
+        const toggleButton = document.getElementById('toggle');
+        $('#toggle').click(() => {
+            $('#navbar').toggle("slow")
+        })
+
+
         // pencarian
         $('#pencarian').on('input', () => {
             let search = $('#pencarian').val();
