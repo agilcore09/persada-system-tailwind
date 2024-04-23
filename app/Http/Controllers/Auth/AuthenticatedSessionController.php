@@ -28,9 +28,13 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        if (Auth::user()->role_id == 1) {
-            return redirect()->intended('/home');
-        }
+        // if (Auth::user()->role_id == 1) {
+        //     return redirect()->intended('/home');
+        // } elseif (Auth::user()->role_id == 2) {
+        //     return redirect()->intended('ndk tau ');
+        // }
+
+        return redirect()->intended('/home');
     }
 
     /**
