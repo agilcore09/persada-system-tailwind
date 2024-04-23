@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         config(['app.locale' => 'id']);
-        Carbon::setLophp artisan make:middleware EnsureTokenIsValidcale('id');
+        Carbon::setLocale('id');
         date_default_timezone_set('Asia/Makassar');
         Paginator::defaultView('pagination::simple-tailwind');
     }
