@@ -174,15 +174,20 @@
                                             <td class="px-4 py-3 text-ms border">{{ $item->keterangan }}</td>
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
-                                                    <a href="{{ url('/pembayaran' . '/' . $item->id . '/edit') }}"><i
-                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="{{ url('/pembayaran' . '/' . $item->id) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"> <i
-                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                    </form>
+                                                    <a href="{{ url('/cetak' . '/' . $item->id) }}">
+                                                        <i class="fa-solid fa-print text-blue-500 mr-1"></i>
+                                                    </a>
+                                                    @can('isAdmin')
+                                                        <a href="{{ url('/pembayaran' . '/' . $item->id . '/edit') }}"><i
+                                                                class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                        <form action="{{ url('/pembayaran' . '/' . $item->id) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit"> <i
+                                                                    class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                        </form>
+                                                    @endcan
                                                 </div>
                                             </td>
                                         </tr>
@@ -221,9 +226,6 @@
 
                     </div>
                     {{-- end alert section --}}
-
-
-
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="jurusan" class="block text-sm font-medium leading-6 text-gray-900">Pilih
@@ -388,7 +390,6 @@
 
                     </div>
                 </div>
-
             </div>
 
             <div class="mt-6 flex items-center justify-end gap-x-6">
