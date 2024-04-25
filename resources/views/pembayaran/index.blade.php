@@ -248,6 +248,20 @@
                             </div>
                         </div>
                         <div class="col-span-full">
+                            <label for="nomor_nota" class="block text-sm font-medium leading-6 text-gray-900 mb-3">Nomor
+                                Nota
+                            </label>
+                            <div class="flex">
+                                <span
+                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 @error('nomor_nota') border-rose-500 @enderror rounded-l-md">
+                                    No.
+                                </span>
+                                <input type="number" id="nomor_nota" name="nomor_nota"
+                                    class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('nomor_nota') border-rose-500 @enderror p-2.5"
+                                    placeholder="@if ($errors->has('nomor_nota')) Nomor nota wajib di isi!!! @else Masukkan No Nota ex: 01 @endif">
+                            </div>
+                        </div>
+                        <div class="col-span-full">
                             <label for="pembangunan" class="block text-sm font-medium leading-6 text-gray-900 mb-3">Biaya
                                 Pembangunan
                             </label>
@@ -258,7 +272,7 @@
                                 </span>
                                 <input type="number" id="pembangunan" name="pembangunan"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('pembangunan') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('pembangunan')) Form ini kosong!!! @else Masukkan Biaya Tunggakan @endif">
+                                    placeholder="@if ($errors->has('pembangunan')) Form ini kosong!!! @else Masukkan Biaya Pembangunan @endif">
                             </div>
                         </div>
 

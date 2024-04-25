@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
-
+            $table->integer('nomor_nota')->nullable()->unique();
             $table->integer('pembangunan')->nullable();
             $table->integer('tunggakan')->nullable();
             $table->integer('spp')->nullable();

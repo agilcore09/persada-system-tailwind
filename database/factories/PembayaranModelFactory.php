@@ -17,6 +17,8 @@ class PembayaranModelFactory extends Factory
     public function definition()
     {
         return [
+
+            'nomor_nota' => $this->faker->unique()->randomNumber(),
             'siswa_id' => $this->faker->numberBetween(1, 3),
             'pembangunan' => $this->faker->numberBetween(100000, 1000000),
             'tunggakan' => $this->faker->numberBetween(100000, 1000000),

@@ -78,7 +78,8 @@ class PembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
+            'nomor_nota' => 'required',
             'nama_siswa' => 'required',
             'pembangunan' => 'required',
             'tunggakan' => 'required',
@@ -92,6 +93,7 @@ class PembayaranController extends Controller
         ]);
 
         PembayaranModel::create([
+            'nomor_nota' => $request->nomor_nota,
             'siswa_id' => (int)$request->nama_siswa,
             'pembangunan' => $request->pembangunan,
             'tunggakan' => $request->tunggakan,
