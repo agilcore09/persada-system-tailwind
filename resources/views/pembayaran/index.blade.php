@@ -231,9 +231,10 @@
                             <label for="jurusan" class="block text-sm font-medium leading-6 text-gray-900">Pilih
                                 Siswa</label>
                             <div class="mt-3">
-                                <select id="nama_siswa" name="nama_siswa" autocomplete="off"
-                                    class="rounded-lg nama_siswa  border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
+                                {{-- <select id="nama_siswa" name="nama_siswa" autocomplete="off"
+                                    class="rounded-lg  nama_siswa  border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
                                     <option>Pilih Siswa</option>
+
                                     @foreach ($nama_siswa as $item)
                                         <option value="{{ $item->id }}">
                                             {{ $item->nama_siswa }}
@@ -241,9 +242,25 @@
                                             {{ $item->nis }}
                                             ||
                                             {{ $item->nisn }}
-
                                         </option>
                                     @endforeach
+                                </select> --}}
+
+                                <input type="text" id="searchInput"
+                                    class="rounded-lg mb-5 border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                                    placeholder="Cari Siswa">
+
+                                <select id="nama_siswa" name="nama_siswa " autocomplete="off"
+                                    class="rounded-lg nama_siswa border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
+
+                                    <option value="">Pilih Siswa</option>
+
+                                    @foreach ($nama_siswa as $item)
+                                        <option value="{{ $item->id }}">
+                                            {{ $item->nama_siswa }} || {{ $item->nis }} || {{ $item->nisn }}
+                                        </option>
+                                    @endforeach
+
                                 </select>
                             </div>
                         </div>
@@ -399,9 +416,6 @@
                                     placeholder="@if ($errors->has('keterangan')) Form ini kosong!!! @else Masukkan Keterangan @endif">
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
@@ -417,4 +431,26 @@
         </form>
     </div>
     {{-- end add data --}}
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            var input, filter, options, option, i;
+            input = e.target.value.toUpperCase();
+            filter = input.toUpperCase();
+            options = document.querySelectorAll('#nama_siswa option');
+            var select = document.getElementById('nama_siswa');
+
+            // Menampilkan elemen select ketika input dimulai
+            select.style.display = "block";
+
+            for (i = 0; i < options.length; i++) {
+                option = options[i];
+                if (option.textContent.toUpperCase().indexOf(filter) > -1) {
+                    option.style.display = "";
+                } else {
+                    option.style.display = "none";
+                }
+            }
+        });
+    </script>
 @endsection

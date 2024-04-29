@@ -116,7 +116,7 @@
                                 <thead class="sticky top-0">
                                     <tr
                                         class="text-md font-semibold tracking-wide text-center text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                                        
+
                                         <th class="px-20 py-3">Nama</th>
                                         <th class="px-20 py-3">Email</th>
                                         <th class="px-4 py-3">Action</th>
@@ -124,11 +124,11 @@
                                 </thead>
 
                                 <tbody class="bg-white" id="tbody">
-                                  
+
                                     @foreach ($data as $item)
                                         <tr class="text-gray-700 text-center">
 
-                                            
+
                                             <td class="px-4 py-3 text-ms border">{{ $item->name }}</td>
                                             <td class="px-4 py-3 text-ms border">{{ $item->email }}</td>
                                             <td class="px-4 py-3 text-ms border">

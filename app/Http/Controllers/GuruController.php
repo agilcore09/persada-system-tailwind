@@ -18,11 +18,11 @@ class GuruController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->guru != null) {
-            $data = User::where('name', $request->search)
-                ->where('role_id', 2)
-                ->get();
 
+
+        // dd($request->all());
+        if ($request->guru != null) {
+            $data = User::where('role_id', 2)->where('name', 'like', '%' . $request->guru . '%')->get();
             return response()->json([
                 "data" => $data,
                 "message" => "berhasil tangkap",
