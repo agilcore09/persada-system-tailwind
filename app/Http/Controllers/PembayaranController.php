@@ -78,6 +78,8 @@ class PembayaranController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $request->validate([
             'nomor_nota' => 'required',
             'nama_siswa' => 'required',

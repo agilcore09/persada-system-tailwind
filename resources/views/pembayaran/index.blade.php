@@ -108,6 +108,9 @@
             {{-- end section --}}
         </div>
 
+
+
+
         {{-- table section --}}
         <div class="container table-pembayaran">
             {{-- on card table section --}}
@@ -123,6 +126,12 @@
                                         alt="">
                                 </div>
                             </div>
+
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div>{{ $error }}</div>
+                                @endforeach
+                            @endif
                             {{-- end loading section --}}
                             <table class="w-full table pembayaran">
                                 <thead class="sticky top-0">
@@ -221,11 +230,7 @@
                     <h2 class="text-base font-semibold leading-7 text-gray-900">form Input Pembayaran</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Tambahkan Pembayaran Siswa</p>
 
-                    {{-- alert section --}}
-                    <div class="error-page">
 
-                    </div>
-                    {{-- end alert section --}}
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="jurusan" class="block text-sm font-medium leading-6 text-gray-900">Pilih
@@ -250,7 +255,7 @@
                                     class="rounded-lg mb-5 border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
                                     placeholder="Cari Siswa">
 
-                                <select id="nama_siswa" name="nama_siswa " autocomplete="off"
+                                <select id="nama_siswa" name="nama_siswa" autocomplete="off"
                                     class="rounded-lg nama_siswa border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
 
                                     <option value="">Pilih Siswa</option>
@@ -434,11 +439,11 @@
 
     <script>
         document.getElementById('searchInput').addEventListener('input', function(e) {
-            var input, filter, options, option, i;
+            let input, filter, options, option, i;
             input = e.target.value.toUpperCase();
             filter = input.toUpperCase();
             options = document.querySelectorAll('#nama_siswa option');
-            var select = document.getElementById('nama_siswa');
+            let select = document.getElementById('nama_siswa');
 
             // Menampilkan elemen select ketika input dimulai
             select.style.display = "block";
