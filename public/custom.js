@@ -14,6 +14,11 @@ $("#tombol-add").on("click", function (event) {
     $('.display-add').fadeIn("slow");
 });
 
+$("#tombol-guru").on("click", function (event) {
+    event.preventDefault();
+    $('.display-add').fadeIn("slow");
+});
+
 // create pembayaran
 $("#btn-add-pembayaran").on("click", function (event) {
     event.preventDefault();
