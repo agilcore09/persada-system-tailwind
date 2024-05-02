@@ -120,7 +120,7 @@
 
 </html> --}}
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -243,6 +243,309 @@
                 </div>
             </div>
         </div>
+    </div>
+</body>
+
+</html> --}}
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+            max-width: 14.8cm;
+            max-height: 21cm;
+        }
+
+        .container {
+            max-width: 14.8cm;
+            max-height: 10.5cm;
+            margin: 0 auto;
+            border: 1px solid #000000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        .content {
+            margin-bottom: 10px;
+        }
+
+        .receipt-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .receipt-info td {
+            padding: 5px;
+            border: 1px solid #ffffff;
+        }
+
+        .items {
+            margin-top: 10px;
+        }
+
+        .items table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .items th,
+        .items td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #000000;
+        }
+
+        .total {
+            margin-top: 20px;
+        }
+
+        .total table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .total th,
+        .total td {
+
+            text-align: right;
+            border: 1px solid #000000;
+        }
+
+        .fw-bold {
+            font-weight: bold;
+        }
+
+        .text-right {
+            text-align: right !important;
+        }
+
+        .text-left {
+            text-align: left !important;
+        }
+
+        .dashed-line {
+            border-top: 1px dashed #999;
+            width: 80%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h4>KWITANSI PEMBAYARAN SMK PERSADA MAKASSAR</h4>
+            <hr>
+        </div>
+        <div class="content">
+            <div class="receipt-info">
+                <table>
+                    <tr>
+                        <td>Nama:</td>
+                        <td>Marsha Lanathea</td>
+                        <td>Kelas:</td>
+                        <td>XI TKJ</td>
+                    </tr>
+                    <tr>
+                        <td>NIS:</td>
+                        <td>22222</td>
+                        <td>Tanggal:</td>
+                        <td>29-Apr-2024</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="items">
+                <table>
+
+
+                    <tr>
+                        <td class="text-right">1. SPP : </td>
+                        <td>Rp. 900. 000</td>
+                        <td>5. PSG </td>
+                        <td>Rp. 900.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">2. LAB : </td>
+                        <td>Rp. 900. 000</td>
+                        <td>6. US/UKK </td>
+                        <td>Rp. 900.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">3. OSIS : </td>
+                        <td>Rp. 900. 000</td>
+                        <td>7. Pembangunan </td>
+                        <td>Rp. 900.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">4. Semester : </td>
+                        <td>Rp. 900. 000</td>
+                        <td>8. Alumni </td>
+                        <td>Rp. 900.000</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="total">
+                <table>
+                    <tr>
+                        <td>Jumlah : </td>
+                        <td style="text-align: left">Rp. 900.000</td>
+
+                        <td style="text-align: center" colspan="2" class="fw-bold">Guru</td>
+                    </tr>
+                    <tr>
+                        <td>Terbilang : </td>
+                        <td style="text-align: left;">Sembilan ratur ribu rupiah</td>
+
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2" style="text-align: left;">
+                            <p style="padding-right: 70px; padding-left: 20px;">Keterangan :
+                                <br>
+                                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Provident quisquam officia, eos
+                                recusandae quidem aperiam molestias, hic ab fuga ad incidunt eveniet in illo aut. Hic
+                                officia necessitatibus illo pariatur."
+                            </p>
+                        </td>
+                        <td colspan="2"></td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> </td>
+
+                        <td style="text-align: center; " colspan="2">
+                            <p class="fw-bold">Agil jibrin, S.Kom, M.Kom</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="dashed-line"></div>
+
+    <br>
+
+    <div class="container">
+        <div class="header">
+            <h4>KWITANSI PEMBAYARAN SMK PERSADA MAKASSAR</h4>
+            <hr>
+        </div>
+        <div class="content">
+            <div class="receipt-info">
+                <table>
+                    <tr>
+                        <td>Nama:</td>
+                        <td>Marsha Lanathea</td>
+                        <td>Kelas:</td>
+                        <td>XI TKJ</td>
+                    </tr>
+                    <tr>
+                        <td>NIS:</td>
+                        <td>22222</td>
+                        <td>Tanggal:</td>
+                        <td>29-Apr-2024</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="items">
+                <table>
+
+
+                    <tr>
+                        <td class="text-right">1. SPP : </td>
+                        <td>Rp. 900. 000</td>
+                        <td>5. PSG </td>
+                        <td>Rp. 900.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">2. LAB : </td>
+                        <td>Rp. 900. 000</td>
+                        <td>6. US/UKK </td>
+                        <td>Rp. 900.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">3. OSIS : </td>
+                        <td>Rp. 900. 000</td>
+                        <td>7. Pembangunan </td>
+                        <td>Rp. 900.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">4. Semester : </td>
+                        <td>Rp. 900. 000</td>
+                        <td>8. Alumni </td>
+                        <td>Rp. 900.000</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="total">
+                <table>
+                    <tr>
+                        <td>Jumlah : </td>
+                        <td style="text-align: left">Rp. 900.000</td>
+
+                        <td style="text-align: center" colspan="2" class="fw-bold">Guru</td>
+                    </tr>
+                    <tr>
+                        <td>Terbilang : </td>
+                        <td style="text-align: left;">Sembilan ratur ribu rupiah</td>
+
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2" style="text-align: left;">
+                            <p style="padding-right: 70px; padding-left: 20px;">Keterangan :
+                                <br>
+                                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Provident quisquam officia, eos
+                                recusandae quidem aperiam molestias, hic ab fuga ad incidunt eveniet in illo aut. Hic
+                                officia necessitatibus illo pariatur."
+                            </p>
+                        </td>
+                        <td colspan="2"></td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> </td>
+
+                        <td style="text-align: center; " colspan="2">
+                            <p class="fw-bold">Agil jibrin, S.Kom, M.Kom</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
     </div>
 </body>
 

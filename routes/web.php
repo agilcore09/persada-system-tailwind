@@ -18,6 +18,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::resource('/pembayaran', PembayaranController::class);
     Route::get('/show-pendaftar', [PendaftaranController::class, 'index']);
     Route::delete('/pendaftar/{id}', [PendaftaranController::class, 'destroy']);
+    Route::resource('/data-guru', GuruController::class);
 });
 
 Route::middleware('auth')->group(function () {
@@ -47,6 +48,5 @@ Route::get('/daftarsmp', function () {
 Route::post('/daftarsmk', [PendaftaranController::class, 'store']);
 Route::post('/daftarsmp', [PendaftaranController::class, 'store']);
 
-Route::resource('/data-guru', GuruController::class);
 
 require __DIR__ . '/auth.php';

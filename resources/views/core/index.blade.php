@@ -191,8 +191,8 @@
                                                                 <td class="px-4 py-3 text-ms border">Rp. ${datas.spp}</td>
                                                                 <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
                                                                 <td class="px-4 py-3 text-ms border">Rp. ${datas.osis}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.semester_ganjil}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.semester_genap}</td>
+                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.semester}</td>
+                                
                                                                 <td class="px-4 py-3 text-ms border">Rp. ${datas.psg}</td>
                                                                 <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
                                                                 <td class="px-4 py-3 text-ms border">${datas.keterangan}</td>

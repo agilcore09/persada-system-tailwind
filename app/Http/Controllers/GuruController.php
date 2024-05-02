@@ -19,8 +19,8 @@ class GuruController extends Controller
     public function index(Request $request)
     {
 
+        $this->authorize('isAdmin');
 
-        // dd($request->all());
         if ($request->guru != null) {
             $data = User::where('role_id', 2)->where('name', 'like', '%' . $request->guru . '%')->get();
             return response()->json([
@@ -77,6 +77,7 @@ class GuruController extends Controller
      */
     public function show(Request $request, $id)
     {
+        $this->authorize('isAdmin');
     }
 
     /**
@@ -87,6 +88,7 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('isAdmin');
         $data = User::where('id', $id)->get()[0];
         return view('Guru.update', compact("data"));
     }
@@ -100,6 +102,7 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->authorize('isAdmin');
         $request->validate([
             'nama' => 'required',
             'email' => 'required',
@@ -128,6 +131,7 @@ class GuruController extends Controller
      */
     public function destroy($id)
     {
+        $this->authorize('isAdmin');
         User::where('id', $id)->delete();
         return redirect()->to('/data-guru')->with('success', 'Berhasil  Menghapus');
     }

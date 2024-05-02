@@ -23,15 +23,7 @@
                                 <select id="nama_siswa" name="nama_siswa" autocomplete="off"
                                     class="rounded-lg nama_siswa  border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
                                     <option value="{{ $data->Siswa->id }}">{{ $data->Siswa->nama_siswa }}</option>
-                                    @foreach ($nama_siswa as $item)
-                                        <option value="{{ $item->id }}">
-                                            {{ $item->nama_siswa }}
-                                            ||
-                                            {{ $item->nis }}
-                                            ||
-                                            {{ $item->nisn }}
-                                        </option>
-                                    @endforeach
+
                                 </select>
                             </div>
                         </div>

@@ -66,7 +66,7 @@
                 <div>
                     <button
                         class="middle none center flex items-center justify-center rounded-lg p-4 font-sans text-xs font-bold uppercase bg-gray-200 text-gray-900 transition-all hover:bg-gray-50/50 active:bg-gray-500 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                        data-ripple-dark="true" id="btn-guru">
+                        data-ripple-dark="true" id="tombol-guru">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>

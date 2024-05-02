@@ -213,39 +213,34 @@ class SiswaController extends Controller
         return view('form.tagihan', compact("data", "nama", "kalkulasi"));
     }
 
-    public function nota($nis)
+    public function nota($id)
     {
         // mengambil nama
-        $nama = DB::table('siswa')->where('nis', '=', $nis)->get();
+        //$nama = DB::table('siswa')->where('nis', '=', $nis)->get();
 
         // menambahkan nilai pengecekan untuk total pembayaran siswa selama 3 tahun sekolah
         $tagihan = PembayaranModel::join('siswa', 'siswa.id', 'pembayaran.siswa_id')
-            ->where('siswa.nis', '=', $nis)->get();
-
+            ->where('pembayaran.id', '=', $id)->get()[0];
+        //dd($tagihan->nama_siswa);
         // query semua data dan join dari siswa yang sesuai nis 
-        $tagihan = $tagihan->toArray();
 
-        $nama = DB::table('siswa')->where('nis', '=', $nis)->get();
-        $cekType = $nama[0];
-
-        $kalkulasi = CustomBiaya::CekBiaya($cekType->category_id, $cekType->type_id, $tagihan);
         //dd($kalkulasi);
         $pdf =  Pdf::loadView(
             "pembayaran.nota",
             [
-                "nama" => $nama,
-                "totalPembangunan" => $kalkulasi["totalPembangunan"],
-                "totalSpp" => $kalkulasi["totalSpp"],
-                "totalLab" => $kalkulasi["totalLab"],
-                "totalOsis" => $kalkulasi["totalOsis"],
-                "totalSemester" => $kalkulasi["totalSemester"],
-                "totalPsg" => $kalkulasi["totalPsg"],
-                "totalUas" => $kalkulasi["totalUas"],
-                "totalAll" => $kalkulasi["totalAll"]
+                "nama" => $tagihan["nama_siswa"],
+                "totalPembangunan" => $tagihan["totalPembangunan"],
+                "totalSpp" => $tagihan["totalSpp"],
+                "totalLab" => $tagihan["totalLab"],
+                "totalOsis" => $tagihan["totalOsis"],
+                "totalSemester" => $tagihan["totalSemester"],
+                "totalPsg" => $tagihan["totalPsg"],
+                "totalUas" => $tagihan["totalUas"],
+                "totalAll" => $tagihan["totalAll"]
 
             ]
         );
 
-        return $pdf->download('invoice.pdf');
+        return $pdf->stream('invoice.pdf');
     }
 }
