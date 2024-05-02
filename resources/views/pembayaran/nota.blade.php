@@ -269,7 +269,7 @@
             max-width: 14.8cm;
             max-height: 10.5cm;
             margin: 0 auto;
-            border: 1px solid #000000;
+            border: 1px solid red;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -293,7 +293,6 @@
         }
 
         .receipt-info td {
-            padding: 5px;
             border: 1px solid #ffffff;
         }
 
@@ -308,13 +307,13 @@
 
         .items th,
         .items td {
-            padding: 8px;
+            padding: 5px;
             text-align: left;
             border: 1px solid #000000;
         }
 
         .total {
-            margin-top: 20px;
+            /* margin-top: 8px; */
         }
 
         .total table {
@@ -324,7 +323,6 @@
 
         .total th,
         .total td {
-
             text-align: right;
             border: 1px solid #000000;
         }
@@ -352,7 +350,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h4>KWITANSI PEMBAYARAN SMK PERSADA MAKASSAR</h4>
+            <h4 style="text-align: center">KWITANSI PEMBAYARAN SMK PERSADA MAKASSAR</h4>
+
             <hr>
         </div>
         <div class="content">
@@ -360,17 +359,16 @@
                 <table>
                     <tr>
                         <td>Nama:</td>
-                        <td>Marsha Lanathea</td>
+                        <td>{{ $data->nama_siswa }}</td>
                         <td>Kelas:</td>
-                        <td>XI TKJ</td>
+                        <td>{{ $data->kelas }}</td>
                     </tr>
                     <tr>
                         <td>NIS:</td>
-                        <td>22222</td>
+                        <td>{{ $data->nis }}</td>
                         <td>Tanggal:</td>
-                        <td>29-Apr-2024</td>
+                        <td>{{ $dateNow->toDateString() }}</td>
                     </tr>
-
                 </table>
             </div>
             <div class="items">
@@ -407,13 +405,19 @@
             <div class="total">
                 <table>
                     <tr>
-                        <td>Jumlah : </td>
-                        <td style="text-align: left">Rp. 900.000</td>
+                        <td>
+                            <p style="padding-right: 5px;">Jumlah : </p>
+                        </td>
+                        <td style="text-align: left; width: 300px !important;">Rp. 900.000</td>
 
-                        <td style="text-align: center" colspan="2" class="fw-bold">Guru</td>
+                        <td style="text-align: center" colspan="2" class="fw-bold" style="width: 700px !important;">
+                            <p style="text-align: center;">Guru</p>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Terbilang : </td>
+                        <td>
+                            <p style="padding-right: 5px;">Terbilang : </p>
+                        </td>
                         <td style="text-align: left;">Sembilan ratur ribu rupiah</td>
 
                         <td colspan="2"></td>
@@ -421,13 +425,14 @@
                     <tr>
 
                         <td colspan="2" style="text-align: left;">
-                            <p style="padding-right: 70px; padding-left: 20px;">Keterangan :
+
+                            <p style="padding-right: 70px; padding-left: 20px;">
+                                <span><b>ID : {{ $data->id }}</b></span>
                                 <br>
-                                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Provident quisquam officia, eos
-                                recusandae quidem aperiam molestias, hic ab fuga ad incidunt eveniet in illo aut. Hic
-                                officia necessitatibus illo pariatur."
-                            </p>
+                                Keterangan :
+                                <br>
+                                "{{ $data->keterangan }}"
+                            </p>git
                         </td>
                         <td colspan="2"></td>
 
@@ -437,7 +442,7 @@
                         <td> </td>
 
                         <td style="text-align: center; " colspan="2">
-                            <p class="fw-bold">Agil jibrin, S.Kom, M.Kom</p>
+                            <p class="fw-bold">{{ auth()->user()->name }}</p>
                         </td>
                     </tr>
                 </table>
@@ -452,101 +457,7 @@
 
     <br>
 
-    <div class="container">
-        <div class="header">
-            <h4>KWITANSI PEMBAYARAN SMK PERSADA MAKASSAR</h4>
-            <hr>
-        </div>
-        <div class="content">
-            <div class="receipt-info">
-                <table>
-                    <tr>
-                        <td>Nama:</td>
-                        <td>Marsha Lanathea</td>
-                        <td>Kelas:</td>
-                        <td>XI TKJ</td>
-                    </tr>
-                    <tr>
-                        <td>NIS:</td>
-                        <td>22222</td>
-                        <td>Tanggal:</td>
-                        <td>29-Apr-2024</td>
-                    </tr>
 
-                </table>
-            </div>
-            <div class="items">
-                <table>
-
-
-                    <tr>
-                        <td class="text-right">1. SPP : </td>
-                        <td>Rp. 900. 000</td>
-                        <td>5. PSG </td>
-                        <td>Rp. 900.000</td>
-                    </tr>
-                    <tr>
-                        <td class="text-right">2. LAB : </td>
-                        <td>Rp. 900. 000</td>
-                        <td>6. US/UKK </td>
-                        <td>Rp. 900.000</td>
-                    </tr>
-                    <tr>
-                        <td class="text-right">3. OSIS : </td>
-                        <td>Rp. 900. 000</td>
-                        <td>7. Pembangunan </td>
-                        <td>Rp. 900.000</td>
-                    </tr>
-                    <tr>
-                        <td class="text-right">4. Semester : </td>
-                        <td>Rp. 900. 000</td>
-                        <td>8. Alumni </td>
-                        <td>Rp. 900.000</td>
-                    </tr>
-
-                </table>
-            </div>
-            <div class="total">
-                <table>
-                    <tr>
-                        <td>Jumlah : </td>
-                        <td style="text-align: left">Rp. 900.000</td>
-
-                        <td style="text-align: center" colspan="2" class="fw-bold">Guru</td>
-                    </tr>
-                    <tr>
-                        <td>Terbilang : </td>
-                        <td style="text-align: left;">Sembilan ratur ribu rupiah</td>
-
-                        <td colspan="2"></td>
-                    </tr>
-                    <tr>
-
-                        <td colspan="2" style="text-align: left;">
-                            <p style="padding-right: 70px; padding-left: 20px;">Keterangan :
-                                <br>
-                                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Provident quisquam officia, eos
-                                recusandae quidem aperiam molestias, hic ab fuga ad incidunt eveniet in illo aut. Hic
-                                officia necessitatibus illo pariatur."
-                            </p>
-                        </td>
-                        <td colspan="2"></td>
-
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> </td>
-
-                        <td style="text-align: center; " colspan="2">
-                            <p class="fw-bold">Agil jibrin, S.Kom, M.Kom</p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-    </div>
 </body>
 
 </html>

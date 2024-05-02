@@ -167,7 +167,7 @@
                     const tbody = $('#tbody');
                     const data = response.data;
                     tbody.empty();
-                    console.log(data)
+
                     if (tanggal1 != null && tanggal2 != null) {
 
                         for (const datas of data) {

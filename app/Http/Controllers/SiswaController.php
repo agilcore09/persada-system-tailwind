@@ -12,6 +12,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Helpers\CustomBiaya;
+use Carbon\Carbon;
 
 class SiswaController extends Controller
 {
@@ -236,7 +237,10 @@ class SiswaController extends Controller
                 "totalSemester" => $tagihan["totalSemester"],
                 "totalPsg" => $tagihan["totalPsg"],
                 "totalUas" => $tagihan["totalUas"],
-                "totalAll" => $tagihan["totalAll"]
+                "totalAll" => $tagihan["totalAll"],
+
+                "data" => $tagihan,
+                "dateNow" => Carbon::now()
 
             ]
         );
