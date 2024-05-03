@@ -151,7 +151,7 @@
                                         <th class="px-20 py-3">Semester</th>
                                         <th class="px-20 py-3">PSG</th>
                                         <th class="px-20 py-3">UKK</th>
-
+                                        <th class="px-20 py-3">Alumni</th>
                                         <th class="px-4 py-3">Action</th>
                                     </tr>
                                 </thead>
@@ -180,6 +180,7 @@
                                             <td class="px-4 py-3 text-ms border">Rp. {{ $item->semester }}</td>
                                             <td class="px-4 py-3 text-ms border">Rp. {{ $item->psg }}</td>
                                             <td class="px-4 py-3 text-ms border">Rp. {{ $item->ukk }}</td>
+                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->alumni }}</td>
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
                                                     <a href="{{ url('/cetak' . '/' . $item->id) }}">
@@ -235,21 +236,7 @@
                             <label for="jurusan" class="block text-sm font-medium leading-6 text-gray-900">Pilih
                                 Siswa</label>
                             <div class="mt-3">
-                                {{-- <select id="nama_siswa" name="nama_siswa" autocomplete="off"
-                                    class="rounded-lg  nama_siswa  border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
-                                    <option>Pilih Siswa</option>
-
-                                    @foreach ($nama_siswa as $item)
-                                        <option value="{{ $item->id }}">
-                                            {{ $item->nama_siswa }}
-                                            ||
-                                            {{ $item->nis }}
-                                            ||
-                                            {{ $item->nisn }}
-                                        </option>
-                                    @endforeach
-                                </select> --}}
-
+                            
                                 <input type="text" id="searchInput"
                                     class="rounded-lg mb-5 border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
                                     placeholder="Cari Siswa">
@@ -469,6 +456,35 @@
                                 <input type="text" id="keterangan_ukk" name="keterangan_ukk"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_ukk') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_ukk')) Form ini kosong!!! @else Masukkan Keterangan UKK @endif">
+                            </div>
+                        </div>
+
+                        <div class="col-span-full">
+                            <label for="alumni" class="block text-sm font-medium leading-6 text-gray-900 mb-3">Biaya
+                                Alumni
+                            </label>
+                            <div class="flex">
+                                <span
+                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 @error('psg') border-rose-500 @enderror rounded-l-md">
+                                    Rp.
+                                </span>
+
+                                <input type="number" required id="alumni" name="alumni"
+                                    class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('alumni') border-rose-500 @enderror p-2.5"
+                                    placeholder="@if ($errors->has('alumni')) Form ini kosong!!! @else Masukkan Nilai Biaya Alumni @endif">
+                            </div>
+                        </div>
+
+                        <div class="col-span-full">
+                            <label for="keterangan_alumni"
+                                class="block text-sm font-medium leading-6 text-gray-900 mb-3">Keterangan
+                                Alumni
+                            </label>
+                            <div class="flex">
+
+                                <input type="text" id="keterangan_alumni" name="keterangan_alumni"
+                                    class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_alumni') border-rose-500 @enderror p-2.5"
+                                    placeholder="@if ($errors->has('keterangan_alumni')) Form ini kosong!!! @else Masukkan Keterangan Alumni @endif">
                             </div>
                         </div>
 

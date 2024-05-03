@@ -31,6 +31,8 @@ return new class extends Migration
             $table->string('keterangan_psg')->nullable();
             $table->integer('ukk')->nullable();
             $table->string('keterangan_ukk')->nullable();
+            $table->integer('alumni')->nullable();
+            $table->string('keterangan_alumni')->nullable();
             $table->date('tanggal_bayar')->nullable();
             $table->date('tanggal_update')->nullable();
             $table->unsignedBigInteger('siswa_id');

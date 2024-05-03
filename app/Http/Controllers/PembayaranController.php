@@ -116,6 +116,8 @@ class PembayaranController extends Controller
             'keterangan_semester' => $request->keterangan_semester,
             'ukk' => $request->ukk,
             'keterangan_ukk' => $request->keterangan_ukk,
+            'alumni' => $request->alumni,
+            'keterangan_alumni' => $request->keterangan_alumni,
             'tanggal_bayar' => Carbon::now()
         ]);
 
@@ -144,7 +146,7 @@ class PembayaranController extends Controller
         return view('pembayaran.update', compact("data"));
     }
 
-    /**
+    /** 
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -168,7 +170,9 @@ class PembayaranController extends Controller
             'semester' => 'required',
             'keterangan_semester' => 'required',
             'ukk' => 'required',
-            'keterangan_ukk' => 'required'
+            'keterangan_ukk' => 'required',
+            'alumni' => 'required',
+            'keterangan_alumni' => 'required'
         ]);
 
         $pembayaranModel->find($id)->update([
@@ -186,6 +190,9 @@ class PembayaranController extends Controller
             'semester' => $request->semester,
             'keterangan_semester' => $request->keterangan_semester,
             'ukk' => $request->ukk,
+            'keterangan_ukk' => $request->keterangan_ukk,
+            'alumni' => $request->alumni,
+            'keterangan_alumni' => $request->keterangan_alumni,
             'tanggal_bayar' => Carbon::now()
         ]);
 
