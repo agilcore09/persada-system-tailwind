@@ -138,12 +138,10 @@ function Terbilang($nilai) {
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="header">
             <h4 style="text-align: center">KWITANSI PEMBAYARAN SMK PERSADA MAKASSAR</h4>
-
             <hr>
         </div>
         <div class="content">
@@ -153,20 +151,18 @@ function Terbilang($nilai) {
                         <td>Nama:</td>
                         <td>{{ $data->nama_siswa }}</td>
                         <td>Kelas:</td>
-                        <td>{{ $data->kelas }}</td>
+                        <td>{{ $data->kelas }} {{ $data ->nama_jurusan }}</td>
                     </tr>
                     <tr>
                         <td>NIS:</td>
                         <td>{{ $data->nis }}</td>
                         <td>Tanggal:</td>
-                        <td>{{ $dateNow->toDateString() }}</td>
+                        <td>{{ $data->tanggal_bayar }}</td>
                     </tr>
                 </table>
             </div>
             <div class="items">
                 <table>
-
-
                     <tr>
                         <td class="text-right">1. SPP : Rp.{{ $data->spp }}</td>
                         <td>{{ $data->keterangan_spp }}</td>
@@ -212,15 +208,16 @@ function Terbilang($nilai) {
                             <p style="text-align: center !important;">Terbilang     </p>
                         </td>
 
-                        
                         <td style="text-align: left; width:300px !important; padding-left: 5px;"> : {{ Terbilang($total) }}</td>
 
                         <td colspan="2" class="no-border-bottom no-border-top"></td>
                     </tr>
                    
                     <tr>
-                        <td><p style="text-align: center; font-weight:bold;">NO : {{ $data->id }}</p></td>
-                        <td> </td>
+                        <td><p style="text-align: center; font-weight:bold;">NO : {{ $data->siswa_id }}</p></td>
+                        <td>
+                        <p style="text-align: left; padding-left: 5px;">Di cetak pada : {{ $dateNow->toDateString() }}</p>    
+                        </td>
 
                         <td style="text-align: center; " colspan="2" class="no-border-top">
                             <p class="fw-bold">{{ auth()->user()->name }}</p> 
@@ -251,7 +248,7 @@ function Terbilang($nilai) {
                         <td>Nama:</td>
                         <td>{{ $data->nama_siswa }}</td>
                         <td>Kelas:</td>
-                        <td>{{ $data->kelas }}</td>
+                        <td>{{ $data->kelas }} {{ $data ->nama_jurusan }}</td>
                     </tr>
                     <tr>
                         <td>NIS:</td>
@@ -317,8 +314,10 @@ function Terbilang($nilai) {
                     </tr>
                    
                     <tr>
-                        <td><p style="text-align: center; font-weight:bold;">NO : {{ $data->id }}</p></td>
-                        <td> </td>
+                        <td><p style="text-align: center; font-weight:bold;">NO : {{ $data->siswa_id }}</p></td>
+                        <td>
+                            <p style="text-align: left; padding-left: 5px;">Di cetak pada : {{ $dateNow->toDateString() }}</p>    
+                        </td>  
 
                         <td style="text-align: center; " colspan="2" class="no-border-top">
                             <p class="fw-bold">{{ auth()->user()->name }}</p> 

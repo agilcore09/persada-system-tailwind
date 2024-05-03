@@ -66,7 +66,7 @@
                                 </span>
                                 <input type="number" required id="spp" name="spp"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm  @error('spp') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('spp')) Form ini kosong!!! @else Masukkan Biaya SPP @endif">
+                                    placeholder="@if ($errors->has('spp')) Form ini kosong!!! @else Masukkan Biaya SPP @endif" value="{{ $data->spp }}">
                             </div>
                         </div>
 
@@ -77,9 +77,9 @@
                             </label>
                             <div class="flex">
 
-                                <input type="text" id="keterangan_spp" name="keterangan_spp"
+                                <input type="text" id="keterangan_spp" name="keterangan_spp" 
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('pembangunan') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('keterangan_spp')) Form ini kosong!!! @else Masukkan Keterangan SPP @endif">
+                                    placeholder="@if ($errors->has('keterangan_spp')) Form ini kosong!!! @else Masukkan Keterangan SPP @endif" value="{{ $data->keterangan_spp }}">
                             </div>
                         </div>
 
@@ -94,7 +94,7 @@
                                 </span>
                                 <input type="number" required id="lab" name="lab"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('lab') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('lab')) Form ini kosong!!! @else Masukkan Biaya LAB @endif">
+                                    placeholder="@if ($errors->has('lab')) Form ini kosong!!! @else Masukkan Biaya LAB @endif" value="{{ $data->lab }}">
                             </div>
                         </div>
 
@@ -107,7 +107,7 @@
 
                                 <input type="text" id="keterangan_lab" name="keterangan_lab"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_lab') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('keterangan_lab')) Form ini kosong!!! @else Masukkan keterangan Lab @endif">
+                                    placeholder="@if ($errors->has('keterangan_lab')) Form ini kosong!!! @else Masukkan keterangan Lab @endif" value="{{ $data->keterangan_lab }}">
                             </div>
                         </div>
 
@@ -122,7 +122,7 @@
                                 </span>
                                 <input type="number" required id="osis" name="osis"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('osis') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('osis')) Form ini kosong!!! @else Masukkan Biaya OSIS @endif ">
+                                    placeholder="@if ($errors->has('osis')) Form ini kosong!!! @else Masukkan Biaya OSIS @endif" value="{{ $data->osis }}">
                             </div>
                         </div>
 
@@ -135,7 +135,7 @@
 
                                 <input type="text" id="keterangan_lab" name="keterangan_osis"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_lab') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('keterangan_lab')) Form ini kosong!!! @else Masukkan Keterangan osis @endif">
+                                    placeholder="@if ($errors->has('keterangan_lab')) Form ini kosong!!! @else Masukkan Keterangan osis @endif" value="{{ $data->keterangan_osis }}">
                             </div>
                         </div>
 
@@ -145,13 +145,13 @@
                             </label>
                             <div class="flex">
                                 <span
-                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 @error('uas') border-rose-500 @enderror rounded-l-md">
+                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 @error('uas') border-rose-500 @enderror rounded-l-md" >
                                     Rp.
                                 </span>
 
                                 <input type="number" required id="uas" name="semester"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('uas') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('uas')) Form ini kosong!!! @else Masukkan Biaya Semester @endif">
+                                    placeholder="@if ($errors->has('uas')) Form ini kosong!!! @else Masukkan Biaya Semester @endif" value="{{ $data->semester }}">
                             </div>
                         </div>
 
@@ -164,7 +164,7 @@
 
                                 <input type="text" id="keterangan_uas" name="keterangan_semester"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_semester') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('keterangan_semester')) Form ini kosong!!! @else Masukkan Biaya Semester @endif">
+                                    placeholder="@if ($errors->has('keterangan_semester')) Form ini kosong!!! @else Masukkan Biaya Semester @endif" value="{{ $data->keterangan_semester }}">
                             </div>
                         </div>
 
@@ -182,7 +182,7 @@
 
                                 <input type="number" required id="psg" name="psg"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('psg') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('psg')) Form ini kosong!!! @else Masukkan Nilai Biaya PSG @endif">
+                                    placeholder="@if ($errors->has('psg')) Form ini kosong!!! @else Masukkan Nilai Biaya PSG @endif" value="{{ $data->psg }}">
                             </div>
                         </div>
 
@@ -195,7 +195,7 @@
 
                                 <input type="text" id="keterangan_psg" name="keterangan_psg"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_psg') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('keterangan_psg')) Form ini kosong!!! @else Masukkan Keterangan PSG @endif">
+                                    placeholder="@if ($errors->has('keterangan_psg')) Form ini kosong!!! @else Masukkan Keterangan PSG @endif" value="{{ $data->keterangan_psg }}">
                             </div>
                         </div>
 
@@ -212,7 +212,7 @@
 
                                 <input type="number" required id="ukk" name="ukk"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('ukk') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('ukk')) Form ini kosong!!! @else Masukkan Nilai Biaya UKK @endif">
+                                    placeholder="@if ($errors->has('ukk')) Form ini kosong!!! @else Masukkan Nilai Biaya UKK @endif" value="{{ $data->ukk }}">
                             </div>
                         </div>
 
@@ -225,10 +225,39 @@
 
                                 <input type="text" id="keterangan_ukk" name="keterangan_ukk"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_ukk') border-rose-500 @enderror p-2.5"
-                                    placeholder="@if ($errors->has('keterangan_ukk')) Form ini kosong!!! @else Masukkan Keterangan UKK @endif">
+                                    placeholder="@if ($errors->has('keterangan_ukk')) Form ini kosong!!! @else Masukkan Keterangan UKK @endif" value="{{ $data->keterangan_ukk }}">
                             </div>
                         </div>
 
+
+                        <div class="col-span-full">
+                            <label for="alumni" class="block text-sm font-medium leading-6 text-gray-900 mb-3">Biaya
+                                Alumni
+                            </label>
+                            <div class="flex">
+                                <span
+                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 @error('psg') border-rose-500 @enderror rounded-l-md">
+                                    Rp.
+                                </span>
+
+                                <input type="number" required id="alumni" name="alumni"
+                                    class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('alumni') border-rose-500 @enderror p-2.5"
+                                    placeholder="@if ($errors->has('alumni')) Form ini kosong!!! @else Masukkan Nilai Biaya Alumni @endif" value="{{ $data->alumni }}">
+                            </div>
+                        </div>
+
+                        <div class="col-span-full">
+                            <label for="keterangan_alumni"
+                                class="block text-sm font-medium leading-6 text-gray-900 mb-3">Keterangan
+                               Alumni
+                            </label>
+                            <div class="flex">
+
+                                <input type="text" id="keterangan_alumni" name="keterangan_alumni"
+                                    class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_alumni') border-rose-500 @enderror p-2.5"
+                                    placeholder="@if ($errors->has('keterangan_alumni')) Form ini kosong!!! @else Masukkan Keterangan Alumni @endif" value="{{ $data->keterangan_alumni }}">
+                            </div>
+                        </div>
 
                     </div>
                 </div>

@@ -96,7 +96,9 @@ class PembayaranController extends Controller
             'semester' => 'required',
             'keterangan_semester' => 'required',
             'ukk' => 'required',
-            'keterangan_ukk' => 'required'
+            'keterangan_ukk' => 'required',
+            'alumni' => 'required',
+            'keterangan_alumni' => 'required'
         ]);
 
         PembayaranModel::create([
@@ -176,9 +178,9 @@ class PembayaranController extends Controller
         ]);
 
         $pembayaranModel->find($id)->update([
-            'nomor_nota' => $request->nomor_nota,
             'siswa_id' => (int)$request->nama_siswa,
             'pembangunan' => $request->pembangunan,
+            'keterangan_pembangunan' => $request->keterangan_pembangunan,
             'spp' => $request->spp,
             'keterangan_spp' => $request->keterangan_spp,
             'lab' => $request->lab,

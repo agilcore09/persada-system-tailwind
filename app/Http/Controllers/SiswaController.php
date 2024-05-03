@@ -27,6 +27,8 @@ class SiswaController extends Controller
         $kelasSiswa = TypeModel::all();
         $data = SiswaModel::with(['Category', 'Type'])->get();
 
+
+
         if ($request->all() != null) {
             $data = DB::table('siswa')
                 ->join('category', 'siswa.category_id', 'category.id')
@@ -221,11 +223,13 @@ class SiswaController extends Controller
 
         // menambahkan nilai pengecekan untuk total pembayaran siswa selama 3 tahun sekolah
         $tagihan = PembayaranModel::join('siswa', 'siswa.id', 'pembayaran.siswa_id')
-            ->where('pembayaran.id', '=', $id)->get()[0];
-        //dd($tagihan->nama_siswa);
-        // query semua data dan join dari siswa yang sesuai nis 
+            ->join('category', 'category.id', 'siswa.category_id')
+            ->where('pembayaran.id', '=', $id)
+            ->get()[0];
 
-        //dd($kalkulasi);
+
+        //dd($tagihan);
+
         $pdf =  Pdf::loadView(
             "pembayaran.nota",
             [
@@ -237,6 +241,6 @@ class SiswaController extends Controller
             ]
         );
 
-        return $pdf->stream('invoice.pdf');
+        return $pdf->stream('kwitansi.pdf');
     }
 }
