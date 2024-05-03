@@ -144,17 +144,24 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, PembayaranModel $pembayaranModel, $id)
     {
-        $validated = $request->validate([
+        $request->validate([
             'nama_siswa' => 'required',
             'pembangunan' => 'required',
+            'keterangan_pembangunan' => 'required',
             'tunggakan' => 'required',
+            'keterangan_tunggakan' => 'required',
             'spp' => 'required',
+            'keterangan_spp' => 'required',
             'lab' => 'required',
+            'keterangan_lab' => 'required',
             'osis' => 'required',
+            'keterangan_osis' => 'required',
             'psg' => 'required',
+            'keterangan_psg' => 'required',
             'uas' => 'required',
-            'keterangan' => 'required',
-            'semester' => 'required'
+            'keterangan_uas' => 'required',
+            'semester' => 'required',
+            'keterangan_semester' => 'required'
         ]);
 
         $pembayaranModel->find($id)->update([
