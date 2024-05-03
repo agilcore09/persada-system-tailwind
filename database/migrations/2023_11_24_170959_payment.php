@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
-            $table->integer('nomor_nota')->nullable();
+            // $table->integer('nomor_nota')->nullable();
             $table->integer('pembangunan')->nullable();
             $table->string('keterangan_pembangunan')->nullable();
-            $table->integer('tunggakan')->nullable();
-            $table->string('keterangan_tunggakan')->nullable();
+
             $table->integer('spp')->nullable();
             $table->string('keterangan_spp')->nullable();
             $table->integer('lab')->nullable();
@@ -30,10 +29,8 @@ return new class extends Migration
             $table->string('keterangan_semester')->nullable();
             $table->integer('psg')->nullable();
             $table->string('keterangan_psg')->nullable();
-            $table->integer('uas')->nullable();
-            $table->string('keterangan_uas')->nullable();
-            $table->integer('alumni')->nullable();
-            $table->string('keterangan_alumni')->nullable();
+            $table->integer('ukk')->nullable();
+            $table->string('keterangan_ukk')->nullable();
             $table->date('tanggal_bayar')->nullable();
             $table->date('tanggal_update')->nullable();
             $table->unsignedBigInteger('siswa_id');

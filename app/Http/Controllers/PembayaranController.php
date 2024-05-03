@@ -79,33 +79,43 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
 
+        //dd($request->all());
 
         $request->validate([
-            'nomor_nota' => 'required',
             'nama_siswa' => 'required',
             'pembangunan' => 'required',
-            'tunggakan' => 'required',
+            'keterangan_pembangunan' => 'required',
             'spp' => 'required',
+            'keterangan_spp' => 'required',
             'lab' => 'required',
+            'keterangan_lab' => 'required',
             'osis' => 'required',
+            'keterangan_osis' => 'required',
             'psg' => 'required',
-            'uas' => 'required',
-            'keterangan' => 'required',
-            'semester' => 'required'
+            'keterangan_psg' => 'required',
+            'semester' => 'required',
+            'keterangan_semester' => 'required',
+            'ukk' => 'required',
+            'keterangan_ukk' => 'required'
         ]);
 
         PembayaranModel::create([
-            'nomor_nota' => $request->nomor_nota,
+
             'siswa_id' => (int)$request->nama_siswa,
             'pembangunan' => $request->pembangunan,
-            'tunggakan' => $request->tunggakan,
+            'keterangan_pembangunan' => $request->keterangan_pembangunan,
             'spp' => $request->spp,
+            'keterangan_spp' => $request->keterangan_spp,
             'lab' => $request->lab,
+            'keterangan_lab' => $request->keterangan_lab,
             'osis' => $request->osis,
+            'keterangan_osis' => $request->keterangan_osis,
             'psg' => $request->psg,
-            'uas' => $request->uas,
-            'keterangan' => $request->keterangan,
+            'keterangan_psg' => $request->keterangan_psg,
             'semester' => $request->semester,
+            'keterangan_semester' => $request->keterangan_semester,
+            'ukk' => $request->ukk,
+            'keterangan_ukk' => $request->keterangan_ukk,
             'tanggal_bayar' => Carbon::now()
         ]);
 
@@ -131,8 +141,8 @@ class PembayaranController extends Controller
     public function edit(PembayaranModel $pembayaranModel, $id)
     {
         $data = $pembayaranModel->find($id);
-        $nama_siswa = DB::table('siswa')->get();
-        return view('pembayaran.update', compact("data", "nama_siswa"));
+
+        return view('pembayaran.update', compact("data"));
     }
 
     /**
@@ -148,8 +158,6 @@ class PembayaranController extends Controller
             'nama_siswa' => 'required',
             'pembangunan' => 'required',
             'keterangan_pembangunan' => 'required',
-            'tunggakan' => 'required',
-            'keterangan_tunggakan' => 'required',
             'spp' => 'required',
             'keterangan_spp' => 'required',
             'lab' => 'required',
@@ -158,24 +166,28 @@ class PembayaranController extends Controller
             'keterangan_osis' => 'required',
             'psg' => 'required',
             'keterangan_psg' => 'required',
-            'uas' => 'required',
-            'keterangan_uas' => 'required',
             'semester' => 'required',
-            'keterangan_semester' => 'required'
+            'keterangan_semester' => 'required',
+            'ukk' => 'required',
+            'keterangan_ukk' => 'required'
         ]);
 
         $pembayaranModel->find($id)->update([
+            'nomor_nota' => $request->nomor_nota,
             'siswa_id' => (int)$request->nama_siswa,
             'pembangunan' => $request->pembangunan,
-            'tunggakan' => $request->tunggakan,
             'spp' => $request->spp,
+            'keterangan_spp' => $request->keterangan_spp,
             'lab' => $request->lab,
+            'keterangan_lab' => $request->keterangan_lab,
             'osis' => $request->osis,
+            'keterangan_osis' => $request->keterangan_osis,
             'psg' => $request->psg,
-            'uas' => $request->uas,
-            'semester' => (int)$request->semester,
-            'keterangan' => $request->keterangan,
-            'tanggal_update' => Carbon::now()
+            'keterangan_psg' => $request->keterangan_psg,
+            'semester' => $request->semester,
+            'keterangan_semester' => $request->keterangan_semester,
+            'ukk' => $request->ukk,
+            'tanggal_bayar' => Carbon::now()
         ]);
 
         return redirect()->to('/pembayaran')->with('success', 'Berhasil Memperbarui Data Pembayaran');
