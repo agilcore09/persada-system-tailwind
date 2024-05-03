@@ -229,17 +229,9 @@ class SiswaController extends Controller
         $pdf =  Pdf::loadView(
             "pembayaran.nota",
             [
-                "nama" => $tagihan["nama_siswa"],
-                "totalPembangunan" => $tagihan["totalPembangunan"],
-                "totalSpp" => $tagihan["totalSpp"],
-                "totalLab" => $tagihan["totalLab"],
-                "totalOsis" => $tagihan["totalOsis"],
-                "totalSemester" => $tagihan["totalSemester"],
-                "totalPsg" => $tagihan["totalPsg"],
-                "totalUas" => $tagihan["totalUas"],
-                "totalAll" => $tagihan["totalAll"],
 
                 "data" => $tagihan,
+
                 "dateNow" => Carbon::now()
 
             ]

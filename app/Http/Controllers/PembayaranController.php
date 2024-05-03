@@ -141,7 +141,6 @@ class PembayaranController extends Controller
     public function edit(PembayaranModel $pembayaranModel, $id)
     {
         $data = $pembayaranModel->find($id);
-
         return view('pembayaran.update', compact("data"));
     }
 

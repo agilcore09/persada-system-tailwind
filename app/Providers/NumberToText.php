@@ -13,7 +13,7 @@ class CustomBiaya extends ServiceProvider
      */
     public function register()
     {
-        require_once app_path() . '/Helpers/CustomBiaya.php';
+        require_once app_path() . '/Helpers/NumberToText.php';
     }
 
     /**

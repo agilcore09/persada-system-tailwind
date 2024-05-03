@@ -344,6 +344,17 @@
             width: 80%;
             margin: 20px auto;
         }
+
+        .no-border-top
+        {
+            border-top: none !important;
+        }
+
+        .no-border-bottom
+        {
+            border-bottom: none !important;
+
+        }
     </style>
 </head>
 
@@ -376,26 +387,26 @@
 
 
                     <tr>
-                        <td class="text-right">1. SPP : </td>
-                        <td>Rp. 900. 000</td>
-                        <td>5. PSG </td>
-                        <td>Rp. 900.000</td>
+                        <td class="text-right">1. SPP : Rp.{{ $data->spp }}</td>
+                        <td>{{ $data->keterangan_spp }}</td>
+                        <td>5. PSG : Rp.{{ $data->psg }}  </td>
+                        <td>{{ $data->keterangan_spp }}</td>
                     </tr>
                     <tr>
-                        <td class="text-right">2. LAB : </td>
-                        <td>Rp. 900. 000</td>
-                        <td>6. US/UKK </td>
-                        <td>Rp. 900.000</td>
+                        <td class="text-right">2. LAB : Rp. {{ $data->lab }}</td>
+                        <td>{{ $data->keterangan_lab }}</td>
+                        <td>6. US/UKK : Rp.{{ $data->ukk }}</td>
+                        <td>{{ $data->keterangan_ukk }}</td>
                     </tr>
                     <tr>
-                        <td class="text-right">3. OSIS : </td>
-                        <td>Rp. 900. 000</td>
-                        <td>7. Pembangunan </td>
-                        <td>Rp. 900.000</td>
+                        <td class="text-right">3. OSIS : Rp. {{ $data->osis }}</td>
+                        <td>{{ $data->keterangan_osis }}</td>
+                        <td>7. Pembangunan : Rp.{{ $data->pembangunan }}</td>
+                        <td>{{ $data->keterangan_pembangunan }}</td>
                     </tr>
                     <tr>
-                        <td class="text-right">4. Semester : </td>
-                        <td>Rp. 900. 000</td>
+                        <td class="text-right">4. Semester : Rp. {{ $data->semester }}</td>
+                        <td>{{ $data->keterangan_semester }}</td>
                         <td>8. Alumni </td>
                         <td>Rp. 900.000</td>
                     </tr>
@@ -406,43 +417,30 @@
                 <table>
                     <tr>
                         <td>
-                            <p style="padding-right: 5px;">Jumlah : </p>
+                            <p style=" padding-right: 20px; text-align:center; margin-right:10px;">Jumlah    </p>
                         </td>
-                        <td style="text-align: left; width: 300px !important;">Rp. 900.000</td>
+                        <td style="text-align: left; width:300px !important;">Rp. 900.000</td>
 
-                        <td style="text-align: center" colspan="2" class="fw-bold" style="width: 700px !important;">
-                            <p style="text-align: center;">Guru</p>
+                        <td style="text-align: center" colspan="2" class="fw-bold no-border-bottom" style="width: 700px !important;">
+                            <p style="text-align: center;" class="no-border-bottom">Guru</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p style="padding-right: 5px;">Terbilang : </p>
+                            <p style=" padding-right: 20px; text-align:center; margin-right:10px;">Terbilang     </p>
                         </td>
-                        <td style="text-align: left;">Sembilan ratur ribu rupiah</td>
+                        
+                        <td style="text-align: left; width:300px !important;">{{ NumberToText::Convert() }}</td>
 
-                        <td colspan="2"></td>
+                        <td colspan="2" class="no-border-bottom no-border-top"></td>
                     </tr>
-                    <tr>
-
-                        <td colspan="2" style="text-align: left;">
-
-                            <p style="padding-right: 70px; padding-left: 20px;">
-                                <span><b>ID : {{ $data->id }}</b></span>
-                                <br>
-                                Keterangan :
-                                <br>
-                                "{{ $data->keterangan }}"
-                            </p>git
-                        </td>
-                        <td colspan="2"></td>
-
-                    </tr>
+                   
                     <tr>
                         <td></td>
                         <td> </td>
 
-                        <td style="text-align: center; " colspan="2">
-                            <p class="fw-bold">{{ auth()->user()->name }}</p>
+                        <td style="text-align: center; " colspan="2" class="no-border-top">
+                            <p class="fw-bold">{{ auth()->user()->name }}</p> 
                         </td>
                     </tr>
                 </table>
