@@ -1,16 +1,11 @@
 @extends('landing.core')
 @section('body')
     {{-- navbar section --}}
-    <div class="grid md:grid-cols-12 grid-cols-12">
-        @include('landing.navbar')
-    </div>
-    <div class="grid md:grid-cols-12 grid-cols-12" id="home">
 
-        {{-- end navbar section --}}
-        {{-- jumbotron section --}}
-        @include('landing.jumbotron')
-        {{-- end jumbotron --}}
-    </div>
+    @include('landing.navbar')
+
+
+    @include('landing.jumbotron')
     {{-- start why --}}
     <div class="grid md:grid-cols-12 grid-cols-12">
         <div class="col-span-10 col-start-2 font-body">
@@ -21,7 +16,7 @@
                         class="text-blue-950 font-bold">SMK PERSADA MAKASSAR</span></p>
             </div>
             <div class="alasan grid md:grid-cols-12 grid-cols-12 mt-12">
-                <div class="col-span-12 my-5 px-9 md:col-span-3" data-aos="fade-up">
+                <div class="col-span-12 my-5 px-9 md:col-span-3 border border-blue-950 py-11" data-aos="fade-up">
                     <div class="icons flex justify-center">
                         <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i>
                     </div>

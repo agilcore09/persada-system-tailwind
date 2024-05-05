@@ -50,6 +50,8 @@
                     const data = response.data;
                     tbody.empty()
 
+                    console.log(data);
+
                     if (search != "" || search != null || search != empty) {
                         for (const datas of data) {
                             tbody.append(`

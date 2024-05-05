@@ -92,7 +92,7 @@
                     <div class="pt-2 relative mx-auto text-gray-900">
                         <input
                             class="border-2 border-gray-900 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                            type="search-nis" name="search" placeholder="Search NIS" autocomplete="off" id="search-nis">
+                            type="search-nis" name="search" placeholder="Cari Nama" autocomplete="off" id="search-nis">
                         <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
                             <svg class="text-gray-900 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -236,7 +236,7 @@
                             <label for="jurusan" class="block text-sm font-medium leading-6 text-gray-900">Pilih
                                 Siswa</label>
                             <div class="mt-3">
-                            
+
                                 <input type="text" id="searchInput"
                                     class="rounded-lg mb-5 border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
                                     placeholder="Cari Siswa">
