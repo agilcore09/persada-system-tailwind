@@ -14,7 +14,7 @@
 
             {{-- yang tampil jika layar besar --}}
             <div class="hidden md:col-span-7 md:flex md:self-center justify-end pr-5">
-                <ul class="flex mr-5 font-body font-semi-bold">
+                <ul class=" flex mr-5 font-body font-semi-bold">
                     <li class="mx-3 text-md text-white hover:text-slate-400"><a href="{{ url('/') }}#home">Home</a>
                     </li>
                     <li class="mx-3 text-md text-white hover:text-slate-400"><a
@@ -35,25 +35,36 @@
                     </button>
                 </div>
 
-                <ul class="list hidden absolute bg-blue-950 pb-8 z-10 top-20 font-body font-semi-bold">
-                    <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
-                            class="px-5 py-5">Home</a>
+                <ul class="list w-screen hidden absolute bg-blue-950 pb-8 z-10 top-20 font-body font-semi-bold">
+                    <li
+                        class="w-full border border-y-slate-300 border-x-0 py-5 devide text-sm px-5 text-white hover:bg-blue-500 text-center">
+
+                        <a href="{{ url('/home') }}" class="px-5 py-5">Home</a>
+
                     </li>
-                    <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
-                            class="px-5 py-5">About</a>
+                    <li
+                        class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
+                        <a href="{{ url('/about') }}" class="px-5 py-5">About</a>
                     </li>
-                    <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
-                            class="px-5 py-5">Contact
-                            Us</a></li>
-                    <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
-                            class="px-5 py-5">Exam
-                            Persada</a></li>
-                    <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
-                            class="px-5 py-5">Ujian</a>
+                    <li
+                        class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
+                        <a href="{{ url('/contact') }}" class="px-5 py-5">Contact
+                            Us</a>
                     </li>
-                    <li class="w-full py-5 text-sm px-5 text-white hover:bg-blue-500"><a href=""
-                            class="px-5 py-5">Virtual
-                            Lab</a></li>
+                    <li
+                        class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
+                        <a href="" class="px-5 py-5">Exam
+                            Persada</a>
+                    </li>
+                    <li
+                        class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
+                        <a href="" class="px-5 py-5">Ujian</a>
+                    </li>
+                    <li
+                        class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
+                        <a href="" class="px-5 py-5">Virtual
+                            Lab</a>
+                    </li>
                 </ul>
             </div>
         </div>

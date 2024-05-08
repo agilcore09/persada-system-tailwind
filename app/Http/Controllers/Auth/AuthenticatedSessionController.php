@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         } elseif (Auth::user()->role_id == 2) {
             return redirect()->intended('/pembayaran');
         }
-
+    
         //return redirect()->intended('/home');
     }
 

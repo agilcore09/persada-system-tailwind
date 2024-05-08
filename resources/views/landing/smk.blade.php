@@ -5,21 +5,21 @@
         @include('landing.navbar')
         {{-- end navbar section --}}
         {{-- jumbotron section --}}
-        @include('landing.jumbotron')
+
         {{-- end jumbotron --}}
     </div>
     {{-- start why --}}
 
-
-    @if(session()->has('status'))
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-       Swal.fire({
-            title: "Berhasil Mendaftar",
-            text: "Silahkan tunggu chat/arahan admin",
-            icon: "success"
+    @include('landing.jumbotron')
+    @if (session()->has('status'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                title: "Berhasil Mendaftar",
+                text: "Silahkan tunggu chat/arahan admin",
+                icon: "success"
             });
-    </script>
+        </script>
     @endif
     <div class="grid grid-cols-12 mb-28 mt-10">
         <div class="col-span-10 col-start-2 font-body">
@@ -34,7 +34,7 @@
                     @method('POST')
                     <div class="flex items-center w-full">
                         <label for="dropzone-file"
-                            class="flex flex-col items-center justify-center w-64 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 hover:bg-gray-100">
+                            class="flex flex-col  items-center justify-center w-64 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 hover:bg-gray-100">
                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                 <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -133,6 +133,9 @@
 
                     <button type="submit"
                         class=" mt-10 py-2.5 px-7 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-blue-950 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Submit</button>
+                    <a href="submit"
+                        class=" mt-10 py-2.5 px-7 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Submit</a>
+
                 </form>
             </div>
         </div>
@@ -174,7 +177,7 @@
             }
         };
     </script>
-   
+
 
     @include('landing.footer')
 @endsection

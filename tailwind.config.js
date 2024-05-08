@@ -10,6 +10,10 @@ module.exports = {
     extend: {},
     fontFamily: {
       body: ['Roboto']
+    },
+
+    backgroundImage : {
+      'jumbotron' : "url('/public/img/bg.png')"
     }
   },
   plugins: [],
