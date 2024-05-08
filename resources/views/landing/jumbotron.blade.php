@@ -1,5 +1,5 @@
 <div class="grid md:grid-cols-12 grid-cols-12" id="home">
-    <section class="col-span-12 font-body bg-center bg-no-repeat bg-jumbotron">
+    <section class="col-span-12 font-body bg-center bg-no-repeat  bg-jumbotron bg-cover">
         <div class="px-4 mx-auto text-center py-24 lg:py-56">
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                 SMK
