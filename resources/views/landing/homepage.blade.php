@@ -117,10 +117,10 @@
                 <div class="col-span-10 md:col-span-5 md:py-14 py-1">
                     <div class="container font-body" data-aos="fade-right">
                         <div>
-                            <h3 class="text-3xl font-bold md:pt-14 pt-9 mb-5">Assalamualaikum Wr. Wb</h3>
+                            <h3 class="md:text-2xl font-bold md:pt-14 pt-9 mb-5">Assalamualaikum Wr. Wb</h3>
                         </div>
                         <div class="pembungkus">
-                            <p class="text-lg">Selamat datang di SMK PERSADA MAKASSAR. Sekolah menengah kejuruan yang
+                            <p class="md:text-lg">Selamat datang di SMK PERSADA MAKASSAR. Sekolah menengah kejuruan yang
                                 memiliki
                                 visi
                                 “Menyiapkan
@@ -172,24 +172,61 @@
             <div class="mt-14" data-aos="fade-up">
                 <h3 class="font-bold text-2xl text-center">Program <span class="text-blue-950 font-bold">Keahlian</span>
                 </h3>
-                <p class="text-center text-sm">Pilih Program keahlian yang kamu sukai</p>
+                <p class="text-center text-sm">SMK Persada menonjol dengan keunggulan dualitas program keahlian, Teknik
+                    Komputer dan Jaringan (TKJ) serta Teknik Kendaraan Ringan (TKR), yang membekali siswa dengan
+                    keterampilan teknis yang relevan dan mempersiapkan mereka untuk meniti karier yang sukses di dunia
+                    teknologi dan otomotif.</p>
             </div>
             <div class="col-span-10">
                 <div class="grid md:grid-cols-12 grid-cols-12">
-                    <div class="col-span-12 sm:col-span-12 p-10 md:col-span-3 md:col-start-4" data-aos="fade-right">
-                        <div class="icons flex justify-center ">
-                            <i class="fa-solid fa-server fa-3x hover:text-blue-900 text-blue-950"></i>
+                    <div class="col-span-12 md:col-span-6 md:mx-2 my-5  bg-blue-950 rounded-md py-14 hover:bg-blue-900 hover:border-none "
+                        data-aos="fade-up">
+                        <div class="grid grid-cols-12 md:col-span-6">
+                            <div class="col-span-12 md:col-span-6 icons flex justify-center">
+                                {{-- <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i> --}}
+
+                                <img src="{{ asset('img/tkj.png') }}" alt="tkj" class="w-60">
+
+                            </div>
+                            <div class="col-span-12 md:col-span-6 md:flex ">
+                                <div class="md:self-center">
+                                    <h3
+                                        class=" px-3 md:px-0 text-white font-bold text-xl md:text-2xl mt-3 font-body  text-center">
+                                        Teknik Komputer Jaringan</h3>
+                                    <p class=" text-sm font-body px-3 md:px-0  text-center text-white">Pendidikan terkini
+                                        dalam bidang
+                                        teknologi informasi, mempersiapkan siswa dengan keterampilan yang dibutuhkan untuk
+                                        menjadi ahli jaringan komputer yang handal dan berkualitas tinggi di era digital
+                                        saat ini.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-center text-blue-950 font-bold text-lg mt-3">Teknik Komputer Jaringan</h3>
-                        <p class="text-center text-sm">Berfokus Pada Perangkat Jaringan, dan Pemrograman komputer</p>
                     </div>
-                    <div class="col-span-12 sm:col-span-12 md:col-span-3 p-10" data-aos="fade-left">
-                        <div class="icons flex justify-center ">
-                            <i class="fa-solid fa-gear fa-3x text-blue-950 hover:text-blue-900"></i>
+
+
+                    <div class="col-span-12 md:col-span-6 md:mx-2 my-5  bg-blue-950 rounded-md py-14 hover:bg-blue-900 hover:border-none "
+                        data-aos="fade-up">
+                        <div class="grid grid-cols-12 md:col-span-6">
+                            <div class="col-span-12 md:col-span-6 icons flex justify-center">
+                                {{-- <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i> --}}
+
+                                <img src="{{ asset('img/tkr.png') }}" alt="tkr" class="w-60">
+
+                            </div>
+                            <div class="col-span-12 md:col-span-6 md:flex ">
+                                <div class="md:self-center">
+                                    <h3
+                                        class=" px-3 md:px-0 text-white font-bold text-xl md:text-2xl mt-3 font-body  text-center">
+                                        Teknik Kendaraan Ringan</h3>
+                                    <p class=" text-sm font-body px-3 md:px-0  text-center text-white">Memberikan pelatihan
+                                        mendalam tentang mekanika, perawatan, dan perbaikan kendaraan bermotor,
+                                        mempersiapkan siswa dengan keterampilan praktis dan teoritis yang diperlukan untuk
+                                        menjadi ahli di industri otomotif modern.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-center text-blue-950 font-bold text-lg mt-3">Teknik Kendaraan Ringan</h3>
-                        <p class="text-center text-sm">Berfokus Pada Pemeliharaan dan Perawatan mesin kendaraan ringan</p>
                     </div>
+
                 </div>
             </div>
         </div>
