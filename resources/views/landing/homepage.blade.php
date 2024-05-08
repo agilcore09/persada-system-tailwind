@@ -4,53 +4,105 @@
 
     @include('landing.navbar')
 
-
     @include('landing.jumbotron')
     {{-- start why --}}
-    <div class="grid md:grid-cols-12 grid-cols-12 bg-blue-950">
+    <div class="grid md:grid-cols-12 grid-cols-12">
         <div class="col-span-10 col-start-2 font-body">
             <div class="kenapa mt-14" data-aos="fade-up">
-                <h3 class="font-bold text-3xl text-center text-white">Kenapa Harus <span class="text-white font-bold">SMK
+                <h3 class="font-bold md:text-3xl text-xl text-center text-gray-800">Kenapa Harus <span
+                        class=" font-bold text-blue-950">SMK
                         PERSADA
                         MAKASSAR</span> ? </h3>
-                <p class="text-center text-lg text-white">alasan kenapa harus memilih untuk mendaftar di <span
-                        class=" font-bold text-white">SMK PERSADA MAKASSAR</span></p>
+                <p class="text-center md:text-lg text-gray-800">alasan kenapa harus memilih untuk mendaftar di <span
+                        class=" font-bold text-blue-950">SMK PERSADA MAKASSAR</span></p>
             </div>
             <div class="alasan grid md:grid-cols-12 grid-cols-12 mt-12">
-                <div class="col-span-12 md:mx-2 my-5 md:col-span-3 bg-white rounded-md py-14 hover:bg-blue-100 hover:border-none "
+                <div class="col-span-12 md:col-span-6 md:mx-2 my-5  bg-blue-950 rounded-md py-14 hover:bg-blue-900 hover:border-none "
                     data-aos="fade-up">
-                    <div class="icons flex justify-center">
-                        <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i>
+                    <div class="grid grid-cols-12 md:col-span-6">
+                        <div class="col-span-12 md:col-span-6 icons flex justify-center">
+                            {{-- <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i> --}}
+
+                            <img src="{{ asset('img/kerja-sama.png') }}" alt="kerja sama luas" class="w-60">
+
+                        </div>
+                        <div class="col-span-12 md:col-span-6 md:flex ">
+                            <div class="md:self-center">
+                                <h3
+                                    class=" px-3 md:px-0 text-white font-bold text-xl md:text-2xl mt-3 font-body  text-center">
+                                    Kerja
+                                    Sama
+                                    Yang Luas</h3>
+                                <p class=" text-sm font-body  text-center text-white">Kami telah bekerja sama dengan
+                                    beberapa
+                                    perusahaan
+                                    terkenal
+                                    dan
+                                    terpercaya</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-center text-blue-950 font-bold text-xl mt-3 font-body">kerja Sama Luas</h3>
-                    <p class="text-center text-sm font-body">Kami telah bekerja sama dengan beberapa perusahaan terkenal dan
-                        terpercaya</p>
                 </div>
-                <div class="col-span-12 md:mx-2 my-5 px-9 md:col-span-3 bg-white rounded-md py-14 hover:bg-blue-100 hover:border-none "
+                <div class="col-span-12 md:col-span-6 md:mx-2 my-5  bg-blue-950 rounded-md py-14 hover:bg-blue-900 hover:border-none "
                     data-aos="fade-up">
-                    <div class="icons flex justify-center">
-                        <i class="fa-solid fa-laptop fa-3x text-blue-950 hover:text-blue-900"></i>
+                    <div class="grid grid-cols-12 md:col-span-6">
+                        <div class="col-span-12 md:col-span-6 icons flex justify-center">
+                            {{-- <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i> --}}
+
+                            <img src="{{ asset('img/fasilitas.png') }}" alt="fasilitas lengkap" class="w-60">
+
+                        </div>
+                        <div class="col-span-12 md:col-span-6 md:flex ">
+                            <div class="md:self-center">
+                                <h3 class="font-bold text-xl md:text-2xl mt-3 font-body  text-center text-white">
+                                    Fasilitas Yang Lengkap</h3>
+                                <p class="px-3 md:px-0 text-sm font-body  text-center text-white">Kami telah bekerja sama
+                                    dengan
+                                    Penunjang pembelajaran dan praktikum dengan kualitas yang premium</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-center text-blue-950 font-bold text-xl mt-3 font-body">Fasilitas Lengkap</h3>
-                    <p class="text-center text-sm font-body">Penunjang pembelajaran dan praktikum dengan kualitas yang
-                        premium</p>
                 </div>
-                <div class="col-span-12 my-5 md:mx-2 px-9 md:col-span-3 bg-white rounded-md py-14 hover:bg-blue-100 hover:border-none"
+                <div class="col-span-12 md:col-span-6 md:mx-2 mb-5  bg-blue-950 rounded-md py-14 hover:bg-blue-900 hover:border-none "
                     data-aos="fade-up">
-                    <div class="icons flex justify-center">
-                        <i class="fa-solid fa-school fa-3x text-blue-950 hover:text-blue-900"></i>
+                    <div class="grid grid-cols-12 md:col-span-6">
+                        <div class="col-span-12 md:col-span-6 icons flex justify-center">
+                            {{-- <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i> --}}
+
+                            <img src="{{ asset('img/lingkungan.png') }}" alt="lingkungan lengkap" class="w-60">
+
+                        </div>
+                        <div class="col-span-12 md:col-span-6 md:flex ">
+                            <div class="md:self-center">
+                                <h3 class=" text-white font-bold text-xl md:text-2xl mt-3 font-body  text-center">
+                                    Lingkungan Yang Nyaman</h3>
+                                <p class="px-3 md:px-0 text-sm font-body  text-center text-white">Kami telah bekerja sama
+                                    dengan
+                                    beberapa perusahaan terkenal dan terpercaya</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-center text-blue-950 font-bold text-xl mt-3 font-body">Lingkungan Yang Nyaman</h3>
-                    <p class="text-center text-sm font-body">Berada di lingkungan yang kondusif dan asri</p>
                 </div>
-                <div class="col-span-12 md:mx-2 my-5 px-9 md:col-span-3 bg-white rounded-md py-14 hover:bg-blue-100 hover:border-none"
+
+                <div class="col-span-12 md:col-span-6 md:mx-2 mb-5  bg-blue-950 rounded-md py-14 hover:bg-blue-900 hover:border-none "
                     data-aos="fade-up">
-                    <div class="icons flex justify-center ">
-                        <i class="fa-solid fa-person-chalkboard fa-3x text-blue-950 hover:text-blue-900"></i>
+                    <div class="grid grid-cols-12 md:col-span-6">
+                        <div class="col-span-12 md:col-span-6 icons flex justify-center">
+                            {{-- <i class="fa-solid fa-handshake fa-3x text-white hover:text-blue-900"></i> --}}
+
+                            <img src="{{ asset('img/pengajar.png') }}" alt="pengajar lengkap" class="w-60">
+
+                        </div>
+                        <div class="col-span-12 md:col-span-6 md:flex ">
+                            <div class="md:self-center">
+                                <h3 class=" text-white font-bold text-xl md:text-2xl mt-3 font-body  text-center">
+                                    Pengajar Kompoten</h3>
+                                <p class="px-3 md:px-0 text-sm font-body  text-center text-white">Kami telah bekerja sama
+                                    dengan
+                                    beberapa perusahaan terkenal dan terpercaya</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-center text-blue-950 font-bold text-xl mt-3 font-body">Pengajar Kompoten</h3>
-                    <p class="text-center text-sm font-body">Kami telah bekerja sama dengan beberapa perusahaan terkenal dan
-                        terpercaya</p>
                 </div>
             </div>
         </div>
