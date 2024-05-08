@@ -169,7 +169,7 @@
     {{-- jurusan --}}
     <div class="grid md:grid-cols-12 grid-cols-12 my-14">
         <div class="col-span-10 col-start-2">
-            <div class="mt-14" data-aos="fade-up">
+            <div class="md:mt-14" data-aos="fade-up">
                 <h3 class="font-bold text-2xl text-center">Program <span class="text-blue-950 font-bold">Keahlian</span>
                 </h3>
                 <p class="md:text-center text-sm text-justify">SMK Persada menonjol dengan keunggulan dualitas program
@@ -238,7 +238,7 @@
     {{-- berita --}}
     <div class="grid md:grid-cols-12 grid-cols-12 my-14">
         <div class="col-span-10 col-start-2">
-            <div class="mt-14" data-aos="fade-up">
+            <div class="md:mt-14" data-aos="fade-up">
                 <h3 class="font-bold text-2xl text-center">Berita <span class="text-blue-950 font-bold">Kami</span>
                 </h3>
                 <p class="text-center text-sm">Nantikan berita terbaru dari kami</p>
@@ -345,7 +345,7 @@
     {{-- gallery --}}
     <div class="grid md:grid-cols-12 grid-cols-12 my-14">
         <div class="col-span-10 col-start-2">
-            <div class="mt-14" data-aos="fade-up">
+            <div class="md:mt-14" data-aos="fade-up">
                 <h3 class="font-bold text-2xl text-center">Gallery <span class="text-blue-950 font-bold">Kami</span>
                 </h3>
                 <p class="text-center text-sm">Beberapa foto kegiatan yang di lakukan siswa</p>
@@ -384,7 +384,7 @@
 
     <div class="grid md:grid-cols-12 grid-cols-12 my-14">
         <div class="col-span-10 col-start-2">
-            <div class="mt-14" data-aos="fade-up">
+            <div class="md:mt-14" data-aos="fade-up">
                 <h3 class="font-bold text-2xl text-center">Sertivikasi<span class="text-blue-950 font-bold">
                         Internasional</span>
                 </h3>

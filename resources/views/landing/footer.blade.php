@@ -55,33 +55,33 @@
             </div>
 
             <div class=" md:col-span-2 col-span-4 mt-5 md:mt-0">
-                <h4 class="text-center text-white font-bold text-md mb-3">Our Service</h4>
+                <h4 class="text-center text-white font-bold md:text-sm text-sm mb-3">Our Service</h4>
                 <ul class="text-center">
-                    <li><a href="{{ url('/') }}" class="text-slate-200 text-sm">Home</a></li>
-                    <li><a href="{{ url('/') }}" class="text-slate-200 text-sm">About</a></li>
-                    <li><a href="{{ url('/') }}" class="text-slate-200 text-sm">Contact Us</a></li>
-                    <li><a href="{{ url('/') }}" class="text-slate-200 text-sm">Ujian</a></li>
-                    <li><a href="{{ url('/') }}" class="text-slate-200 text-sm">Persada Exam </a></li>
+                    <li><a href="{{ url('/') }}" class="text-slate-200 md:text-sm text-xs">Home</a></li>
+                    <li><a href="{{ url('/') }}" class="text-slate-200 md:text-sm text-xs">About</a></li>
+                    <li><a href="{{ url('/') }}" class="text-slate-200 md:text-sm text-xs">Contact Us</a></li>
+                    <li><a href="{{ url('/') }}" class="text-slate-200 md:text-sm text-xs">Ujian</a></li>
+                    <li><a href="{{ url('/') }}" class="text-slate-200 md:text-sm text-xs">Persada Exam </a></li>
                 </ul>
             </div>
             <div class="md:col-span-2  col-span-4 mt-5 md:mt-0">
-                <h4 class="text-center text-white font-bold text-md  mb-3">Join With Us</h4>
+                <h4 class="text-center text-white font-bold md:text-md text-sm mb-3">Join With Us</h4>
                 <ul class="text-center">
-                    <li><a href="{{ url('/') }}" class="text-slate-200 text-sm">Daftar SMK</a></li>
-                    <li><a href="{{ url('/') }}" class="text-slate-200 text-sm">Daftar SMP</a></li>
+                    <li><a href="{{ url('/') }}" class="text-slate-200 md:text-sm text-xs">Daftar SMK</a></li>
+                    <li><a href="{{ url('/') }}" class="text-slate-200 md:text-sm text-xs">Daftar SMP</a></li>
 
                 </ul>
             </div>
-            <div class="md:col-span-1 col-span-4 mt-5 md:mt-0 flex justify-center ">
+            <div class="md:col-span-1 col-span-4 md:mt-0 flex justify-center ">
                 <ul class="text-center content-center">
-                    <li class="py-3">
+                    <li class="pb-1">
                         <a href="{{ url('/') }}" class="text-slate-200"><i
-                                class="fa-brands fa-2xl fa-instagram"></i></a>
+                                class="fa-brands text-md fa-instagram"></i></a>
                     </li>
-                    <li class="py-3"><a href="{{ url('/') }}" class="text-slate-200"><i
-                                class="fa-brands fa-2xl fa-facebook"></i></a>
-                    <li class="py-3"><a href="{{ url('/') }}" class="text-slate-200"><i
-                                class="fa-brands fa-2xl fa-whatsapp"></i></a>
+                    <li class="py-1"><a href="{{ url('/') }}" class="text-slate-200"><i
+                                class="fa-brands text-md fa-facebook"></i></a>
+                    <li class="py-1"><a href="{{ url('/') }}" class="text-slate-200"><i
+                                class="fa-brands text-md fa-whatsapp"></i></a>
                     </li>
 
                 </ul>
