@@ -172,7 +172,8 @@
             <div class="mt-14" data-aos="fade-up">
                 <h3 class="font-bold text-2xl text-center">Program <span class="text-blue-950 font-bold">Keahlian</span>
                 </h3>
-                <p class="text-center text-sm">SMK Persada menonjol dengan keunggulan dualitas program keahlian, Teknik
+                <p class="md:text-center text-sm text-justify">SMK Persada menonjol dengan keunggulan dualitas program
+                    keahlian, Teknik
                     Komputer dan Jaringan (TKJ) serta Teknik Kendaraan Ringan (TKR), yang membekali siswa dengan
                     keterampilan teknis yang relevan dan mempersiapkan mereka untuk meniti karier yang sukses di dunia
                     teknologi dan otomotif.</p>
@@ -193,7 +194,8 @@
                                     <h3
                                         class=" px-3 md:px-0 text-white font-bold text-xl md:text-2xl mt-3 font-body  text-center">
                                         Teknik Komputer Jaringan</h3>
-                                    <p class=" text-sm font-body px-3 md:px-0  text-center text-white">Pendidikan terkini
+                                    <p class=" text-sm font-body px-3 md:px-0 text-justify md:text-center text-white">
+                                        Pendidikan terkini
                                         dalam bidang
                                         teknologi informasi, mempersiapkan siswa dengan keterampilan yang dibutuhkan untuk
                                         menjadi ahli jaringan komputer yang handal dan berkualitas tinggi di era digital
@@ -203,13 +205,11 @@
                         </div>
                     </div>
 
-
                     <div class="col-span-12 md:col-span-6 md:mx-2 my-5  bg-blue-950 rounded-md py-14 hover:bg-blue-900 hover:border-none "
                         data-aos="fade-up">
                         <div class="grid grid-cols-12 md:col-span-6">
                             <div class="col-span-12 md:col-span-6 icons flex justify-center">
                                 {{-- <i class="fa-solid fa-handshake fa-3x text-blue-950 hover:text-blue-900"></i> --}}
-
                                 <img src="{{ asset('img/tkr.png') }}" alt="tkr" class="w-60">
 
                             </div>
@@ -218,7 +218,8 @@
                                     <h3
                                         class=" px-3 md:px-0 text-white font-bold text-xl md:text-2xl mt-3 font-body  text-center">
                                         Teknik Kendaraan Ringan</h3>
-                                    <p class=" text-sm font-body px-3 md:px-0  text-center text-white">Memberikan pelatihan
+                                    <p class=" text-sm font-body px-3 md:px-0 text-justify md:text-center text-white">
+                                        Memberikan pelatihan
                                         mendalam tentang mekanika, perawatan, dan perbaikan kendaraan bermotor,
                                         mempersiapkan siswa dengan keterampilan praktis dan teoritis yang diperlukan untuk
                                         menjadi ahli di industri otomotif modern.</p>
@@ -232,6 +233,114 @@
         </div>
     </div>
     {{-- end jurusan --}}
+
+
+    {{-- berita --}}
+    <div class="grid md:grid-cols-12 grid-cols-12 my-14">
+        <div class="col-span-10 col-start-2">
+            <div class="mt-14" data-aos="fade-up">
+                <h3 class="font-bold text-2xl text-center">Berita <span class="text-blue-950 font-bold">Kami</span>
+                </h3>
+                <p class="text-center text-sm">Nantikan berita terbaru dari kami</p>
+            </div>
+            <div class="col-span-10">
+                <div class="grid md:grid-cols-12 grid-cols-12">
+
+                    <div class="col-span-12 md:col-span-4 md:mx-2 my-5  bg-blue-950 rounded-md hover:bg-blue-900 hover:border-none "
+                        data-aos="fade-up">
+                        <div class="grid grid-cols-12 md:col-span-6">
+                            <div class="col-span-12 icons flex justify-center">
+                                <img src="{{ asset('img/akiyama.jpg') }}" alt="tkj"
+                                    class="w-full h-96 object-cover rounded-md ">
+                            </div>
+                            <div class="col-span-12 md:col-span-12 md:flex ">
+                                <div class="md:self-center md:px-4 md:pt-5 md:pb-10">
+                                    <h3 class=" px-3 md:px-0 text-white font-bold text-md md:text-xl mt-3 font-body ">
+                                        Teknik Komputer Jaringan</h3>
+                                    <p
+                                        class="text-xs md:text-md text-justify md:text-justify font-body px-3 md:px-0 text-white">
+                                        Pendidikan terkini
+                                        dalam bidang
+                                        teknologi informasi, mempersiapkan siswa dengan keterampilan yang dibutuhkan untuk
+                                        menjadi ahli jaringan komputer yang handal dan berkualitas tinggi di era digital
+                                        saat ini.</p>
+
+                                    <button class="px-3 my-5 mt-5">
+                                        <a href="#"
+                                            class=" py-2 px-2 bg-white rounded-md text-blue-950 font-bold text-xs">Baca
+                                            Selengkapnya</a>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-12 md:col-span-4 md:mx-2 my-5  bg-blue-950 rounded-md hover:bg-blue-900 hover:border-none "
+                        data-aos="fade-up">
+                        <div class="grid grid-cols-12 md:col-span-6">
+                            <div class="col-span-12 icons flex justify-center">
+                                <img src="{{ asset('img/akiyama.jpg') }}" alt="tkj"
+                                    class="w-full h-96 object-cover rounded-md ">
+                            </div>
+                            <div class="col-span-12 md:col-span-12 md:flex ">
+                                <div class="md:self-center md:px-4 md:pt-5 md:pb-10">
+                                    <h3 class=" px-3 md:px-0 text-white font-bold text-md md:text-xl mt-3 font-body ">
+                                        Teknik Komputer Jaringan</h3>
+                                    <p
+                                        class="text-xs md:text-md text-justify md:text-justify font-body px-3 md:px-0 text-white">
+                                        Pendidikan terkini
+                                        dalam bidang
+                                        teknologi informasi, mempersiapkan siswa dengan keterampilan yang dibutuhkan untuk
+                                        menjadi ahli jaringan komputer yang handal dan berkualitas tinggi di era digital
+                                        saat ini.</p>
+
+                                    <button class="px-3 my-5 mt-5">
+                                        <a href="#"
+                                            class=" py-2 px-2 bg-white rounded-md text-blue-950 font-bold text-xs">Baca
+                                            Selengkapnya</a>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-12 md:col-span-4 md:mx-2 my-5  bg-blue-950 rounded-md hover:bg-blue-900 hover:border-none "
+                        data-aos="fade-up">
+                        <div class="grid grid-cols-12 md:col-span-6">
+                            <div class="col-span-12 icons flex justify-center">
+                                <img src="{{ asset('img/akiyama.jpg') }}" alt="tkj"
+                                    class="w-full h-96 object-cover rounded-md ">
+                            </div>
+                            <div class="col-span-12 md:col-span-12 md:flex ">
+                                <div class="md:self-center md:px-4 md:pt-5 md:pb-10">
+                                    <h3 class=" px-3 md:px-0 text-white font-bold text-md md:text-xl mt-3 font-body ">
+                                        Teknik Komputer Jaringan</h3>
+                                    <p
+                                        class="text-xs md:text-md text-justify md:text-justify font-body px-3 md:px-0 text-white">
+                                        Pendidikan terkini
+                                        dalam bidang
+                                        teknologi informasi, mempersiapkan siswa dengan keterampilan yang dibutuhkan untuk
+                                        menjadi ahli jaringan komputer yang handal dan berkualitas tinggi di era digital
+                                        saat ini.</p>
+
+                                    <button class="px-3 my-5 mt-5">
+                                        <a href="#"
+                                            class=" py-2 px-2 bg-white rounded-md text-blue-950 font-bold text-xs">Baca
+                                            Selengkapnya</a>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end berita --}}
 
     {{-- gallery --}}
     <div class="grid md:grid-cols-12 grid-cols-12 my-14">
