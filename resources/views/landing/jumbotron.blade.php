@@ -2,10 +2,9 @@
     <section class="col-span-12 font-body bg-center bg-no-repeat  bg-jumbotron bg-cover">
         <div class="px-4 mx-auto text-center py-24 lg:py-56">
             <h1 class="mb-4 text-2xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white ">
-                SMK
-                PERSADA MAKASSAR</h1>
-            <p class="mb-8 text-md font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Tumbuh Bersama, Berkarya
-                Bersama SMK PERSADA MAKASSAR</p>
+                {{ $title }}
+            </h1>
+            <p class="mb-8 text-md font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">{{ $body }}</p>
             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
                 <a href="#"
                     class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-950 hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">

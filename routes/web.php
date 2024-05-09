@@ -29,11 +29,15 @@ Route::middleware('auth')->group(function () {
 
 // landing routes
 Route::get('/', function () {
-    return view('landing.homepage');
+    $title = " SMK PERSADA MAKASSAR";
+    $body = "Tumbuh Bersama, Berkarya Bersama SMK PERSADA MAKASSAR";
+    return view('landing.homepage', compact("title", "body"));
 });
 
 Route::get('/about', function () {
-    return view('landing.about');
+    $title = " Tentang Kami";
+    $body = "Jelajahi Dunia Pendidikan yang Dinamis & Inovatif Bersama SMK Persada Makassar";
+    return view('landing.about', compact("title", "body"));
 });
 
 Route::get('/daftarsmk', function () {
