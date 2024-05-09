@@ -29,7 +29,8 @@
 <footer class="bg-blue-950">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <h2 class="text-center md:text-2xl text-xl text-white font-bold">Come Join With Us</h2>
-        <p class="text-white px-10 text-sm  text-justify md:text-center">Gabunglah bersama kami di SMK Persada Makassar
+        <p class="text-white px-2 md:px-10 text-sm  text-justify md:text-center">Gabunglah bersama kami di SMK Persada
+            Makassar
             untuk
             meniti
             jalan
@@ -41,7 +42,7 @@
         <div class="grid grid-cols-12 mt-8">
             <div class="md:col-span-7 col-span-12">
                 <h4 class="text-center text-white font-bold text-md  mb-3">Ajukan Pertanyaan</h4>
-                <div class="container px-5">
+                <div class="container px-2 md:px-10">
                     <div>
                         <input class="w-full rounded-md placeholder:text-sm" type="text" name=""
                             placeholder="Nama Kamu" required autocomplete="off">
