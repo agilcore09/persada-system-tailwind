@@ -3,7 +3,6 @@
     @include('landing.navbar')
     @include('landing.jumbotron')
 
-    {{-- start why --}}
     {{-- vISI --}}
     <div class="grid md:grid-cols-12 grid-cols-12 my-14 md:my-7">
         <div class="col-span-10 col-start-2">
@@ -76,7 +75,45 @@
         </div>
     </div>
     {{-- end VISI --}}
-    {{-- end why --}}
+
+
+    {{-- start pengajar --}}
+    <div class="grid md:grid-cols-12 grid-cols-12 my-14">
+        <div class="col-span-10 col-start-2">
+            <div class="md:mt-14" data-aos="fade-up">
+                <h3 class="font-bold text-2xl text-center">TIM <span class="text-blue-950 font-bold">Pengajar</span>
+                </h3>
+                <p class="text-justify md:text-center text-sm">Tim pengajar SMK Persada terdiri dari para profesional
+                    berpengalaman yang
+                    berdedikasi, siap menginspirasi dan membimbing siswa-siswa dalam mencapai keunggulan dalam bidangnya
+                    masing-masing, memastikan pengalaman belajar yang berharga dan relevan untuk kesuksesan masa depan.</p>
+            </div>
+            <div class="col-span-10">
+                <div class="grid md:grid-cols-12 grid-cols-12">
+                    <div class="col-span-12 md:col-span-4 md:mx-2 my-5 shadow hover:border-none " data-aos="fade-up">
+                        <div class="grid grid-cols-12 md:col-span-6">
+                            <div class="col-span-12 icons flex justify-center">
+                                <img src="{{ asset('img/example.jpg') }}" alt="tkj"
+                                    class="w-full h-96 object-cover rounded-md hover:grayscale">
+                            </div>
+                            <div class="col-span-12 md:col-span-12 md:flex md:justify-center ">
+                                <div class="py-3">
+                                    <h3
+                                        class="px-3 md:px-0 text-blue-950 font-bold text-md md:text-xl font-body text-center">
+                                        Marsha Lanathea Lapian</h3>
+                                    <p class="text-center">Guru Teknik Komputer Jaringan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end pengajar --}}
 
     {{-- popup --}}
     <div id="popup-modal" tabindex="-1"
@@ -111,7 +148,7 @@
                         </div>
                         <div class="modal-body">
                             <h3 class="text-blue-950 font-bold">MISI SMK PERSADA</h3>
-                            <ul class="text-left">
+                            <ul class="text-center">
                                 <li>1. Menciptakan lapangan kerja baru
                                 </li>
                                 <li>2. Meningkatkan keterampilan dan keahlian siswa
