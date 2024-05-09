@@ -40,6 +40,12 @@ Route::get('/about', function () {
     return view('landing.about', compact("title", "body"));
 });
 
+Route::get('/contact-us', function () {
+    $title = " Contact Us";
+    $body = "Untuk informasi lebih lanjut atau pertanyaan, jangan ragu untuk menghubungi kami melalui kontak di bawah ini";
+    return view('landing.contact_us', compact("title", "body"));
+});
+
 Route::get('/daftarsmk', function () {
     return view('landing.smk');
 });
