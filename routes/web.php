@@ -46,6 +46,12 @@ Route::get('/contact-us', function () {
     return view('landing.contact_us', compact("title", "body"));
 });
 
+Route::get('/peminjaman', function () {
+    $title = "Peminjaman Peminjaman Barang";
+    $body = "Tolong lengkapi form terlebih dahulu  sebelum meminjam barang di lab";
+    return view('landing.form_peminjaman', compact("title", "body"));
+});
+
 Route::get('/daftarsmk', function () {
     return view('landing.smk');
 });
