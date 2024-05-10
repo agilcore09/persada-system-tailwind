@@ -52,6 +52,12 @@ Route::get('/peminjaman', function () {
     return view('landing.form_peminjaman', compact("title", "body"));
 });
 
+Route::get('/berita', function () {
+    $title = "Berita Kami";
+    $body = "Nantikan berita terbaru dari kami";
+    return view('landing.berita', compact("title", "body"));
+});
+
 Route::get('/daftarsmk', function () {
     return view('landing.smk');
 });
