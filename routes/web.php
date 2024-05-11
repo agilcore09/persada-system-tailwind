@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\ProfileController;
@@ -16,6 +17,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/tagihan/{nis}', [SiswaController::class, 'ShowTagihan']);
     Route::get('/cetak/{nis}', [SiswaController::class, 'nota']);
     Route::resource('/pembayaran', PembayaranController::class);
+    Route::resource('/kelola-inventaris', InventarisController::class);
     Route::get('/show-pendaftar', [PendaftaranController::class, 'index']);
     Route::delete('/pendaftar/{id}', [PendaftaranController::class, 'destroy']);
     Route::resource('/data-guru', GuruController::class);

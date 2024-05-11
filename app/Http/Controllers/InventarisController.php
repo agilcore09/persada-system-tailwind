@@ -14,7 +14,8 @@ class InventarisController extends Controller
      */
     public function index()
     {
-        //
+        $data = [];
+        return view('inventaris.index', compact("data"));
     }
 
     /**

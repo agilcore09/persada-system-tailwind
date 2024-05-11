@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PeminjamanModel;
+use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 
-class PeminjamanController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PeminjamanController extends Controller
      */
     public function index()
     {
-        return view('inventaris.index');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class PeminjamanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PeminjamanModel  $peminjamanModel
+     * @param  \App\Models\KategoriModel  $kategoriModel
      * @return \Illuminate\Http\Response
      */
-    public function show(PeminjamanModel $peminjamanModel)
+    public function show(KategoriModel $kategoriModel)
     {
         //
     }
@@ -52,10 +52,10 @@ class PeminjamanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PeminjamanModel  $peminjamanModel
+     * @param  \App\Models\KategoriModel  $kategoriModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(PeminjamanModel $peminjamanModel)
+    public function edit(KategoriModel $kategoriModel)
     {
         //
     }
@@ -64,10 +64,10 @@ class PeminjamanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PeminjamanModel  $peminjamanModel
+     * @param  \App\Models\KategoriModel  $kategoriModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PeminjamanModel $peminjamanModel)
+    public function update(Request $request, KategoriModel $kategoriModel)
     {
         //
     }
@@ -75,10 +75,10 @@ class PeminjamanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PeminjamanModel  $peminjamanModel
+     * @param  \App\Models\KategoriModel  $kategoriModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PeminjamanModel $peminjamanModel)
+    public function destroy(KategoriModel $kategoriModel)
     {
         //
     }
