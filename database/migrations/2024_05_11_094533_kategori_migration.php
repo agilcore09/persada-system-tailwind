@@ -13,7 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('other_kategori', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_kategori');
+            $table->enum('jenis_kategori', ['Berita', 'Inventaris']);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('other_kategori');
     }
 };
