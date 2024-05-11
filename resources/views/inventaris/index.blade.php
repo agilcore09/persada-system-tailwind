@@ -145,15 +145,21 @@
 
                                     @foreach ($data as $item)
                                         <tr class="text-gray-700 text-center">
-
-
-                                            <td class="px-4 py-3 text-ms border">{{ $item->name }}</td>
-                                            <td class="px-4 py-3 text-ms border">{{ $item->email }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->nama_barang }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->kode_alat }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->tanggal_masuk }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->sumber }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->lokasi }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->status }}</td>
+                                            <td class="px-4 py-3 text-ms border">
+                                                {{ Str::limit($item->gambar, 20, '...') }}
+                                            </td>
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
                                                     <a href="{{ url('/data-guru' . '/' . $item->id . '/edit') }}"><i
                                                             class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="{{ url('/data-guru' . '/' . $item->id) }}" method="POST">
+                                                    <form action="{{ url('/data-guru' . '/' . $item->id) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"> <i
@@ -183,18 +189,16 @@
 
 
     {{-- add inventaris data modal --}}
-    <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4 h-screen hidden">
+    <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4  hidden">
         <form method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
-            <div class="space-y-12">
+            <div class="space-y-12 ">
                 <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-base font-semibold leading-7 text-gray-900">Tambah Data data-siswa</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Tambahkan data siswa jika sudah fix menjadi
                         siswa
                     </p>
-
-
                     {{-- end alert section --}}
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
                         <div class="col-span-full">
@@ -226,7 +230,6 @@
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
-
                         <div class="col-span-full">
                             <label for="sumber" class="block text-sm font-medium leading-6 text-gray-900">Sumber
                             </label>
@@ -266,11 +269,9 @@
                                 <option value="Dalam Perawatan">Dalam Perawatan</option>
                             </select>
                         </div>
-
                     </div>
                 </div>
             </div>
-
             <div class="mt-6 flex items-center justify-end gap-x-6">
                 <button type="button" id="button-cancel"
                     class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
