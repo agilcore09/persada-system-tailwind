@@ -13,7 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('inventaris', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_lengkap');
+            $table->string('kode_alat')->unique();
+            $table->date('tanggal_masuk');
+            $table->string('sumber');
+            $table->unsignedBigInteger('kategori');
+            $table->string('lokasi');
+            $table->string('gambar');
+            $table->foreign('kategori')->references('id')->on('other_kategori');
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('inventaris');
     }
 };

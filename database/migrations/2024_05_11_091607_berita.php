@@ -13,7 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('berita', function (Blueprint $table) {
+            $table->id();
+            $table->string('judul_berita', 100);
+            $table->string('cover', 100)->nullable();
+            $table->date('tanggal');
+            $table->unsignedBigInteger('author');
+            $table->unsignedBigInteger('kategori');
+            $table->text('body_berita');
+
+            $table->foreign('kategori')->references('id')->on('other_kategori');
+            $table->foreign('author')->references('id')->on('users');
+        });
     }
 
     /**
@@ -23,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('berita');
     }
 };
