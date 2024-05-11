@@ -30,7 +30,7 @@ class InventarisController extends Controller
      */
     public function create()
     {
-        //
+        // anjay banget slebew
     }
 
     /**
@@ -51,7 +51,6 @@ class InventarisController extends Controller
             'status' => 'required',
             'gambar' => 'required|max:1024|mimes:jpg, png, jpeg, JPG, PNG, JPEG'
         ]);
-
 
         if (!is_null($request->gambar)) {
             $gambar = $request->file('gambar');
