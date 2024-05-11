@@ -158,7 +158,7 @@
                                                 <div class="flex justify-center">
                                                     <a href="{{ url('/data-guru' . '/' . $item->id . '/edit') }}"><i
                                                             class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="{{ url('/data-guru' . '/' . $item->id) }}"
+                                                    <form action="{{ url('/kelola-inventaris' . '/' . $item->kode_alat) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
