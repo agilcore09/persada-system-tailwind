@@ -40,11 +40,24 @@ class InventarisController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'nama' => 'required',
+            'kode_alat' => 'required',
+            'sumber' => 'required',
+            'kategori' => 'required',
+            'lokasi' => 'required',
+            'status' => 'required',
+            'gambar' => 'required|max:1024|mimes:jpg, png, jpeg, JPG, PNG, JPEG'
+        ]);
+
         if (!is_null($request->gambar)) {
 
             $gambar = $request->file('gambar');
             $namaFile = time() . "_" . $gambar->getClientOriginalName();
             Storage::disk('local')->put('/public/inventaris/' . $namaFile, File::get($gambar));
+
+
             return redirect()->back();
         }
     }
