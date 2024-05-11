@@ -124,9 +124,13 @@
                                 <thead class="sticky top-0">
                                     <tr
                                         class="text-md font-semibold tracking-wide text-center text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-
-                                        <th class="px-20 py-3">Nama</th>
-                                        <th class="px-20 py-3">Email</th>
+                                        <th class="px-20 py-3">Nama Alat</th>
+                                        <th class="px-20 py-3">Kode Alat</th>
+                                        <th class="px-20 py-3">Tanggal Masuk</th>
+                                        <th class="px-20 py-3">Sumber</th>
+                                        <th class="px-20 py-3">Lokasi</th>
+                                        <th class="px-20 py-3">Status</th>
+                                        <th class="px-20 py-3">Gambar</th>
                                         <th class="px-4 py-3">Action</th>
                                     </tr>
                                 </thead>
@@ -174,7 +178,7 @@
 
     {{-- add inventaris data modal --}}
     <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4 h-screen hidden">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
             <div class="space-y-12">
@@ -187,6 +191,10 @@
 
                     {{-- end alert section --}}
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
+                        <div class="col-span-full">
+                            <label for="gambar" class="block text-sm font-medium leading-6 text-gray-900">Gambar</label>
+                            <input type="file" name="gambar" required>
+                        </div>
                         <div class="col-span-full">
                             <label for="nama_barang" class="block text-sm font-medium leading-6 text-gray-900">Nama
                                 Barang </label>
@@ -233,9 +241,16 @@
                             </select>
                         </div>
                         <div class="col-span-full">
-                            <label for="gambar" class="block text-sm font-medium leading-6 text-gray-900">Gambar</label>
-                            <input type="file" name="gambar" required>
+                            <label for="status" class="block text-sm font-medium leading-6 text-gray-900">Status</label>
+                            <select id="status" name="status" required
+                                class="rounded-lg keperluan border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
+                                <option value="">Pilih Status</option>
+                                <option value="Rusak">Rusak</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Dalam Perawatan">Dalam Perawatan</option>
+                            </select>
                         </div>
+
                     </div>
                 </div>
             </div>
