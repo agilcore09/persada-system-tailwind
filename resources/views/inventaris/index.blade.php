@@ -237,7 +237,7 @@
 
                         <div class="col-span-full">
                             <label for="gambar" class="block text-sm font-medium leading-6 text-gray-900">Gambar</label>
-                            <input type="file" name="gambar">
+                            <input type="file" name="gambar" required>
                         </div>
 
                     </div>
