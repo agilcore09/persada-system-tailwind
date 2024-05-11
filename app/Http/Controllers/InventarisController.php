@@ -117,6 +117,8 @@ class InventarisController extends Controller
         InventarisModel::where('kode_alat', $kode)->delete();
 
         //
+
+        //
         return redirect()->back();
     }
 }
