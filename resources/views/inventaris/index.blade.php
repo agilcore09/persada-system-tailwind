@@ -221,7 +221,6 @@
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
-
                         <div class="col-span-full">
                             <label for="kategori" class="block text-sm font-medium leading-6 text-gray-900">Nama
                                 Kategori</label>
@@ -231,18 +230,14 @@
                                 @foreach ($kategori as $data)
                                     <option value="{{ $data->id }}">{{ $data->nama_kategori }}</option>
                                 @endforeach
-
                             </select>
                         </div>
-
                         <div class="col-span-full">
                             <label for="gambar" class="block text-sm font-medium leading-6 text-gray-900">Gambar</label>
                             <input type="file" name="gambar" required>
                         </div>
-
                     </div>
                 </div>
-
             </div>
 
             <div class="mt-6 flex items-center justify-end gap-x-6">
