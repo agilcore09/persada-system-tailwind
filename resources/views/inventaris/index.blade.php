@@ -64,12 +64,19 @@
         <div class="px-6 grid grid-cols-10">
             {{-- button wrap --}}
             <div class="buton-wrap col-span-5 pt-2 flex">
-                <div>
+                <div class="flex">
                     <button
                         class="middle none center flex items-center justify-center rounded-lg p-4 font-sans text-xs font-bold uppercase bg-gray-200 text-gray-900 transition-all hover:bg-gray-50/50 active:bg-gray-500 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         data-ripple-dark="true" id="tombol-guru">
                         <i class="fa-solid fa-plus"></i>
                     </button>
+
+                    <button
+                        class="ml-3 middle none center flex items-center justify-center rounded-lg p-4 font-sans text-xs font-bold uppercase bg-gray-200 text-gray-900 transition-all hover:bg-gray-50/50 active:bg-gray-500 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        data-ripple-dark="true" id="tombol-kategori">
+                        Tambah Kategori
+                    </button>
+
                 </div>
 
             </div>
@@ -163,7 +170,9 @@
         </div>
     </div>
     {{-- end dashboard table view --}}
-    {{-- add data modal --}}
+
+
+    {{-- add inventaris data modal --}}
     <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4 h-screen hidden">
         <form method="POST">
             @csrf
@@ -174,44 +183,62 @@
                     <p class="mt-1 text-sm leading-6 text-gray-600">Tambahkan data siswa jika sudah fix menjadi
                         siswa
                     </p>
-                    @if ($errors->any())
-                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                        <script>
-                            Swal.fire({
-                                title: "Gagal",
-                                text: "Pastikan Tidak ada duplikasi",
-                                icon: "error"
-                            });
-                        </script>
-                    @endif
+
 
                     {{-- end alert section --}}
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
                         <div class="col-span-full">
-                            <label for="nama_guru" class="block text-sm font-medium leading-6 text-gray-900">Nama
-                                Guru </label>
+                            <label for="nama_barang" class="block text-sm font-medium leading-6 text-gray-900">Nama
+                                Barang </label>
                             <div class="mt-1">
-                                <input type="text" name="nama" id="nama_guru" autocomplete="off"
+                                <input type="text" name="nama" id="nama_barang" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
                         <div class="col-span-full">
-                            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email Guru
+                            <label for="kode_alat" class="block text-sm font-medium leading-6 text-gray-900">Kode Alat
                             </label>
                             <div class="mt-1">
-                                <input type="email" name="email" id="email" autocomplete="off"
+                                <input type="text" name="kode_alat" id="kode_alat" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
                         <div class="col-span-full">
-                            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password
+                            <label for="tanggal_masuk" class="block text-sm font-medium leading-6 text-gray-900">Tanggal
+                                Masuk
                             </label>
                             <div class="mt-1">
-                                <input type="password" name="password" id="password" autocomplete="off"
+                                <input type="date" name="tanggal_masuk" id="tanggal_masuk" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
 
+                        <div class="col-span-full">
+                            <label for="sumber" class="block text-sm font-medium leading-6 text-gray-900">Sumber
+                            </label>
+                            <div class="mt-1">
+                                <input type="text" name="sumber" id="sumber" autocomplete="off"
+                                    class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="col-span-full">
+                            <label for="kategori" class="block text-sm font-medium leading-6 text-gray-900">Nama
+                                Kategori</label>
+                            <select id="kategori" name="kategori" required
+                                class="rounded-lg keperluan border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
+                                <option value="">Pilih Kategori</option>
+                                @foreach ($kategori as $data)
+                                    <option value="{{ $data->id }}">{{ $data->nama_kategori }}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+
+                        <div class="col-span-full">
+                            <label for="gambar" class="block text-sm font-medium leading-6 text-gray-900">Gambar</label>
+                            <input type="file" name="gambar">
+                        </div>
 
                     </div>
                 </div>
@@ -220,6 +247,54 @@
 
             <div class="mt-6 flex items-center justify-end gap-x-6">
                 <button type="button" id="button-cancel"
+                    class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+                <button type="submit" wire:click="$refresh"
+                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit
+                </button>
+            </div>
+        </form>
+    </div>
+    {{-- end add data --}}
+
+    {{-- add kategori data modal --}}
+    <div class="container display-kategori bg-white shadow-xl p-9 absolute top-10 w-3/4 h-screen hidden">
+        <form method="POST" action="{{ url('/kategori') }}">
+            @csrf
+            @method('POST')
+            <div class="space-y-12">
+                <div class="border-b border-gray-900/10 pb-12">
+                    <h2 class="text-base font-semibold leading-7 text-gray-900">Tambah Kategori</h2>
+                    <p class="mt-1 text-sm leading-6 text-gray-600">Tambahkan yang akan di gunakan untuk inventaris
+                    </p>
+
+                    {{-- end alert section --}}
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
+                        <div class="col-span-full">
+                            <label for="nama_kategori" class="block text-sm font-medium leading-6 text-gray-900">Nama
+                                Kategori</label>
+                            <div class="mt-1">
+                                <input type="text" name="nama_kategori" id="nama_kategori" autocomplete="off"
+                                    required
+                                    class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="col-span-full">
+                            <select id="keperluan" name="keperluan" autocomplete="off" required
+                                class="rounded-lg keperluan border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
+                                <option value="">Pilih Keperluan</option>
+                                <option value="Berita">Berita</option>
+                                <option value="Inventaris">Inventaris</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <button type="button" id="button-cancel-kategori"
                     class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
                 <button type="submit" wire:click="$refresh"
                     class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit

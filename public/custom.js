@@ -19,6 +19,11 @@ $("#tombol-guru").on("click", function (event) {
     $('.display-add').fadeIn("slow");
 });
 
+$("#tombol-kategori").on("click", function (event) {
+    event.preventDefault();
+    $('.display-kategori').fadeIn("slow");
+});
+
 // create pembayaran
 $("#btn-add-pembayaran").on("click", function (event) {
     event.preventDefault();
@@ -39,6 +44,10 @@ $('#button-cancel-pembayaran').on('click', function () {
 
 $('#update-cancel').on('click', function () {
     $('.display-update').fadeOut("slow");
+})
+
+$('#button-cancel-kategori').on('click', function () {
+    $('.display-kategori').fadeOut("slow");
 })
 
 // add page

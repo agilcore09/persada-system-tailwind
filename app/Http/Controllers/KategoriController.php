@@ -35,7 +35,11 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        KategoriModel::insert([
+            'nama_kategori' => $request->nama_kategori,
+            'jenis_kategori' => $request->keperluan
+        ]);
+        return redirect()->back()->with('success', 'Berhasil Menambah Kategori');
     }
 
     /**

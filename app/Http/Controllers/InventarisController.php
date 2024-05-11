@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\InventarisModel;
+use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 
 class InventarisController extends Controller
@@ -15,7 +16,8 @@ class InventarisController extends Controller
     public function index()
     {
         $data = [];
-        return view('inventaris.index', compact("data"));
+        $kategori = KategoriModel::where('jenis_kategori', 'Inventaris')->get();
+        return view('inventaris.index', compact("data", "kategori"));
     }
 
     /**
