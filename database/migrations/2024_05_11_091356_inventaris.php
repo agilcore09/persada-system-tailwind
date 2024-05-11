@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('sumber');
             $table->unsignedBigInteger('kategori');
             $table->string('lokasi');
+            $table->string('status');
             $table->string('gambar');
             $table->foreign('kategori')->references('id')->on('other_kategori');
         });

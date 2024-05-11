@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InventarisModel;
 use App\Models\KategoriModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -42,7 +43,7 @@ class InventarisController extends Controller
     {
 
         $request->validate([
-            'nama' => 'required',
+            'nama_barang' => 'required',
             'kode_alat' => 'required',
             'sumber' => 'required',
             'kategori' => 'required',
@@ -51,12 +52,22 @@ class InventarisController extends Controller
             'gambar' => 'required|max:1024|mimes:jpg, png, jpeg, JPG, PNG, JPEG'
         ]);
 
-        if (!is_null($request->gambar)) {
 
+        if (!is_null($request->gambar)) {
             $gambar = $request->file('gambar');
             $namaFile = time() . "_" . $gambar->getClientOriginalName();
             Storage::disk('local')->put('/public/inventaris/' . $namaFile, File::get($gambar));
 
+            InventarisModel::insert([
+                'nama_barang' => $request->nama_barang,
+                'kode_alat' => $request->kode_alat,
+                'sumber' => $request->sumber,
+                'tanggal_masuk' => Carbon::now(),
+                'kategori' => $request->kategori,
+                'lokasi' => $request->lokasi,
+                'status' => $request->status,
+                'gambar' => $namaFile
+            ]);
 
             return redirect()->back();
         }
