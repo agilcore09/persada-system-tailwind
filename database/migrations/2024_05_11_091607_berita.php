@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('kategori');
             $table->text('body_berita');
 
+            // 
             $table->foreign('kategori')->references('id')->on('other_kategori');
             $table->foreign('author')->references('id')->on('users');
         });
