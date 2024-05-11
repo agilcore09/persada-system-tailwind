@@ -18,7 +18,7 @@ class InventarisController extends Controller
      */
     public function index()
     {
-        $data = InventarisModel::all();
+        $data = InventarisModel::paginate(10);
         $kategori = KategoriModel::where('jenis_kategori', 'Inventaris')->get();
         return view('inventaris.index', compact("data", "kategori"));
     }

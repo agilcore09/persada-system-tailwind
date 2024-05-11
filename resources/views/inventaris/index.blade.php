@@ -174,10 +174,10 @@
 
 
                         </div>
-                        {{-- 
+
                         <div class="container my-5 px-5">
                             {{ $data->links() }}
-                        </div> --}}
+                        </div>
 
 
                     </div>
