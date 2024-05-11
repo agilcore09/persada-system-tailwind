@@ -115,6 +115,8 @@ class InventarisController extends Controller
     public function destroy(InventarisModel $inven, $kode)
     {
         InventarisModel::where('kode_alat', $kode)->delete();
+
+        //
         return redirect()->back();
     }
 }
