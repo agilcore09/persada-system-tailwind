@@ -156,7 +156,8 @@
                                             </td>
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
-                                                    <a href="{{ url('/data-guru' . '/' . $item->id . '/edit') }}"><i
+                                                    <a
+                                                        href="{{ url('/kelola-inventaris' . '/' . $item->kode_alat . '/edit') }}"><i
                                                             class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
                                                     <form action="{{ url('/kelola-inventaris' . '/' . $item->kode_alat) }}"
                                                         method="POST">
@@ -203,13 +204,13 @@
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="gambar" class="block text-sm font-medium leading-6 text-gray-900">Gambar</label>
-                            <input type="file" name="gambar" required>
+                            <input type="file" name="gambar">
                         </div>
                         <div class="col-span-full">
                             <label for="nama_barang" class="block text-sm font-medium leading-6 text-gray-900">Nama
                                 Barang </label>
                             <div class="mt-1">
-                                <input type="text" name="nama_barang" id="nama_barang" autocomplete="off"
+                                <input type="text" required name="nama_barang" id="nama_barang" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
@@ -217,7 +218,7 @@
                             <label for="kode_alat" class="block text-sm font-medium leading-6 text-gray-900">Kode Alat
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="kode_alat" id="kode_alat" autocomplete="off"
+                                <input type="text" required name="kode_alat" id="kode_alat" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
@@ -226,7 +227,8 @@
                                 Masuk
                             </label>
                             <div class="mt-1">
-                                <input type="date" name="tanggal_masuk" id="tanggal_masuk" autocomplete="off"
+                                <input type="date" required name="tanggal_masuk" id="tanggal_masuk"
+                                    autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
@@ -234,7 +236,7 @@
                             <label for="sumber" class="block text-sm font-medium leading-6 text-gray-900">Sumber
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="sumber" id="sumber" autocomplete="off"
+                                <input type="text" required name="sumber" id="sumber" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
@@ -243,7 +245,7 @@
                             <label for="lokasi" class="block text-sm font-medium leading-6 text-gray-900">Lokasi
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="lokasi" id="lokasi" autocomplete="off"
+                                <input type="text" required name="lokasi" id="lokasi" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>

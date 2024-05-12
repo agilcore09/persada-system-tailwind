@@ -11,4 +11,9 @@ class KategoriModel extends Model
 
     protected $table = "other_kategori";
     protected $guarded = ["id"];
+
+    public function inventaris()
+    {
+        return $this->belongsTo(InventarisModel::class);
+    }
 }

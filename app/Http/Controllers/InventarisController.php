@@ -89,9 +89,11 @@ class InventarisController extends Controller
      * @param  \App\Models\InventarisModel  $inventarisModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(InventarisModel $inventarisModel)
+    public function edit(InventarisModel $inven, $kode)
     {
-        //
+        $data = $inven::where('kode_alat', $kode)->get()[0];
+        $kategori = KategoriModel::all();
+        return view('inventaris.update', compact("data", "kategori"));
     }
 
     /**
@@ -101,9 +103,14 @@ class InventarisController extends Controller
      * @param  \App\Models\InventarisModel  $inventarisModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InventarisModel $inventarisModel)
+    public function update(Request $request, InventarisModel $inven)
     {
-        //
+        // jika form gambar terisi
+        if (!is_null($request->gambar)) {
+        }
+
+
+        // jika form gambar tidak terisi
     }
 
     /**
@@ -114,11 +121,7 @@ class InventarisController extends Controller
      */
     public function destroy(InventarisModel $inven, $kode)
     {
-        InventarisModel::where('kode_alat', $kode)->delete();
-
-        //
-
-        //
+        $inven::where('kode_alat', $kode)->delete();
         return redirect()->back();
     }
 }
