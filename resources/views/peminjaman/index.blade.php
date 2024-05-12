@@ -137,22 +137,14 @@
                                 <thead class="sticky top-0">
                                     <tr
                                         class="text-md font-semibold tracking-wide text-center text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                                        <th class="px-20 py-3">Tanggal Bayar</th>
-                                        <th class="px-20 py-3">Nama Siswa</th>
+                                        <th class="px-20 py-3">Nama Lengkap</th>
                                         <th class="px-20 py-3">Kelas</th>
-                                        <th class="px-20 py-3">NIS</th>
-                                        <th class="px-20 py-3">NISN</th>
-                                        <th class="px-20 py-3">Jurusan</th>
-                                        <th class="px-20 py-3">Pembangunan</th>
-
-                                        <th class="px-20 py-3">SPP</th>
-                                        <th class="px-20 py-3">LAB</th>
-                                        <th class="px-20 py-3">OSIS</th>
-                                        <th class="px-20 py-3">Semester</th>
-                                        <th class="px-20 py-3">PSG</th>
-                                        <th class="px-20 py-3">UKK</th>
-                                        <th class="px-20 py-3">Alumni</th>
-                                        <th class="px-4 py-3">Action</th>
+                                        <th class="px-20 py-3">Nama Barang</th>
+                                        <th class="px-20 py-3">Kode Barang</th>
+                                        <th class="px-20 py-3">Keperluan</th>
+                                        <th class="px-20 py-3">Tanggal Peminjaman</th>
+                                        <th class="px-20 py-3">Tanggal Pengembalian</th>
+                                        <th class="px-20 py-3">Action</th>
                                     </tr>
                                 </thead>
 
