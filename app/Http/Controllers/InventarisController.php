@@ -111,7 +111,7 @@ class InventarisController extends Controller
         if (!is_null($request->gambar)) {
 
             // menghapus file foto lama
-            Storage::delete('/public/inventaris' . $getGambar->gambar);
+            Storage::delete('/public/inventaris/' . $getGambar->gambar);
 
             // menyimpan file baru
             $gambar = $request->file('gambar');
@@ -133,7 +133,7 @@ class InventarisController extends Controller
     {
         // menghapus file foto lama
         $getGambar = $inven::where('kode_alat', $kode)->get()[0];
-        Storage::delete('/public/inventaris' . $getGambar->gambar);
+        Storage::delete('/public/inventaris/' . $getGambar->gambar);
         $inven::where('kode_alat', $kode)->delete();
         return redirect()->back();
     }
