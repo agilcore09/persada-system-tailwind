@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PeminjamanModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PeminjamanController extends Controller
@@ -91,18 +92,26 @@ class PeminjamanController extends Controller
     }
 
 
-    public function prosesFormPeminjaman(Request $request)
+    public function prosesFormPeminjaman(Request $request, PeminjamanModel $pinjam)
     {
 
         $request->validate([
             'nama_lengkap' => 'required',
             'kelas' => 'required',
             'nama_barang' => 'required',
-            'nama_barang' => 'required',
             'kode_barang' => 'required',
             'keperluan' => 'required',
         ]);
 
-        dd($request->all());
+        $pinjam::insert([
+            'nama_lengkap' => $request->nama_lengkap,
+            'kelas' => $request->kelas,
+            'nama_barang' => $request->nama_barang,
+            'kode_barang' => $request->kode_barang,
+            'keperluan' => $request->keperluan,
+            'tanggal_peminjaman' => Carbon::now()
+        ]);
+
+        return redirect()->back()->with(['success' => 'Berhasil melakukan peminjaman. Tolong di kembalikan']);
     }
 }
