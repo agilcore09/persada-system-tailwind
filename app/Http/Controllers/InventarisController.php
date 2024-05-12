@@ -117,6 +117,8 @@ class InventarisController extends Controller
             $gambar = $request->file('gambar');
             $namaFile = time() . "_" . $gambar->getClientOriginalName();
             Storage::disk('local')->put('/public/inventaris/' . $namaFile, File::get($gambar));
+
+            return redirect()->to('kelola-inventaris');
         }
 
 
