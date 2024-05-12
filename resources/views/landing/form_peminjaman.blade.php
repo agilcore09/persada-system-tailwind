@@ -18,26 +18,23 @@
                                         sebelum meminjam barang di lab</p>
                                 </div>
                                 <div class="form-body w-full">
-                                    <input type="text" name="nama" placeholder="Nama Lengkap"
+                                    <input type="text" name="nama_lengkap" placeholder="Nama Lengkap"
                                         class="w-full border border-t-0 border-x-0 placeholder:text-center focus:text-center"
                                         required autocomplete="off">
-                                    <input type="text" name="email" placeholder="Kelas/Jabatan"
+                                    <input type="text" name="kelas" placeholder="Kelas/Jabatan"
                                         class="w-full border border-t-0 border-x-0 placeholder:text-center focus:text-center mt-5"
                                         autocomplete="off" required>
-                                    <input type="text" name="pertanyaan" placeholder="Nama Barang"
+                                    <input type="text" name="nama_barang" placeholder="Nama Barang"
                                         class="w-full border border-t-0 border-x-0 placeholder:text-center focus:text-center mt-5"
                                         autocomplete="off" required>
-                                    <input type="text" name="pertanyaan" placeholder="Kode Barang"
+                                    <input type="text" name="kode+barang" placeholder="Kode Barang"
                                         class="w-full border border-t-0 border-x-0 placeholder:text-center focus:text-center mt-5"
                                         autocomplete="off" required>
-                                    <input type="text" name="pertanyaan" placeholder="Keperluan"
+                                    <input type="text" name="keperluan" placeholder="Keperluan"
                                         class="w-full border border-t-0 border-x-0 placeholder:text-center focus:text-center mt-5"
                                         autocomplete="off" required>
-                                    <input type="date" name="pertanyaan" placeholder="Tanggal"
-                                        class="w-full border border-t-0 border-x-0 text-center mt-5 appearance-none"
-                                        style="text-align-last:center; color: gray;" autocomplete="off" required>
-                                    <div class="flex justify-center mt-5">
-                                        <div class="w-52 mr-3">
+                                    <div class="flex justify-center mt-10">
+                                        <div class="w-52 mr-10">
                                             <input type="checkbox" id="bersedia1" name="vehicle1" value="Bike">
                                             <label for="bersedia1">Dengan Ini saya bersedia mengembalikan
                                                 barang yang telah

@@ -195,7 +195,6 @@
                                 {{ $data->links() }}
                             </div>
                         @endif --}}
-
                     </div>
                 </section>
             </div>

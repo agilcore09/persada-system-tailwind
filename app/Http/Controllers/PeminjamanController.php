@@ -93,5 +93,16 @@ class PeminjamanController extends Controller
 
     public function prosesFormPeminjaman(Request $request)
     {
+
+        $request->validate([
+            'nama_lengkap' => 'required',
+            'kelas' => 'required',
+            'nama_barang' => 'required',
+            'nama_barang' => 'required',
+            'kode_barang' => 'required',
+            'keperluan' => 'required',
+        ]);
+
+        dd($request->all());
     }
 }
