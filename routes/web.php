@@ -44,6 +44,8 @@ Route::get('/about', [LandingPageController::class, 'aboutPage']);
 Route::get('/berita', [LandingPageController::class, 'beritaPage']);
 Route::get('/contact-us', [LandingPageController::class, 'contactPage']);
 
+
+
 Route::get('/daftarsmk', function () {
     return view('landing.smk');
 });
