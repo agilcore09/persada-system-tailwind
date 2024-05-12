@@ -4,6 +4,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiswaController;
@@ -23,6 +24,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::delete('/pendaftar/{id}', [PendaftaranController::class, 'destroy']);
     Route::resource('/data-guru', GuruController::class);
     Route::resource('/kategori', KategoriController::class);
+    Route::resource('/kelola-peminjaman', PeminjamanController::class);
 });
 
 Route::middleware('auth')->group(function () {

@@ -14,7 +14,7 @@ class PeminjamanController extends Controller
      */
     public function index()
     {
-        return view('inventaris.index');
+        return view('peminjaman.index');
     }
 
     /**

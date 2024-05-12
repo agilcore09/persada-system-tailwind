@@ -13,7 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('peminjaman', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_lengkap')->nullable();
+            $table->string('kelas')->nullable();
+            $table->string('nama_barang')->nullable();
+            $table->string('kode_barang')->nullable();
+            $table->string('keperluan')->nullable();
+            $table->dateTime('tanggal_peminjaman')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('peminjaman');
     }
 };
