@@ -106,7 +106,7 @@ class InventarisController extends Controller
     public function update(Request $request, InventarisModel $inven, $kode)
     {
 
-        $getGambar = $inven::where('kode', $kode)->get()[0];
+        $getGambar = $inven::where('kode_alat', $kode)->get()[0];
         // jika form gambar terisi
         if (!is_null($request->gambar)) {
 
@@ -131,6 +131,9 @@ class InventarisController extends Controller
      */
     public function destroy(InventarisModel $inven, $kode)
     {
+        // menghapus file foto lama
+        $getGambar = $inven::where('kode_alat', $kode)->get()[0];
+        Storage::delete('/public/inventaris' . $getGambar->gambar);
         $inven::where('kode_alat', $kode)->delete();
         return redirect()->back();
     }
