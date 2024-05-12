@@ -103,10 +103,20 @@ class InventarisController extends Controller
      * @param  \App\Models\InventarisModel  $inventarisModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InventarisModel $inven)
+    public function update(Request $request, InventarisModel $inven, $kode)
     {
+
+        $getGambar = $inven::where('kode', $kode)->get()[0];
         // jika form gambar terisi
         if (!is_null($request->gambar)) {
+
+            // menghapus file foto lama
+            Storage::delete('/public/inventaris' . $getGambar->gambar);
+
+            // menyimpan file baru
+            $gambar = $request->file('gambar');
+            $namaFile = time() . "_" . $gambar->getClientOriginalName();
+            Storage::disk('local')->put('/public/inventaris/' . $namaFile, File::get($gambar));
         }
 
 
