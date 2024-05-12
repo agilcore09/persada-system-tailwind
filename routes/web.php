@@ -3,6 +3,7 @@
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PendaftaranController;
@@ -34,35 +35,14 @@ Route::middleware('auth')->group(function () {
 });
 
 // landing routes
-Route::get('/', function () {
-    $title = " SMK PERSADA MAKASSAR";
-    $body = "Tumbuh Bersama, Berkarya Bersama SMK PERSADA MAKASSAR";
-    return view('landing.homepage', compact("title", "body"));
-});
+Route::get('/', [LandingPageController::class, 'homePage']);
 
-Route::get('/about', function () {
-    $title = " Tentang Kami";
-    $body = "Jelajahi Dunia Pendidikan yang Dinamis & Inovatif Bersama SMK Persada Makassar";
-    return view('landing.about', compact("title", "body"));
-});
 
-Route::get('/contact-us', function () {
-    $title = " Contact Us";
-    $body = "Untuk informasi lebih lanjut atau pertanyaan, jangan ragu untuk menghubungi kami melalui kontak di bawah ini";
-    return view('landing.contact_us', compact("title", "body"));
-});
 
-Route::get('/peminjaman', function () {
-    $title = "Peminjaman Peminjaman Barang";
-    $body = "Tolong lengkapi form terlebih dahulu  sebelum meminjam barang di lab";
-    return view('landing.form_peminjaman', compact("title", "body"));
-});
-
-Route::get('/berita', function () {
-    $title = "Berita Kami";
-    $body = "Nantikan berita terbaru dari kami";
-    return view('landing.berita', compact("title", "body"));
-});
+Route::get('/peminjaman', [PeminjamanController::class, 'formPeminjaman']);
+Route::get('/about', [LandingPageController::class, 'aboutPage']);
+Route::get('/berita', [LandingPageController::class, 'beritaPage']);
+Route::get('/contact-us', [LandingPageController::class, 'contactPage']);
 
 Route::get('/daftarsmk', function () {
     return view('landing.smk');

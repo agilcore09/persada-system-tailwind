@@ -82,4 +82,16 @@ class PeminjamanController extends Controller
     {
         //
     }
+
+    public function formPeminjaman()
+    {
+        $title = "Peminjaman Peminjaman Barang";
+        $body = "Tolong lengkapi form terlebih dahulu  sebelum meminjam barang di lab";
+        return view('landing.form_peminjaman', compact("title", "body"));
+    }
+
+
+    public function prosesFormPeminjaman(Request $request)
+    {
+    }
 }
