@@ -44,7 +44,7 @@ class InventarisController extends Controller
 
         $request->validate([
             'nama_barang' => 'required',
-            'kode_alat' => 'required',
+            'kode_alat' => 'required|unique:inventaris',
             'sumber' => 'required',
             'kategori' => 'required',
             'lokasi' => 'required',
@@ -61,7 +61,7 @@ class InventarisController extends Controller
                 'nama_barang' => $request->nama_barang,
                 'kode_alat' => $request->kode_alat,
                 'sumber' => $request->sumber,
-                'tanggal_masuk' => Carbon::now(),
+                'tanggal_masuk' => $request->tanggal_masuk,
                 'kategori' => $request->kategori,
                 'lokasi' => $request->lokasi,
                 'status' => $request->status,
@@ -105,10 +105,21 @@ class InventarisController extends Controller
      */
     public function update(Request $request, InventarisModel $inven, $kode)
     {
-
         $getGambar = $inven::where('kode_alat', $kode)->get()[0];
+
         // jika form gambar terisi
         if (!is_null($request->gambar)) {
+
+            // validasi 
+            $request->validate([
+                'nama_barang' => 'required',
+                'kode_alat' => 'required',
+                'sumber' => 'required',
+                'kategori' => 'required',
+                'lokasi' => 'required',
+                'status' => 'required',
+                'gambar' => 'required|max:1024|mimes:jpg, png, jpeg, JPG, PNG, JPEG'
+            ]);
 
             // menghapus file foto lama
             Storage::delete('/public/inventaris/' . $getGambar->gambar);
@@ -118,11 +129,44 @@ class InventarisController extends Controller
             $namaFile = time() . "_" . $gambar->getClientOriginalName();
             Storage::disk('local')->put('/public/inventaris/' . $namaFile, File::get($gambar));
 
+            $inven::where('kode_alat', $kode)->update([
+                'nama_barang' => $request->nama_barang,
+                'kode_alat' => $request->kode_alat,
+                'sumber' => $request->sumber,
+                'tanggal_masuk' => $request->tanggal_masuk,
+                'kategori' => $request->kategori,
+                'lokasi' => $request->lokasi,
+                'status' => $request->status,
+                'gambar' => $namaFile
+            ]);
+
+            return redirect()->to('kelola-inventaris');
+        } else {
+
+            $request->validate([
+                'nama_barang' => 'required',
+                'kode_alat' => 'required',
+                'sumber' => 'required',
+                'kategori' => 'required',
+                'lokasi' => 'required',
+                'status' => 'required',
+            ]);
+
+
+            // jika form gambar tidak terisi
+            $inven::where('kode_alat', $kode)->update([
+                'nama_barang' => $request->nama_barang,
+                'kode_alat' => $request->kode_alat,
+                'sumber' => $request->sumber,
+                'tanggal_masuk' => $request->tanggal_masuk,
+                'kategori' => $request->kategori,
+                'lokasi' => $request->lokasi,
+                'status' => $request->status,
+
+            ]);
+
             return redirect()->to('kelola-inventaris');
         }
-
-
-        // jika form gambar tidak terisi
     }
 
     /**

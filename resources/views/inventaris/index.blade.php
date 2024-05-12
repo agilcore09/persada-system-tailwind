@@ -204,7 +204,7 @@
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="gambar" class="block text-sm font-medium leading-6 text-gray-900">Gambar</label>
-                            <input type="file" name="gambar">
+                            <input type="file" name="gambar" required>
                         </div>
                         <div class="col-span-full">
                             <label for="nama_barang" class="block text-sm font-medium leading-6 text-gray-900">Nama

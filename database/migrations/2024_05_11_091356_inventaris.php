@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('gambar');
             $table->foreign('kategori')->references('id')->on('other_kategori');
+            $table->timestamps();
         });
     }
 
