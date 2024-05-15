@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PeminjamanModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PeminjamanController extends Controller
 {
@@ -57,9 +58,13 @@ class PeminjamanController extends Controller
      * @param  \App\Models\PeminjamanModel  $peminjamanModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(PeminjamanModel $peminjamanModel)
+    public function edit(PeminjamanModel $peminjaman, $id)
     {
-        //
+        $peminjaman::where('id', $id)->update([
+            'status' => 'Di Kembalikan',
+            'updated_at' => Carbon::now()
+        ]);
+        return redirect()->to('/kelola-peminjaman');
     }
 
     /**
@@ -69,9 +74,8 @@ class PeminjamanController extends Controller
      * @param  \App\Models\PeminjamanModel  $peminjamanModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PeminjamanModel $peminjamanModel)
+    public function update(Request $request, PeminjamanModel $peminjaman, $id)
     {
-        //
     }
 
     /**
@@ -80,9 +84,10 @@ class PeminjamanController extends Controller
      * @param  \App\Models\PeminjamanModel  $peminjamanModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PeminjamanModel $peminjamanModel)
+    public function destroy($id)
     {
-        //
+        DB::table('peminjaman')->where('id', $id)->delete();
+        return redirect()->to('/kelola-peminjaman');
     }
 
     public function formPeminjaman()
@@ -95,7 +100,6 @@ class PeminjamanController extends Controller
 
     public function prosesFormPeminjaman(Request $request, PeminjamanModel $pinjam)
     {
-
         $request->validate([
             'nama_lengkap' => 'required',
             'kelas' => 'required',
@@ -110,7 +114,8 @@ class PeminjamanController extends Controller
             'nama_barang' => $request->nama_barang,
             'kode_barang' => $request->kode_barang,
             'keperluan' => $request->keperluan,
-            'tanggal_peminjaman' => Carbon::now()
+            'tanggal_peminjaman' => Carbon::now(),
+            'status' => 'Di Pinjam'
         ]);
 
         return redirect()->back()->with(['success' => 'Berhasil melakukan peminjaman. Tolong di kembalikan']);

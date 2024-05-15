@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nama_barang')->nullable();
             $table->string('kode_barang')->nullable();
             $table->string('keperluan')->nullable();
+            $table->enum('status', ['Di Pinjam', 'Di Kembalikan'])->nullable();
             $table->dateTime('tanggal_peminjaman')->nullable();
             $table->timestamps();
         });

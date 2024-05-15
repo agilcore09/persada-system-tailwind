@@ -137,6 +137,7 @@
                                         <th class="px-20 py-3">Kode Barang</th>
                                         <th class="px-20 py-3">Keperluan</th>
                                         <th class="px-20 py-3">Tanggal Peminjaman</th>
+                                        <th class="px-20 py-3">Status</th>
                                         <th class="px-20 py-3">Tanggal Pengembalian</th>
                                         <th class="px-20 py-3">Action</th>
                                     </tr>
@@ -158,18 +159,15 @@
                                             <td class="px-4 py-3 text-ms border">{{ $item->keperluan }}</td>
                                             <td class="px-4 py-3 text-ms border">
                                                 {{ $item->tanggal_peminjaman }}</td>
+                                            <td class="px-4 py-3 text-ms border">
+                                                {{ $item->status }}</td>
                                             <td class="px-4 py-3 text-ms border">{{ $item->updated_at }}</td>
-
-
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
-                                                    <a href="{{ url('/cetak' . '/' . $item->id) }}">
-                                                        <i class="fa-solid fa-print text-blue-500 mr-1"></i>
-                                                    </a>
                                                     @can('isAdmin')
-                                                        <a href="{{ url('/pembayaran' . '/' . $item->id . '/edit') }}"><i
-                                                                class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                        <form action="{{ url('/pembayaran' . '/' . $item->id) }}"
+                                                        <a href="{{ url('/kelola-peminjaman' . '/' . $item->id . '/edit') }}"><i
+                                                                class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></a>
+                                                        <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
