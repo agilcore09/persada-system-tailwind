@@ -143,30 +143,24 @@
                                 </thead>
 
                                 <tbody class="bg-white" id="tbody">
-                                    {{-- @foreach ($data as $item)
+                                    @foreach ($data as $item)
                                         <tr class="text-gray-700 text-center">
                                             <td class="px-4 py-3 text-ms border">
-                                                {{ $item->tanggal_bayar }}
+                                                {{ $item->nama_lengkap }}
                                             </td>
                                             <td class="px-4 py-3 text-ms border">
-                                                {{ $item->Siswa->nama_siswa }}
+                                                {{ $item->kelas }}
                                             </td>
                                             <td class="px-4 py-3 text-ms border">
-                                                {{ $item->Siswa->kelas }}
+                                                {{ $item->nama_barang }}
                                             </td>
-                                            <td class="px-4 py-3 text-ms border">{{ $item->Siswa->nis }}</td>
-                                            <td class="px-4 py-3 text-ms border">{{ $item->Siswa->nisn }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->kode_barang }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->keperluan }}</td>
                                             <td class="px-4 py-3 text-ms border">
-                                                {{ $item->Siswa->Category->nama_jurusan }}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->pembangunan }}</td>
+                                                {{ $item->tanggal_peminjaman }}</td>
+                                            <td class="px-4 py-3 text-ms border">{{ $item->updated_at }}</td>
 
-                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->spp }}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->lab }}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->osis }}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->semester }}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->psg }}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->ukk }}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. {{ $item->alumni }}</td>
+
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
                                                     <a href="{{ url('/cetak' . '/' . $item->id) }}">
@@ -186,7 +180,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

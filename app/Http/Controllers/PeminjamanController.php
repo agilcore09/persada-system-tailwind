@@ -15,7 +15,8 @@ class PeminjamanController extends Controller
      */
     public function index()
     {
-        return view('peminjaman.index');
+        $data = PeminjamanModel::all();
+        return view('peminjaman.index', compact("data"));
     }
 
     /**
