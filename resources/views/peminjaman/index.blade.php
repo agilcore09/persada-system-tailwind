@@ -165,8 +165,11 @@
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
                                                     @can('isAdmin')
-                                                        <a href="{{ url('/kelola-peminjaman' . '/' . $item->id . '/edit') }}"><i
-                                                                class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></a>
+                                                        @if (!$item->status == 'Di Kembalikan')
+                                                            <a
+                                                                href="{{ url('/kelola-peminjaman' . '/' . $item->id . '/edit') }}"><i
+                                                                    class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></a>
+                                                        @endif
                                                         <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
                                                             method="POST">
                                                             @csrf
