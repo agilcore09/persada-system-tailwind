@@ -18,7 +18,7 @@
     {{-- vISI --}}
     <div class="grid md:grid-cols-12 grid-cols-12 my-14 md:my-7">
         <div class="col-span-10 col-start-2">
-
+            `
             <div class="col-span-10">
                 <div class="grid md:grid-cols-12 grid-cols-12">
                     <div class="col-span-12 md:col-span-12 my-5" data-aos="fade-up">
