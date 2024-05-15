@@ -162,6 +162,8 @@
                                             <td class="px-4 py-3 text-ms border">
                                                 {{ $item->status }}</td>
                                             <td class="px-4 py-3 text-ms border">{{ $item->updated_at }}</td>
+
+                                            /
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
                                                     @can('isAdmin')
