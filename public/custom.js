@@ -105,3 +105,5 @@ $('#button-cancel-kategori').on('click', function () {
 $('.closealertbutton').click(function () {
     $('#alertbox').hide(1000);
 })
+
+// kumpul niatka ini serius gara2 android
