@@ -50,13 +50,13 @@ Route::get('/contact-us', [LandingPageController::class, 'contactPage']);
 Route::get('/daftarsmk', function () {
     $title = " SMK PERSADA MAKASSAR";
     $body = "Tumbuh Bersama, Berkarya Bersama SMK PERSADA MAKASSAR";
-    return view('landing.smk', compact("title, body"));
+    return view('landing.smk', compact("title", "body"));
 });
 
 Route::get('/daftarsmp', function () {
     $title = " SMK PERSADA MAKASSAR";
     $body = "Tumbuh Bersama, Berkarya Bersama SMK PERSADA MAKASSAR";
-    return view('landing.smp', compact("title, body"));
+    return view('landing.smp', compact("title", "body"));
 });
 
 // pendaftaran custom route
