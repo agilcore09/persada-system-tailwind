@@ -1,24 +1,23 @@
 @extends('landing.core')
 @section('body')
-    <div class="grid grid-cols-12" id="home">
-        {{-- navbar section --}}
-        @include('landing.navbar')
-        {{-- end navbar section --}}
-        {{-- jumbotron section --}}
-        @include('landing.jumbotron')
-        {{-- end jumbotron --}}
-    </div>
+    {{-- navbar section --}}
+    @include('landing.navbar')
+    {{-- end navbar section --}}
+    {{-- jumbotron section --}}
+    @include('landing.jumbotron')
+    {{-- end jumbotron --}}
+
     {{-- start why --}}
 
-    @if(session()->has('status'))
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-       Swal.fire({
-            title: "Berhasil Mendaftar",
-            text: "Silahkan tunggu chat/arahan admin",
-            icon: "success"
+    @if (session()->has('status'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                title: "Berhasil Mendaftar",
+                text: "Silahkan tunggu chat/arahan admin",
+                icon: "success"
             });
-    </script>
+        </script>
     @endif
     <div class="grid grid-cols-12 mb-28 mt-10">
         <div class="col-span-10 col-start-2 font-body">
@@ -126,6 +125,9 @@
 
                     <button type="submit"
                         class=" mt-10 py-2.5 px-7 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-blue-950 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Submit</button>
+                    <a href="{{ url('/') }}"
+                        class=" mt-10 py-2.5 px-7 me-2 mb-2 text-sm font-medium text-white text-gray-900 focus:outline-none rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Kembali</a>
+
                 </form>
             </div>
         </div>
