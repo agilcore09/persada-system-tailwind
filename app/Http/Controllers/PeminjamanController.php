@@ -14,9 +14,19 @@ class PeminjamanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = PeminjamanModel::all();
+        if (is_null($request->peminjam)) {
+            $data = PeminjamanModel::all();
+        } else {
+            $data = PeminjamanModel::where('nama_lengkap', 'like', '%' .  $request->peminjam . '%')->get();
+            return response()->json([
+                "data" => $data,
+                "message" => "berhasil tangkap",
+                "success" => true
+            ]);
+        }
+
         return view('peminjaman.index', compact("data"));
     }
 

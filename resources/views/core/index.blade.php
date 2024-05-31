@@ -221,7 +221,6 @@
 
         })
 
-
         // cari barang
         $('#cari_barang').on('input', () => {
             let search = $('#cari_barang').val();
@@ -231,6 +230,58 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 url: `/kelola-inventaris?cari_barang=${search}`,
+                type: 'GET',
+                contentType: false,
+                processData: false,
+                success: function(response) {
+
+                    const tbody = $('#tbody');
+                    const data = response.data;
+                    tbody.empty()
+                    console.log(data);
+                    if (search != "" || search != null || search != empty) {
+                        for (const datas of data) {
+                            tbody.append(`
+                            <td class="px-4 py-3 text-ms border"> ${datas.nama_barang} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.kode_alat} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.tanggal_masuk} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.sumber} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.lokasi} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.status} </td>
+                                            <td class="px-4 py-3 text-ms border">
+                                                ${datas . gambar}
+                                            </td>
+                                            <td class="px-4 py-3 text-ms border">
+                                                <div class="flex justify-center">
+                                                    <a
+                                                        href="/kelola-inventaris/${datas.kode_alat}/edit"><i
+                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                    <form action="/kelola-inventaris/${datas.kode_alat}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"> <i
+                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                    `)
+                        }
+                    }
+
+                }
+            })
+        })
+
+        // cari nama peminjaman
+        $('#peminjam').on('input', () => {
+            let search = $('#peminjam').val();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: `/kelola-inventaris?peminjam=${search}`,
                 type: 'GET',
                 contentType: false,
                 processData: false,
