@@ -13,8 +13,9 @@
     <meta property="og:description"
         content="smk persada adalah sekolah kejuruan yang memiliki 2 jurusan yaitu jurusan tkr dan tkj" />
     <meta property="og:url" content="https://pendaftaran.persadaict.sch.id" />
-    <meta property="og:image" content="{{ asset('img/bg.png') }}" />
-
+    {{-- <meta property="og:image" content="{{ asset('img/bg.png') }}" /> --}}
+    <meta property="og:image" itemprop="image" content="{{ asset('img/bg.png') }}">
+    <meta property="og:type" content="website" />
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
