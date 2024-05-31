@@ -262,7 +262,7 @@
                                     class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 @error('pembangunan') border-rose-500 @enderror rounded-l-md">
                                     Rp.
                                 </span>
-                                <input type="number" required id="pembangunan" name="pembangunan"
+                                <input type="number" required id="pembangunan" name="pembangunan" value="0"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('pembangunan') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('pembangunan')) Form ini kosong!!! @else Masukkan Biaya Pembangunan @endif">
                             </div>
@@ -276,6 +276,7 @@
                             <div class="flex">
 
                                 <input type="text" id="keterangan_pembangunan" name="keterangan_pembangunan"
+                                    value="-"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_pembangunan') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_pembangunan')) Form ini kosong!!! @else Masukkan Keterangan Pembangunan @endif">
                             </div>
@@ -291,7 +292,7 @@
                                     class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0  @error('spp') border-rose-500 @enderror rounded-l-md">
                                     Rp.
                                 </span>
-                                <input type="number" required id="spp" name="spp"
+                                <input type="number" required id="spp" name="spp" value="0"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm  @error('spp') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('spp')) Form ini kosong!!! @else Masukkan Biaya SPP @endif">
                             </div>
@@ -304,7 +305,7 @@
                             </label>
                             <div class="flex">
 
-                                <input type="text" id="keterangan_spp" name="keterangan_spp"
+                                <input type="text" id="keterangan_spp" name="keterangan_spp" value="-"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('pembangunan') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_spp')) Form ini kosong!!! @else Masukkan Keterangan SPP @endif">
                             </div>
@@ -319,7 +320,7 @@
                                     class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 @error('lab') border-rose-500 @enderror rounded-l-md">
                                     Rp.
                                 </span>
-                                <input type="number" required id="lab" name="lab"
+                                <input type="number" required id="lab" name="lab" value="0"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('lab') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('lab')) Form ini kosong!!! @else Masukkan Biaya LAB @endif">
                             </div>
@@ -332,7 +333,7 @@
                             </label>
                             <div class="flex">
 
-                                <input type="text" id="keterangan_lab" name="keterangan_lab"
+                                <input type="text" id="keterangan_lab" name="keterangan_lab" value="-"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_lab') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_lab')) Form ini kosong!!! @else Masukkan keterangan Lab @endif">
                             </div>
@@ -347,7 +348,7 @@
                                     class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 @error('osis') border-rose-500 @enderror rounded-l-md">
                                     Rp.
                                 </span>
-                                <input type="number" required id="osis" name="osis"
+                                <input type="number" required id="osis" name="osis" value="0"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('osis') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('osis')) Form ini kosong!!! @else Masukkan Biaya OSIS @endif ">
                             </div>
@@ -360,7 +361,7 @@
                             </label>
                             <div class="flex">
 
-                                <input type="text" id="keterangan_lab" name="keterangan_osis"
+                                <input type="text" id="keterangan_lab" name="keterangan_osis" value="-"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_lab') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_lab')) Form ini kosong!!! @else Masukkan Keterangan osis @endif">
                             </div>
@@ -376,7 +377,7 @@
                                     Rp.
                                 </span>
 
-                                <input type="number" required id="uas" name="semester"
+                                <input type="number" required id="uas" name="semester" value="0"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('uas') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('uas')) Form ini kosong!!! @else Masukkan Biaya Semester @endif">
                             </div>
@@ -389,7 +390,7 @@
                             </label>
                             <div class="flex">
 
-                                <input type="text" id="keterangan_uas" name="keterangan_semester"
+                                <input type="text" id="keterangan_uas" name="keterangan_semester" value="-"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_semester') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_semester')) Form ini kosong!!! @else Masukkan Biaya Semester @endif">
                             </div>
@@ -407,7 +408,7 @@
                                     Rp.
                                 </span>
 
-                                <input type="number" required id="psg" name="psg"
+                                <input type="number" required id="psg" name="psg" value="0"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('psg') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('psg')) Form ini kosong!!! @else Masukkan Nilai Biaya PSG @endif">
                             </div>
@@ -420,7 +421,7 @@
                             </label>
                             <div class="flex">
 
-                                <input type="text" id="keterangan_psg" name="keterangan_psg"
+                                <input type="text" id="keterangan_psg" name="keterangan_psg" value="-"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_psg') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_psg')) Form ini kosong!!! @else Masukkan Keterangan PSG @endif">
                             </div>
@@ -437,7 +438,7 @@
                                     Rp.
                                 </span>
 
-                                <input type="number" required id="ukk" name="ukk"
+                                <input type="number" required id="ukk" name="ukk" value="0"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('ukk') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('ukk')) Form ini kosong!!! @else Masukkan Nilai Biaya UKK @endif">
                             </div>
@@ -450,7 +451,7 @@
                             </label>
                             <div class="flex">
 
-                                <input type="text" id="keterangan_ukk" name="keterangan_ukk"
+                                <input type="text" id="keterangan_ukk" name="keterangan_ukk" value="-"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_ukk') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_ukk')) Form ini kosong!!! @else Masukkan Keterangan UKK @endif">
                             </div>
@@ -466,7 +467,7 @@
                                     Rp.
                                 </span>
 
-                                <input type="number" required id="alumni" name="alumni"
+                                <input type="number" required id="alumni" name="alumni" value="0"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('alumni') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('alumni')) Form ini kosong!!! @else Masukkan Nilai Biaya Alumni @endif">
                             </div>
@@ -479,7 +480,7 @@
                             </label>
                             <div class="flex">
 
-                                <input type="text" id="keterangan_alumni" name="keterangan_alumni"
+                                <input type="text" id="keterangan_alumni" name="keterangan_alumni" value="-"
                                     class="rounded-none rounded-r-lg  border text-gray-900 block flex-1 min-w-0 w-full text-sm @error('keterangan_alumni') border-rose-500 @enderror p-2.5"
                                     placeholder="@if ($errors->has('keterangan_alumni')) Form ini kosong!!! @else Masukkan Keterangan Alumni @endif">
                             </div>
