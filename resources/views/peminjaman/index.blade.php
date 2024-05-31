@@ -63,7 +63,6 @@
         <div class="px-6 grid grid-cols-10">
             {{-- button wrap --}}
             <div class="buton-wrap col-span-5 pt-2 flex">
-
                 <div>
                     <form action="" class="ml-3 mx-auto flex">
                         <div class="mr-1">
@@ -166,18 +165,20 @@
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
                                                     @can('isAdmin')
-                                                        @if (!$item->status == 'Di Kembalikan')
+                                                        @if ($item->status == 'Di Pinjam')
                                                             <a
                                                                 href="{{ url('/kelola-peminjaman' . '/' . $item->id . '/edit') }}"><i
                                                                     class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></a>
                                                         @endif
-                                                        <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"> <i
-                                                                    class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                        </form>
+                                                        @if ($item->status == 'Di Kembalikan')
+                                                            <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit"> <i
+                                                                        class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                            </form>
+                                                        @endif
                                                     @endcan
                                                 </div>
                                             </td>
