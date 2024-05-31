@@ -219,6 +219,59 @@
             })
 
         })
+
+
+        // cari barang
+        $('#cari_barang').on('input', () => {
+            let search = $('#cari_barang').val();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: `/kelola-inventaris?cari_barang=${search}`,
+                type: 'GET',
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    console.log(response.data)
+                    const tbody = $('#tbody');
+                    const data = response.data;
+                    tbody.empty()
+                    console.log(data);
+                    // if (search != "" || search != null || search != empty) {
+                    //     for (const datas of data) {
+                    //         tbody.append(`
+                //                        <tr class="text-gray-700 text-center">
+
+                //                         <td class="px-4 py-3 text-ms border">
+                //                           ${datas.name}
+                //                         </td>
+                //                         <td class="px-4 py-3 text-ms border">
+                //                            ${datas.email}
+                //                         </td>
+
+                //                         <td class="px-4 py-3 text-ms border">
+                //                             <div class="flex justify-center">
+                //                                 <a href="/data-guru/${datas.id}/edit"><i
+                //                                         class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                //                                 <form action="/data-guru/${datas.id}"
+                //                                     method="POST">
+                //                                     @csrf
+                //                                     @method('DELETE')
+                //                                     <button type="submit"> <i
+                //                                             class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                //                                 </form>
+                //                             </div>
+                //                         </td>
+                //                     </tr>
+                //                     `)
+                    //     }
+                    // }
+
+                }
+            })
+        })
     </script>
 
 

@@ -16,10 +16,21 @@ class InventarisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = InventarisModel::paginate(10);
         $kategori = KategoriModel::where('jenis_kategori', 'Inventaris')->get();
+        if (is_null($request->cari_barang)) {
+            $data = InventarisModel::paginate(10);
+        } else {
+            $data = InventarisModel::where('nama_barang',  'like', '%' . $request->cari_barang . '%')->get();
+            return response()->json([
+                "data" => $data,
+                "message" => "berhasil tangkap",
+                "success" => true
+            ]);
+        }
+
+
         return view('inventaris.index', compact("data", "kategori"));
     }
 
@@ -49,7 +60,7 @@ class InventarisController extends Controller
             'kategori' => 'required',
             'lokasi' => 'required',
             'status' => 'required',
-            'gambar' => 'required|max:1024|mimes:jpg, png, jpeg, JPG, PNG, JPEG'
+            'gambar' => 'required|max:1024|image'
         ]);
 
         if (!is_null($request->gambar)) {
