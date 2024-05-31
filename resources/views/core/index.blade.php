@@ -234,40 +234,40 @@
                 contentType: false,
                 processData: false,
                 success: function(response) {
-                    console.log(response.data)
+
                     const tbody = $('#tbody');
                     const data = response.data;
                     tbody.empty()
                     console.log(data);
-                    // if (search != "" || search != null || search != empty) {
-                    //     for (const datas of data) {
-                    //         tbody.append(`
-                //                        <tr class="text-gray-700 text-center">
-
-                //                         <td class="px-4 py-3 text-ms border">
-                //                           ${datas.name}
-                //                         </td>
-                //                         <td class="px-4 py-3 text-ms border">
-                //                            ${datas.email}
-                //                         </td>
-
-                //                         <td class="px-4 py-3 text-ms border">
-                //                             <div class="flex justify-center">
-                //                                 <a href="/data-guru/${datas.id}/edit"><i
-                //                                         class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                //                                 <form action="/data-guru/${datas.id}"
-                //                                     method="POST">
-                //                                     @csrf
-                //                                     @method('DELETE')
-                //                                     <button type="submit"> <i
-                //                                             class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                //                                 </form>
-                //                             </div>
-                //                         </td>
-                //                     </tr>
-                //                     `)
-                    //     }
-                    // }
+                    if (search != "" || search != null || search != empty) {
+                        for (const datas of data) {
+                            tbody.append(`
+                            <td class="px-4 py-3 text-ms border"> ${datas.nama_barang} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.kode_alat} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.tanggal_masuk} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.sumber} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.lokasi} </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.status} </td>
+                                            <td class="px-4 py-3 text-ms border">
+                                                ${datas . gambar}
+                                            </td>
+                                            <td class="px-4 py-3 text-ms border">
+                                                <div class="flex justify-center">
+                                                    <a
+                                                        href="/kelola-inventaris' . '/' . ${datas.kode_alat} . '/edit'"><i
+                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                    <form action="/kelola-inventaris' . '/' . ${datas.kode_alat}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"> <i
+                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                    `)
+                        }
+                    }
 
                 }
             })

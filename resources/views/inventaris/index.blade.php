@@ -145,7 +145,7 @@
                                 <tbody class="bg-white" id="tbody">
 
                                     @foreach ($data as $item)
-                                        <tr class="text-gray-700 text-center">
+                                        <tr class="text-gray-700 text-center" id="tbody">
                                             <td class="px-4 py-3 text-ms border">{{ $item->nama_barang }}</td>
                                             <td class="px-4 py-3 text-ms border">{{ $item->kode_alat }}</td>
                                             <td class="px-4 py-3 text-ms border">{{ $item->tanggal_masuk }}</td>
