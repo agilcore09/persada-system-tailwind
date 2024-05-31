@@ -166,9 +166,13 @@
                                                 <div class="flex justify-center">
                                                     @can('isAdmin')
                                                         @if ($item->status == 'Di Pinjam')
-                                                            <a
-                                                                href="{{ url('/kelola-peminjaman' . '/' . $item->id . '/edit') }}"><i
-                                                                    class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></a>
+                                                            <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <button type="submit"> <i
+                                                                        class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></button>
+                                                            </form>
                                                         @endif
                                                         @if ($item->status == 'Di Kembalikan')
                                                             <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
@@ -187,11 +191,14 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{-- @if ((request()->tanggal1 == null && request()->tanggal2 == null) || request()->tanggal1 == null || request->tanggal2 == null)
+                        @if (
+                            (request()->tanggal1 == null && request()->tanggal2 == null) ||
+                                request()->tanggal1 == null ||
+                                request->tanggal2 == null)
                             <div class="container my-5 px-5">
                                 {{ $data->links() }}
                             </div>
-                        @endif --}}
+                        @endif
                     </div>
                 </section>
             </div>

@@ -281,7 +281,7 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                url: `/kelola-inventaris?peminjam=${search}`,
+                url: `/kelola-peminjaman?peminjam=${search}`,
                 type: 'GET',
                 contentType: false,
                 processData: false,
@@ -289,32 +289,50 @@
 
                     const tbody = $('#tbody');
                     const data = response.data;
-                    tbody.empty()
                     console.log(data);
+                    tbody.empty()
+
                     if (search != "" || search != null || search != empty) {
                         for (const datas of data) {
                             tbody.append(`
-                            <td class="px-4 py-3 text-ms border"> ${datas.nama_barang} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.kode_alat} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.tanggal_masuk} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.sumber} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.lokasi} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.status} </td>
-                                            <td class="px-4 py-3 text-ms border">
-                                                ${datas . gambar}
+                            <td class="px-4 py-3 text-ms border">
+                                                 ${datas.nama_lengkap}
                                             </td>
                                             <td class="px-4 py-3 text-ms border">
+                                               ${datas.kelas }
+                                            </td>
+                                            <td class="px-4 py-3 text-ms border">
+                                               ${datas.nama_barang }
+                                            </td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.kode_barang }</td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.keperluan }</td>
+                                            <td class="px-4 py-3 text-ms border">
+                                               ${datas.tanggal_peminjaman }</td>
+                                            <td class="px-4 py-3 text-ms border">
+                                               ${datas.status }</td>
+                                            <td class="px-4 py-3 text-ms border"> ${datas.updated_at }</td>
+                                            <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
-                                                    <a
-                                                        href="/kelola-inventaris/${datas.kode_alat}/edit"><i
-                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="/kelola-inventaris/${datas.kode_alat}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"> <i
-                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                    </form>
+                                                    @can('isAdmin')
+                                                        @if ($item->status == 'Di Pinjam')
+                                                            <form action="kelola-peminjaman/${datas.id}"
+                                                                method="post">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <button type="submit"> <i
+                                                                        class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></button>
+                                                            </form>
+                                                        @endif
+                                                        @if ($item->status == 'Di Kembalikan')
+                                                            <form action="kelola-peminjaman/${datas.id}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit"> <i
+                                                                        class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                            </form>
+                                                        @endif
+                                                    @endcan
                                                 </div>
                                             </td>
                                     `)

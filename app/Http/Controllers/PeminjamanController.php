@@ -17,7 +17,7 @@ class PeminjamanController extends Controller
     public function index(Request $request)
     {
         if (is_null($request->peminjam)) {
-            $data = PeminjamanModel::all();
+            $data = PeminjamanModel::paginate(10);
         } else {
             $data = PeminjamanModel::where('nama_lengkap', 'like', '%' .  $request->peminjam . '%')->get();
             return response()->json([
@@ -86,6 +86,12 @@ class PeminjamanController extends Controller
      */
     public function update(Request $request, PeminjamanModel $peminjaman, $id)
     {
+        $peminjaman->where('id', $id)->update([
+            'updated_at' => Carbon::now(),
+            'status' => 'Di Kembalikan'
+        ]);
+
+        return redirect()->to('kelola-peminjaman')->with('success', 'Berhasil Mengupdate Data!!!');
     }
 
     /**
