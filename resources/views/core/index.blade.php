@@ -254,9 +254,9 @@
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
                                                     <a
-                                                        href="/kelola-inventaris' . '/' . ${datas.kode_alat} . '/edit'"><i
+                                                        href="/kelola-inventaris/${datas.kode_alat}/edit"><i
                                                             class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="/kelola-inventaris' . '/' . ${datas.kode_alat}"
+                                                    <form action="/kelola-inventaris/${datas.kode_alat}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
