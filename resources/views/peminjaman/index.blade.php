@@ -164,7 +164,7 @@
                                             <td class="px-4 py-3 text-ms border">{{ $item->updated_at }}</td>
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
-                                                    @can('isAdmin')
+                                                    {{-- @can('isAdmin')
                                                         @if ($item->status == 'Di Pinjam')
                                                             <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
                                                                 method="post">
@@ -183,7 +183,7 @@
                                                                         class="fa-solid fa-trash text-red-600 ml-1"></i></button>
                                                             </form>
                                                         @endif
-                                                    @endcan
+                                                    @endcan --}}
                                                 </div>
                                             </td>
                                         </tr>
@@ -207,4 +207,78 @@
 
 
 
+@endsection
+
+@section('scripts')
+    <script>
+        // cari nama peminjaman
+        $('#peminjam').on('input', () => {
+            let search = $('#peminjam').val();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: `/kelola-peminjaman?peminjam=${search}`,
+                type: 'GET',
+                contentType: false,
+                processData: false,
+                success: function(response) {
+
+                    const tbody = $('#tbody');
+                    const data = response.data;
+                    console.log(data);
+                    tbody.empty()
+
+                    if (search != "" || search != null || search != empty) {
+                        for (const datas of data) {
+                            tbody.append(`
+                        <td class="px-4 py-3 text-ms border">
+                                             ${datas.nama_lengkap}
+                                        </td>
+                                        <td class="px-4 py-3 text-ms border">
+                                           ${datas.kelas }
+                                        </td>
+                                        <td class="px-4 py-3 text-ms border">
+                                           ${datas.nama_barang }
+                                        </td>
+                                        <td class="px-4 py-3 text-ms border"> ${datas.kode_barang }</td>
+                                        <td class="px-4 py-3 text-ms border"> ${datas.keperluan }</td>
+                                        <td class="px-4 py-3 text-ms border">
+                                           ${datas.tanggal_peminjaman }</td>
+                                        <td class="px-4 py-3 text-ms border">
+                                           ${datas.status }</td>
+                                        <td class="px-4 py-3 text-ms border"> ${datas.updated_at }</td>
+                                        <td class="px-4 py-3 text-ms border">
+                                            <div class="flex justify-center">
+                                                @can('isAdmin')
+                                                    @if ($datas->status == 'Di Pinjam')
+                                                        <form action="kelola-peminjaman/${datas.id}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <button type="submit"> <i
+                                                                    class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></button>
+                                                        </form>
+                                                    @endif
+                                                    @if ($datas->status == 'Di Kembalikan')
+                                                        // <form action="kelola-peminjaman/${datas.id}"
+                                                        //     method="POST">
+                                                        //     @csrf
+                                                        //     @method('DELETE')
+                                                        //     <button type="submit"> <i
+                                                        //             class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                        // </form>
+                                                    @endif
+                                                @endcan
+                                            </div>
+                                        </td>
+                                `)
+                        }
+                    }
+
+                }
+            })
+        })
+    </script>
 @endsection

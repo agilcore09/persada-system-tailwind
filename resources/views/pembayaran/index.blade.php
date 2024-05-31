@@ -206,14 +206,11 @@
 
 
                         </div>
-                        @if (
-                            (request()->tanggal1 == null && request()->tanggal2 == null) ||
-                                request()->tanggal1 == null ||
-                                request->tanggal2 == null)
+                        {{-- @if ((request()->tanggal1 == null && request()->tanggal2 == null) || request()->tanggal1 == null || request->tanggal2 == null)
                             <div class="container my-5 px-5">
                                 {{ $data->links() }}
                             </div>
-                        @endif
+                        @endif --}}
 
                     </div>
                 </section>

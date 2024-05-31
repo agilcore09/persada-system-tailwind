@@ -22,7 +22,7 @@ class PembayaranController extends Controller
         $kelas_siswa = DB::table('type')->get();
 
         // mencari berdasarkan nama sisa
-        if ($request->search != null) {
+        if (!is_null($request->search)) {
             $data = DB::table('siswa')
                 ->join('category', 'siswa.category_id', 'category.id')
                 ->join('type', 'siswa.type_id', 'type.id')
@@ -39,7 +39,7 @@ class PembayaranController extends Controller
         }
 
         // mengorder by tanggal
-        if ($request->tanggal1 && $request->tanggal2 != null) {
+        else if ($request->tanggal1 && $request->tanggal2 != null) {
             $data = DB::table("siswa")
                 ->join('category', 'siswa.category_id', 'category.id')
                 ->join('type', 'siswa.type_id', 'type.id')
@@ -53,10 +53,10 @@ class PembayaranController extends Controller
                 "message" => "berhasil tangkap",
                 "success" => true
             ]);
+        } else {
+            // menampilkan semuanya
+            $data = PembayaranModel::orderBy('pembayaran.tanggal_bayar', 'DESC')->paginate(10);
         }
-
-        // menampilkan semuanya
-        $data = PembayaranModel::orderBy('pembayaran.tanggal_bayar', 'DESC')->paginate(10);
 
         return view('pembayaran.index', compact("nama_siswa", "nama_jurusan", "kelas_siswa", "data"));
     }

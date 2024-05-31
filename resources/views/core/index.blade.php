@@ -56,45 +56,45 @@
                     if (search != "" || search != null || search != empty) {
                         for (const datas of data) {
                             tbody.append(`
-                                           <tr class="text-gray-700 text-center">
-                                            <td class="px-4 py-3 text-ms border">
-                                            ${datas.tanggal_bayar}
-                                            </td>
-                                            <td class="px-4 py-3 text-ms border">
-                                              ${datas.nama_siswa}
-                                            </td>
-                                            <td class="px-4 py-3 text-ms border">
-                                               ${datas.kelas}
-                                            </td>
-                                            <td class="px-4 py-3 text-ms border">${datas.nis}</td>
-                                            <td class="px-4 py-3 text-ms border">${datas.nisn}</td>
-                                            <td class="px-4 py-3 text-ms border">
-                                               ${datas.nama_jurusan}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.pembangunan}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.tunggakan}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.spp}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.osis}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.semester_ganjil}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.semester_genap}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.psg}</td>
-                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
-                                            <td class="px-4 py-3 text-ms border">${datas.keterangan}</td>
-                                            <td class="px-4 py-3 text-ms border">
-                                                <div class="flex justify-center">
-                                                    <a href="/pembayaran/${datas.id}/edit"><i
-                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="/pembayaran/${datas.id}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"> <i
-                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        `)
+                                       <tr class="text-gray-700 text-center">
+                                        <td class="px-4 py-3 text-ms border">
+                                        ${datas.tanggal_bayar}
+                                        </td>
+                                        <td class="px-4 py-3 text-ms border">
+                                          ${datas.nama_siswa}
+                                        </td>
+                                        <td class="px-4 py-3 text-ms border">
+                                           ${datas.kelas}
+                                        </td>
+                                        <td class="px-4 py-3 text-ms border">${datas.nis}</td>
+                                        <td class="px-4 py-3 text-ms border">${datas.nisn}</td>
+                                        <td class="px-4 py-3 text-ms border">
+                                           ${datas.nama_jurusan}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.pembangunan}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.tunggakan}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.spp}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.osis}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.semester_ganjil}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.semester_genap}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.psg}</td>
+                                        <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
+                                        <td class="px-4 py-3 text-ms border">${datas.keterangan}</td>
+                                        <td class="px-4 py-3 text-ms border">
+                                            <div class="flex justify-center">
+                                                <a href="/pembayaran/${datas.id}/edit"><i
+                                                        class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                <form action="/pembayaran/${datas.id}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"> <i
+                                                            class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    `)
                         }
                     }
 
@@ -123,30 +123,30 @@
                     if (search != "" || search != null || search != empty) {
                         for (const datas of data) {
                             tbody.append(`
-                                           <tr class="text-gray-700 text-center">
-                                            
-                                            <td class="px-4 py-3 text-ms border">
-                                              ${datas.name}
-                                            </td>
-                                            <td class="px-4 py-3 text-ms border">
-                                               ${datas.email}
-                                            </td>
-                                           
-                                            <td class="px-4 py-3 text-ms border">
-                                                <div class="flex justify-center">
-                                                    <a href="/data-guru/${datas.id}/edit"><i
-                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="/data-guru/${datas.id}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"> <i
-                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        `)
+                                       <tr class="text-gray-700 text-center">
+
+                                        <td class="px-4 py-3 text-ms border">
+                                          ${datas.name}
+                                        </td>
+                                        <td class="px-4 py-3 text-ms border">
+                                           ${datas.email}
+                                        </td>
+
+                                        <td class="px-4 py-3 text-ms border">
+                                            <div class="flex justify-center">
+                                                <a href="/data-guru/${datas.id}/edit"><i
+                                                        class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                <form action="/data-guru/${datas.id}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"> <i
+                                                            class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    `)
                         }
                     }
 
@@ -154,7 +154,7 @@
             })
         })
 
-        // jika tombol rekap by tanggal di bagian pembayaran di tekan
+        // // jika tombol rekap by tanggal di bagian pembayaran di tekan
         $('#tanggal1, #tanggal2').on("change", () => {
             const tanggal1 = $('#tanggal1').val();
             const tanggal2 = $('#tanggal2').val();
@@ -175,45 +175,45 @@
 
                         for (const datas of data) {
                             tbody.append(`
-                                                            <tr class="text-gray-700 text-center">
-                                                                <td class="px-4 py-3 text-ms border">
-                                                                ${datas.tanggal_bayar}
-                                                                </td>
-                                                                <td class="px-4 py-3 text-ms border">
-                                                                ${datas.nama_siswa}
-                                                                </td>
-                                                                <td class="px-4 py-3 text-ms border">
-                                                                ${datas.kelas}
-                                                                </td>
-                                                                <td class="px-4 py-3 text-ms border">${datas.nis}</td>
-                                                                <td class="px-4 py-3 text-ms border">${datas.nisn}</td>
-                                                                <td class="px-4 py-3 text-ms border">
-                                                                ${datas.nama_jurusan}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.pembangunan}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.tunggakan}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.spp}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.osis}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.semester}</td>
-                                
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.psg}</td>
-                                                                <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
-                                                                <td class="px-4 py-3 text-ms border">${datas.keterangan}</td>
-                                                                <td class="px-4 py-3 text-ms border">
-                                                                    <div class="flex justify-center">
-                                                                        <a href="/pembayaran/${datas.id}/edit"><i
-                                                                                class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                                        <form action="/pembayaran/${datas.id}"
-                                                                            method="POST">
-                                                                            @csrf
-                                                                            @method('DELETE')
-                                                                            <button type="submit"> <i
-                                                                                    class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                                        </form>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                    `)
+                                                        <tr class="text-gray-700 text-center">
+                                                            <td class="px-4 py-3 text-ms border">
+                                                            ${datas.tanggal_bayar}
+                                                            </td>
+                                                            <td class="px-4 py-3 text-ms border">
+                                                            ${datas.nama_siswa}
+                                                            </td>
+                                                            <td class="px-4 py-3 text-ms border">
+                                                            ${datas.kelas}
+                                                            </td>
+                                                            <td class="px-4 py-3 text-ms border">${datas.nis}</td>
+                                                            <td class="px-4 py-3 text-ms border">${datas.nisn}</td>
+                                                            <td class="px-4 py-3 text-ms border">
+                                                            ${datas.nama_jurusan}</td>
+                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.pembangunan}</td>
+                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.tunggakan}</td>
+                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.spp}</td>
+                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
+                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.osis}</td>
+                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.semester}</td>
+
+                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.psg}</td>
+                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
+                                                            <td class="px-4 py-3 text-ms border">${datas.keterangan}</td>
+                                                            <td class="px-4 py-3 text-ms border">
+                                                                <div class="flex justify-center">
+                                                                    <a href="/pembayaran/${datas.id}/edit"><i
+                                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                                    <form action="/pembayaran/${datas.id}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit"> <i
+                                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                                    </form>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                `)
                         }
                     }
                 }
@@ -242,100 +242,30 @@
                     if (search != "" || search != null || search != empty) {
                         for (const datas of data) {
                             tbody.append(`
-                            <td class="px-4 py-3 text-ms border"> ${datas.nama_barang} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.kode_alat} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.tanggal_masuk} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.sumber} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.lokasi} </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.status} </td>
-                                            <td class="px-4 py-3 text-ms border">
-                                                ${datas . gambar}
-                                            </td>
-                                            <td class="px-4 py-3 text-ms border">
-                                                <div class="flex justify-center">
-                                                    <a
-                                                        href="/kelola-inventaris/${datas.kode_alat}/edit"><i
-                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                    <form action="/kelola-inventaris/${datas.kode_alat}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"> <i
-                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                    `)
-                        }
-                    }
-
-                }
-            })
-        })
-
-        // cari nama peminjaman
-        $('#peminjam').on('input', () => {
-            let search = $('#peminjam').val();
-
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url: `/kelola-peminjaman?peminjam=${search}`,
-                type: 'GET',
-                contentType: false,
-                processData: false,
-                success: function(response) {
-
-                    const tbody = $('#tbody');
-                    const data = response.data;
-                    console.log(data);
-                    tbody.empty()
-
-                    if (search != "" || search != null || search != empty) {
-                        for (const datas of data) {
-                            tbody.append(`
-                            <td class="px-4 py-3 text-ms border">
-                                                 ${datas.nama_lengkap}
-                                            </td>
-                                            <td class="px-4 py-3 text-ms border">
-                                               ${datas.kelas }
-                                            </td>
-                                            <td class="px-4 py-3 text-ms border">
-                                               ${datas.nama_barang }
-                                            </td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.kode_barang }</td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.keperluan }</td>
-                                            <td class="px-4 py-3 text-ms border">
-                                               ${datas.tanggal_peminjaman }</td>
-                                            <td class="px-4 py-3 text-ms border">
-                                               ${datas.status }</td>
-                                            <td class="px-4 py-3 text-ms border"> ${datas.updated_at }</td>
-                                            <td class="px-4 py-3 text-ms border">
-                                                <div class="flex justify-center">
-                                                    @can('isAdmin')
-                                                        @if ($item->status == 'Di Pinjam')
-                                                            <form action="kelola-peminjaman/${datas.id}"
-                                                                method="post">
-                                                                @csrf
-                                                                @method('PUT')
-                                                                <button type="submit"> <i
-                                                                        class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></button>
-                                                            </form>
-                                                        @endif
-                                                        @if ($item->status == 'Di Kembalikan')
-                                                            <form action="kelola-peminjaman/${datas.id}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit"> <i
-                                                                        class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                            </form>
-                                                        @endif
-                                                    @endcan
-                                                </div>
-                                            </td>
-                                    `)
+                        <td class="px-4 py-3 text-ms border"> ${datas.nama_barang} </td>
+                                        <td class="px-4 py-3 text-ms border"> ${datas.kode_alat} </td>
+                                        <td class="px-4 py-3 text-ms border"> ${datas.tanggal_masuk} </td>
+                                        <td class="px-4 py-3 text-ms border"> ${datas.sumber} </td>
+                                        <td class="px-4 py-3 text-ms border"> ${datas.lokasi} </td>
+                                        <td class="px-4 py-3 text-ms border"> ${datas.status} </td>
+                                        <td class="px-4 py-3 text-ms border">
+                                            ${datas . gambar}
+                                        </td>
+                                        <td class="px-4 py-3 text-ms border">
+                                            <div class="flex justify-center">
+                                                <a
+                                                    href="/kelola-inventaris/${datas.kode_alat}/edit"><i
+                                                        class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                <form action="/kelola-inventaris/${datas.kode_alat}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"> <i
+                                                            class="fa-solid fa-trash text-red-600 ml-1"></i></button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                `)
                         }
                     }
 
@@ -343,6 +273,8 @@
             })
         })
     </script>
+
+    @yield('scripts')
 
 
 
