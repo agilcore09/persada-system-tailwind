@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    @vite('resources/css/app.css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="description" content="SMK PERSADA MAKASSAR">
+    <meta name="keywords" content="SMK PERSADA MAKASSAR">
+
+
+    <meta property="og:title" content="SMK PERSADA MAKASSAR" />
+    <meta property="og:description"
+        content="SMK PERSADA adalah sekolah kejuruan yang memiliki 2 jurusan yaitu TKJ (Teknik Komputer Jaringan) dan TKR (Teknik Kendaraan Ringan)" />
+    <link href="{{ asset('img/bg.png') }}" rel="stylesheet">
+
     <title>SMK PERSADA</title>
 </head>
 <style>

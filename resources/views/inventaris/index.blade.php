@@ -313,7 +313,6 @@
                             <select id="keperluan" name="keperluan" autocomplete="off" required
                                 class="rounded-lg keperluan border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
                                 <option value="">Pilih Keperluan</option>
-                                <option value="Berita">Berita</option>
                                 <option value="Inventaris">Inventaris</option>
                             </select>
                         </div>
