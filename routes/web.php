@@ -12,9 +12,7 @@ use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth', 'verified')->group(function () {
-    Route::get('/home', function () {
-        return view('core.dashboard');
-    });
+    Route::get('/home', [LandingPageController::class, 'Dashboard']);
     Route::resource('/data-siswa', SiswaController::class);
     Route::get('/data-siswa/profile/{nis}', [SiswaController::class, 'ShowProfile']);
     Route::get('/tagihan/{nis}', [SiswaController::class, 'ShowTagihan']);

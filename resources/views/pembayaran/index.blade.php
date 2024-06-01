@@ -248,7 +248,6 @@
                                             {{ $item->nama_siswa }} || {{ $item->nis }} || {{ $item->nisn }}
                                         </option>
                                     @endforeach
-
                                 </select>
                             </div>
                         </div>

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PembayaranModel;
+use App\Models\PendaftaranModel;
+use App\Models\SiswaModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -30,5 +34,15 @@ class LandingPageController extends Controller
         $title = " Tentang Kami";
         $body = "Jelajahi Dunia Pendidikan yang Dinamis & Inovatif Bersama SMK Persada Makassar";
         return view('landing.about', compact("title", "body"));
+    }
+
+    public function Dashboard()
+    {
+        $pembayaran = PembayaranModel::all()->count();
+        $totalSiswa = SiswaModel::all()->count();
+        $pendaftar = PendaftaranModel::all()->count();
+        $guru = User::where('role_id', 2)->count();
+
+        return view('core.dashboard', compact("pembayaran", "totalSiswa", "pendaftar", "guru"));
     }
 }
