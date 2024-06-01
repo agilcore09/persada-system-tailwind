@@ -16,15 +16,23 @@ class PeminjamanController extends Controller
      */
     public function index(Request $request)
     {
-        if (is_null($request->peminjam)) {
-            $data = PeminjamanModel::paginate(10);
-        } else {
+        if (!is_null($request->peminjam)) {
             $data = PeminjamanModel::where('nama_lengkap', 'like', '%' .  $request->peminjam . '%')->get();
             return response()->json([
                 "data" => $data,
                 "message" => "berhasil tangkap",
                 "success" => true
             ]);
+        } else if (!is_null($request->tanggal1) && !is_null($request->tanggal2)) {
+
+            $data = PeminjamanModel::whereBetween('tanggal_peminjaman', [$request->tanggal1, $request->tanggal2])->get();
+            return response()->json([
+                "data" => $data,
+                "message" => "berhasil Menangkap Data",
+                "success" => true
+            ]);
+        } else {
+            $data = PeminjamanModel::paginate(10);
         }
 
         return view('peminjaman.index', compact("data"));
