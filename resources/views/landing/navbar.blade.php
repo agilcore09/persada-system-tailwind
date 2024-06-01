@@ -57,16 +57,16 @@
                     </li>
                     <li
                         class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
-                        <a href="" class="px-5 py-5">Exam
+                        <a href="{{ url('https://exam.persadaict.sch.id/admin/login.php') }}" class="px-5 py-5">Exam
                             Persada</a>
                     </li>
                     <li
                         class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
-                        <a href="" class="px-5 py-5">Ujian</a>
+                        <a href="{{ url('https://ujian.persadaict.sch.id/') }}" class="px-5 py-5">Ujian</a>
                     </li>
                     <li
                         class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
-                        <a href="" class="px-5 py-5">Virtual
+                        <a href="{{ url('https://labs.persadaict.sch.id/') }}" class="px-5 py-5">Virtual
                             Lab</a>
                     </li>
                 </ul>
