@@ -34,13 +34,9 @@ Route::middleware('auth')->group(function () {
 
 // landing routes
 Route::get('/', [LandingPageController::class, 'homePage']);
-
-
-
 Route::get('/peminjaman', [PeminjamanController::class, 'formPeminjaman']);
 Route::post('/peminjaman', [PeminjamanController::class, 'prosesFormPeminjaman']);
 Route::get('/about', [LandingPageController::class, 'aboutPage']);
-Route::get('/berita', [LandingPageController::class, 'beritaPage']);
 Route::get('/contact-us', [LandingPageController::class, 'contactPage']);
 
 

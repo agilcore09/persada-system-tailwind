@@ -90,23 +90,29 @@
             </div>
             <div class="col-span-10">
                 <div class="grid md:grid-cols-12 grid-cols-12">
-                    <div class="col-span-12 md:col-span-4 md:mx-2 my-5 shadow hover:border-none " data-aos="fade-up">
-                        <div class="grid grid-cols-12 md:col-span-6">
-                            <div class="col-span-12 icons flex justify-center">
-                                <img src="{{ asset('img/example.jpg') }}" alt="tkj"
-                                    class="w-full h-96 object-cover rounded-md hover:grayscale">
-                            </div>
-                            <div class="col-span-12 md:col-span-12 md:flex md:justify-center ">
-                                <div class="py-3">
-                                    <h3
-                                        class="px-3 md:px-0 text-blue-950 font-bold text-md md:text-xl font-body text-center">
-                                        Marsha Lanathea Lapian</h3>
-                                    <p class="text-center">Guru Teknik Komputer Jaringan</p>
+                    @foreach ($data as $item)
+                        <div class="col-span-12 md:col-span-4 md:mx-2 my-5 shadow hover:border-none " data-aos="fade-up">
+
+
+                            <div class="grid grid-cols-12 md:col-span-6">
+                                <div class="col-span-12 icons flex justify-center">
+                                    <img src="{{ asset('img/example.jpg') }}" alt="tkj"
+                                        class="w-full h-96 object-cover rounded-md hover:grayscale">
+                                </div>
+                                <div class="col-span-12 md:col-span-12 md:flex md:justify-center ">
+                                    <div class="py-3">
+                                        <h3
+                                            class="px-3 md:px-0 text-blue-950 font-bold text-md md:text-xl font-body text-center">
+                                            {{ $item['nama'] }}</h3>
+                                        <p class="text-center">{{ $item['job'] }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
+
+
+                        </div>
+                    @endforeach
 
 
                 </div>

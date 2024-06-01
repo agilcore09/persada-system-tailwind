@@ -20,10 +20,14 @@
                     <li class="mx-3 text-md text-white hover:text-slate-400"><a
                             href="{{ url('/about') }}#about">About</a>
                     </li>
-                    <li class="mx-3 text-md text-white hover:text-slate-400"><a href="">Contact Us</a></li>
-                    <li class="mx-3 text-md text-white hover:text-slate-400"><a href="">Exam Persada</a></li>
-                    <li class="mx-3 text-md text-white hover:text-slate-400"><a href="">Ujian</a></li>
-                    <li class="mx-3 text-md text-white hover:text-slate-400"><a href="">Virtual Lab</a></li>
+                    <li class="mx-3 text-md text-white hover:text-slate-400"><a href="{{ url('/contact-us') }}">Contact
+                            Us</a></li>
+                    <li class="mx-3 text-md text-white hover:text-slate-400"><a
+                            href="{{ url('https://exam.persadaict.sch.id/admin/login.php') }}">Exam Persada</a></li>
+                    <li class="mx-3 text-md text-white hover:text-slate-400"><a
+                            href="{{ url('https://ujian.persadaict.sch.id/') }}">Ujian</a></li>
+                    <li class="mx-3 text-md text-white hover:text-slate-400"><a
+                            href="{{ url('https://labs.persadaict.sch.id/') }}">Virtual Lab</a></li>
                 </ul>
             </div>
 
@@ -48,7 +52,7 @@
                     </li>
                     <li
                         class="w-full py-5 border border-y-slate-300 border-x-0 text-sm px-5 text-white hover:bg-blue-500 text-center">
-                        <a href="{{ url('/contact') }}" class="px-5 py-5">Contact
+                        <a href="{{ url('/contact-us') }}" class="px-5 py-5">Contact
                             Us</a>
                     </li>
                     <li
