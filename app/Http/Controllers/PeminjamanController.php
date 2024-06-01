@@ -23,16 +23,16 @@ class PeminjamanController extends Controller
                 "message" => "berhasil tangkap",
                 "success" => true
             ]);
-        } else if (!is_null($request->tanggal1) && !is_null($request->tanggal2)) {
+        } else if (!is_null($request->tanggals1) && !is_null($request->tanggals2)) {
 
-            $data = PeminjamanModel::whereBetween('tanggal_peminjaman', [$request->tanggal1, $request->tanggal2])->get();
+            $data = PeminjamanModel::whereBetween('tanggal_peminjaman', [$request->tanggals1, $request->tanggals2])->get();
             return response()->json([
                 "data" => $data,
                 "message" => "berhasil Menangkap Data",
                 "success" => true
             ]);
         } else {
-            $data = PeminjamanModel::paginate(10);
+            $data = PeminjamanModel::paginate(20);
         }
 
         return view('peminjaman.index', compact("data"));

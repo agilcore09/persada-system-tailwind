@@ -66,11 +66,11 @@
                 <div>
                     <form action="" class="ml-3 mx-auto flex">
                         <div class="mr-1">
-                            <input type="date" id="tanggal1" name="tanggal1"
+                            <input type="date" id="tanggals1" name="tanggals1"
                                 class="w-full px-4 py-2 border border-gray-900 rounded-md shadow-sm focus:outline-none focus:border-blue-900 focus:ring focus:ring-blue-200">
                         </div>
                         <div class="ml-1">
-                            <input type="date" id="tanggal2" name="tanggal2"
+                            <input type="date" id="tanggals2" name="tanggals2"
                                 class="w-full px-4 py-2 border border-gray-900 rounded-md shadow-sm focus:outline-none focus:border-blue-900 focus:ring focus:ring-blue-200">
 
                         </div>
@@ -139,7 +139,7 @@
                                         <th class="px-20 py-3">Tanggal Peminjaman</th>
                                         <th class="px-20 py-3">Status</th>
                                         <th class="px-20 py-3">Tanggal Pengembalian</th>
-                                        <th class="px-20 py-3">Action</th>
+                                        {{-- <th class="px-20 py-3">Action</th> --}}
                                     </tr>
                                 </thead>
 
@@ -162,30 +162,7 @@
                                             <td class="px-4 py-3 text-ms border">
                                                 {{ $item->status }}</td>
                                             <td class="px-4 py-3 text-ms border">{{ $item->updated_at }}</td>
-                                            <td class="px-4 py-3 text-ms border">
-                                                <div class="flex justify-center">
-                                                    {{-- @can('isAdmin')
-                                                        @if ($item->status == 'Di Pinjam')
-                                                            <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
-                                                                method="post">
-                                                                @csrf
-                                                                @method('PUT')
-                                                                <button type="submit"> <i
-                                                                        class="fa-solid fa-handshake-simple text-green-500 mr-1  "></i></button>
-                                                            </form>
-                                                        @endif
-                                                        @if ($item->status == 'Di Kembalikan')
-                                                            <form action="{{ url('/kelola-peminjaman' . '/' . $item->id) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit"> <i
-                                                                        class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                            </form>
-                                                        @endif
-                                                    @endcan --}}
-                                                </div>
-                                            </td>
+
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -233,6 +210,7 @@
                     if (search != "" || search != null || search != empty) {
                         for (const datas of data) {
                             tbody.append(`
+                            <tr class="text-gray-700 text-center"> 
                         <td class="px-4 py-3 text-ms border">
                                              ${datas.nama_lengkap}
                                         </td>
@@ -249,13 +227,10 @@
                                         <td class="px-4 py-3 text-ms border">
                                            ${datas.status }</td>
                                         <td class="px-4 py-3 text-ms border"> ${datas.updated_at }</td>
-                                        <td class="px-4 py-3 text-ms border">
-                                            <div class="flex justify-center">
-                                               
-                                               
-                                            </div>
-                                        </td>
+                                       
+                                    </tr>       
                                 `)
+
                         }
                     }
 
@@ -264,20 +239,21 @@
         })
 
         // cari peminjaman berdasarkan tanggal
-        $('#tanggal1, #tanggal2').on("change", () => {
-            const tanggal1 = $('#tanggal1').val();
-            const tanggal2 = $('#tanggal2').val();
+        $('#tanggals1, #tanggals2').on("change", () => {
+            const tanggal1 = $('#tanggals1').val();
+            const tanggal2 = $('#tanggals2').val();
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                url: `/kelola-peminjaman?tanggal1=${tanggal1}&&tanggal2=${tanggal2}`,
+                url: `/kelola-peminjaman?tanggals1=${tanggal1}&&tanggals2=${tanggal2}`,
                 type: 'GET',
                 contentType: false,
                 processData: false,
                 success: function(response) {
                     const tbody = $('#tbody');
                     const data = response.data;
+                    console.log(data);
                     tbody.empty();
 
                     if (tanggal1 != null && tanggal2 != null) {
@@ -286,41 +262,23 @@
                             tbody.append(`
                                                         <tr class="text-gray-700 text-center">
                                                             <td class="px-4 py-3 text-ms border">
-                                                            ${datas.tanggal_bayar}
+                                                            ${datas.nama_lengkap}
                                                             </td>
                                                             <td class="px-4 py-3 text-ms border">
-                                                            ${datas.nama_siswa}
+                                                            ${datas.kelas       }
                                                             </td>
                                                             <td class="px-4 py-3 text-ms border">
-                                                            ${datas.kelas}
+                                                            ${datas.nama_barang}
                                                             </td>
-                                                            <td class="px-4 py-3 text-ms border">${datas.nis}</td>
-                                                            <td class="px-4 py-3 text-ms border">${datas.nisn}</td>
+                                                            <td class="px-4 py-3 text-ms border">${datas.kode_barang}</td>
+                                                            <td class="px-4 py-3 text-ms border">${datas.keperluan}</td>
                                                             <td class="px-4 py-3 text-ms border">
-                                                            ${datas.nama_jurusan}</td>
-                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.pembangunan}</td>
-                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.tunggakan}</td>
-                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.spp}</td>
-                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
-                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.osis}</td>
-                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.semester}</td>
-
-                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.psg}</td>
-                                                            <td class="px-4 py-3 text-ms border">Rp. ${datas.lab}</td>
-                                                            <td class="px-4 py-3 text-ms border">${datas.keterangan}</td>
-                                                            <td class="px-4 py-3 text-ms border">
-                                                                <div class="flex justify-center">
-                                                                    <a href="/pembayaran/${datas.id}/edit"><i
-                                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
-                                                                    <form action="/pembayaran/${datas.id}"
-                                                                        method="POST">
-                                                                        @csrf
-                                                                        @method('DELETE')
-                                                                        <button type="submit"> <i
-                                                                                class="fa-solid fa-trash text-red-600 ml-1"></i></button>
-                                                                    </form>
-                                                                </div>
-                                                            </td>
+                                                            ${datas.tanggal_peminjaman}</td>
+                                                            <td class="px-4 py-3 text-ms border"> ${datas.status}</td>
+                                                            <td class="px-4 py-3 text-ms border"> ${datas.updated_at}</td>
+                                                    
+                                                              
+                                                           
                                                         </tr>
                                 `)
                         }
