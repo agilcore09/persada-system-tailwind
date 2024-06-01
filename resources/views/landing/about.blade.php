@@ -96,8 +96,8 @@
 
                             <div class="grid grid-cols-12 md:col-span-6">
                                 <div class="col-span-12 icons flex justify-center">
-                                    <img src="{{ asset('img/example.jpg') }}" alt="tkj"
-                                        class="w-full h-96 object-cover rounded-md hover:grayscale">
+                                    <img src="{{ $item['img'] == null ? asset('img/gambar2.jpeg') : asset('img/' . $item['img']) }} "
+                                        alt="tkj" class="w-full h-96 object-cover rounded-md hover:grayscale">
                                 </div>
                                 <div class="col-span-12 md:col-span-12 md:flex md:justify-center ">
                                     <div class="py-3">
