@@ -1,36 +1,38 @@
 <?php
-function Terbilang($nilai) {
-        $huruf = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas");
-        if($nilai==0){
-            return "Kosong";
-        }elseif ($nilai < 12&$nilai!=0) {
-            return "" . $huruf[$nilai];
-        } elseif ($nilai < 20) {
-            return Terbilang($nilai - 10) . " Belas ";
-        } elseif ($nilai < 100) {
-            return Terbilang($nilai / 10) . " Puluh " . Terbilang($nilai % 10);
-        } elseif ($nilai < 200) {
-            return " Seratus " . Terbilang($nilai - 100);
-        } elseif ($nilai < 1000) {
-            return Terbilang($nilai / 100) . " Ratus " . Terbilang($nilai % 100);
-        } elseif ($nilai < 2000) {
-            return " Seribu " . Terbilang($nilai - 1000);
-        } elseif ($nilai < 1000000) {
-            return Terbilang($nilai / 1000) . " Ribu " . Terbilang($nilai % 1000);
-        } elseif ($nilai < 1000000000) {
-            return Terbilang($nilai / 1000000) . " Juta " . Terbilang($nilai % 1000000);
-        }elseif ($nilai < 1000000000000) {
-            return Terbilang($nilai / 1000000000) . " Milyar " . Terbilang($nilai % 1000000000);
-        }elseif ($nilai < 100000000000000) {
-            return Terbilang($nilai / 1000000000000) . " Trilyun " . Terbilang($nilai % 1000000000000);
-        }elseif ($nilai <= 100000000000000) {
-            return "Maaf Tidak Dapat di Prose Karena Jumlah nilai Terlalu Besar ";
-        }
+function Terbilang($nilai)
+{
+    $huruf = ['', 'Satu', 'Dua', 'Tiga', 'Empat', 'Lima', 'Enam', 'Tujuh', 'Delapan', 'Sembilan', 'Sepuluh', 'Sebelas'];
+    if ($nilai == 0) {
+        return 'Kosong';
+    } elseif (($nilai < 12) & ($nilai != 0)) {
+        return '' . $huruf[$nilai];
+    } elseif ($nilai < 20) {
+        return Terbilang($nilai - 10) . ' Belas ';
+    } elseif ($nilai < 100) {
+        return Terbilang($nilai / 10) . ' Puluh ' . Terbilang($nilai % 10);
+    } elseif ($nilai < 200) {
+        return ' Seratus ' . Terbilang($nilai - 100);
+    } elseif ($nilai < 1000) {
+        return Terbilang($nilai / 100) . ' Ratus ' . Terbilang($nilai % 100);
+    } elseif ($nilai < 2000) {
+        return ' Seribu ' . Terbilang($nilai - 1000);
+    } elseif ($nilai < 1000000) {
+        return Terbilang($nilai / 1000) . ' Ribu ' . Terbilang($nilai % 1000);
+    } elseif ($nilai < 1000000000) {
+        return Terbilang($nilai / 1000000) . ' Juta ' . Terbilang($nilai % 1000000);
+    } elseif ($nilai < 1000000000000) {
+        return Terbilang($nilai / 1000000000) . ' Milyar ' . Terbilang($nilai % 1000000000);
+    } elseif ($nilai < 100000000000000) {
+        return Terbilang($nilai / 1000000000000) . ' Trilyun ' . Terbilang($nilai % 1000000000000);
+    } elseif ($nilai <= 100000000000000) {
+        return 'Maaf Tidak Dapat di Prose Karena Jumlah nilai Terlalu Besar ';
     }
+}
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <style>
         body {
@@ -59,10 +61,10 @@ function Terbilang($nilai) {
             margin: 0;
         }
 
-       
+
 
         .receipt-info table {
-          
+
             width: 100%;
             border-collapse: collapse;
         }
@@ -120,24 +122,22 @@ function Terbilang($nilai) {
             margin: 7px auto;
         }
 
-        .no-border-top
-        {
+        .no-border-top {
             border-top: none !important;
         }
 
-        .no-border-bottom
-        {
+        .no-border-bottom {
             border-bottom: none !important;
 
         }
 
-        .px-5
-        {
+        .px-5 {
             padding-right: 10px;
             padding-left: 10px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -151,7 +151,7 @@ function Terbilang($nilai) {
                         <td>Nama:</td>
                         <td>{{ $data->nama_siswa }}</td>
                         <td>Kelas:</td>
-                        <td>{{ $data->kelas }} {{ $data ->nama_jurusan }}</td>
+                        <td>{{ $data->kelas }} {{ $data->nama_jurusan }}</td>
                     </tr>
                     <tr>
                         <td>NIS:</td>
@@ -165,9 +165,9 @@ function Terbilang($nilai) {
                 <table>
                     <tr>
                         <td class="text-right">1. SPP : Rp.{{ $data->spp }}</td>
-                        <td>{{ $data->keterangan_spp }}</td>
-                        <td>5. PSG : Rp.{{ $data->psg }}  </td>
-                        <td>{{ $data->keterangan_spp }}</td>
+                        <td>{{ $data->keterangan_spp }}asjdakjskdjkasjkdjkjaskjdkajskdjkajdkjaskjdkjsakd</td>
+                        <td>5. PSG : Rp.{{ $data->psg }} </td>
+                        <td>{{ $data->keterangan_spp }} ooiodisoidoisodiosiodioisodiosidosd</td>
                     </tr>
                     <tr>
                         <td class="text-right">2. LAB : Rp. {{ $data->lab }}</td>
@@ -192,35 +192,41 @@ function Terbilang($nilai) {
             <div class="total">
                 <table>
                     <tr>
-                        <?php  $total = (int)$data->spp + (int)$data->lab + (int)$data->osis + (int)$data->semester + (int)$data->psg + (int)$data->ukk + (int)$data->pembangunan + (int)$data->alumni ?>
+                        <?php $total = (int) $data->spp + (int) $data->lab + (int) $data->osis + (int) $data->semester + (int) $data->psg + (int) $data->ukk + (int) $data->pembangunan + (int) $data->alumni; ?>
 
                         <td>
-                            <p style=" text-align:center;" class="px-5">Jumlah    </p>
+                            <p style=" text-align:center;" class="px-5">Jumlah </p>
                         </td>
-                        <td style="text-align: left; width:300px !important; padding-left: 5px;"> : Rp. {{ number_format($total, 0, ',', '.') }}</td>
+                        <td style="text-align: left; width:300px !important; padding-left: 5px;"> : Rp.
+                            {{ number_format($total, 0, ',', '.') }}</td>
 
-                        <td style="text-align: center" colspan="2" class="fw-bold no-border-bottom" style="width: 700px !important;">
+                        <td style="text-align: center" colspan="2" class="fw-bold no-border-bottom"
+                            style="width: 700px !important;">
                             <p style="text-align: center;" class="no-border-bottom">Guru</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p style="text-align: center !important;">Terbilang     </p>
+                            <p style="text-align: center !important;">Terbilang </p>
                         </td>
 
-                        <td style="text-align: left; width:300px !important; padding-left: 5px;"> : {{ Terbilang($total) }}</td>
+                        <td style="text-align: left; width:300px !important; padding-left: 5px;"> :
+                            {{ Terbilang($total) }}</td>
 
                         <td colspan="2" class="no-border-bottom no-border-top"></td>
                     </tr>
-                   
+
                     <tr>
-                        <td><p style="text-align: center; font-weight:bold;">NO : {{ $data->siswa_id }}</p></td>
                         <td>
-                        <p style="text-align: left; padding-left: 5px;">Di cetak pada : {{ $dateNow->toDateString() }}</p>    
+                            <p style="text-align: center; font-weight:bold;">NO : {{ $data->siswa_id }}</p>
+                        </td>
+                        <td>
+                            <p style="text-align: left; padding-left: 5px;">Di cetak pada :
+                                {{ $dateNow->toDateString() }}</p>
                         </td>
 
                         <td style="text-align: center; " colspan="2" class="no-border-top">
-                            <p class="fw-bold">{{ auth()->user()->name }}</p> 
+                            <p class="fw-bold">{{ auth()->user()->name }}</p>
                         </td>
                     </tr>
                 </table>
@@ -229,11 +235,11 @@ function Terbilang($nilai) {
 
     </div>
 
- 
+
 
     <div class="dashed-line"></div>
 
-   
+
 
     <div class="container">
         <div class="header">
@@ -248,7 +254,7 @@ function Terbilang($nilai) {
                         <td>Nama:</td>
                         <td>{{ $data->nama_siswa }}</td>
                         <td>Kelas:</td>
-                        <td>{{ $data->kelas }} {{ $data ->nama_jurusan }}</td>
+                        <td>{{ $data->kelas }} {{ $data->nama_jurusan }}</td>
                     </tr>
                     <tr>
                         <td>NIS:</td>
@@ -265,7 +271,7 @@ function Terbilang($nilai) {
                     <tr>
                         <td class="text-right">1. SPP : Rp.{{ $data->spp }}</td>
                         <td>{{ $data->keterangan_spp }}</td>
-                        <td>5. PSG : Rp.{{ $data->psg }}  </td>
+                        <td>5. PSG : Rp.{{ $data->psg }} </td>
                         <td>{{ $data->keterangan_spp }}</td>
                     </tr>
                     <tr>
@@ -291,36 +297,42 @@ function Terbilang($nilai) {
             <div class="total">
                 <table>
                     <tr>
-                        <?php  $total = (int)$data->spp + (int)$data->lab + (int)$data->osis + (int)$data->semester + (int)$data->psg + (int)$data->ukk + (int)$data->pembangunan + (int)$data->alumni ?>
+                        <?php $total = (int) $data->spp + (int) $data->lab + (int) $data->osis + (int) $data->semester + (int) $data->psg + (int) $data->ukk + (int) $data->pembangunan + (int) $data->alumni; ?>
 
                         <td>
-                            <p style=" text-align:center;" class="px-5">Jumlah    </p>
+                            <p style=" text-align:center;" class="px-5">Jumlah </p>
                         </td>
-                        <td style="text-align: left; width:300px !important; padding-left: 5px;"> : Rp. {{ number_format($total, 0, ',', '.') }}</td>
+                        <td style="text-align: left; width:300px !important; padding-left: 5px;"> : Rp.
+                            {{ number_format($total, 0, ',', '.') }}</td>
 
-                        <td style="text-align: center" colspan="2" class="fw-bold no-border-bottom" style="width: 700px !important;">
+                        <td style="text-align: center" colspan="2" class="fw-bold no-border-bottom"
+                            style="width: 700px !important;">
                             <p style="text-align: center;" class="no-border-bottom">Guru</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p style="text-align: center !important;">Terbilang     </p>
+                            <p style="text-align: center !important;">Terbilang </p>
                         </td>
 
-                        
-                        <td style="text-align: left; width:300px !important; padding-left: 5px;"> : {{ Terbilang($total) }}</td>
+
+                        <td style="text-align: left; width:300px !important; padding-left: 5px;"> :
+                            {{ Terbilang($total) }}</td>
 
                         <td colspan="2" class="no-border-bottom no-border-top"></td>
                     </tr>
-                   
+
                     <tr>
-                        <td><p style="text-align: center; font-weight:bold;">NO : {{ $data->siswa_id }}</p></td>
                         <td>
-                            <p style="text-align: left; padding-left: 5px;">Di cetak pada : {{ $dateNow->toDateString() }}</p>    
-                        </td>  
+                            <p style="text-align: center; font-weight:bold;">NO : {{ $data->siswa_id }}</p>
+                        </td>
+                        <td>
+                            <p style="text-align: left; padding-left: 5px;">Di cetak pada :
+                                {{ $dateNow->toDateString() }}</p>
+                        </td>
 
                         <td style="text-align: center; " colspan="2" class="no-border-top">
-                            <p class="fw-bold">{{ auth()->user()->name }}</p> 
+                            <p class="fw-bold">{{ auth()->user()->name }}</p>
                         </td>
                     </tr>
                 </table>
