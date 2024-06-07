@@ -3,7 +3,7 @@ function Terbilang($nilai)
 {
     $huruf = ['', 'Satu', 'Dua', 'Tiga', 'Empat', 'Lima', 'Enam', 'Tujuh', 'Delapan', 'Sembilan', 'Sepuluh', 'Sebelas'];
     if ($nilai == 0) {
-        return 'Kosong';
+        return '';
     } elseif (($nilai < 12) & ($nilai != 0)) {
         return '' . $huruf[$nilai];
     } elseif ($nilai < 20) {
@@ -165,9 +165,9 @@ function Terbilang($nilai)
                 <table>
                     <tr>
                         <td class="text-right">1. SPP : Rp.{{ $data->spp }}</td>
-                        <td>{{ $data->keterangan_spp }}asjdakjskdjkasjkdjkjaskjdkajskdjkajdkjaskjdkjsakd</td>
+                        <td>{{ $data->keterangan_spp }}</td>
                         <td>5. PSG : Rp.{{ $data->psg }} </td>
-                        <td>{{ $data->keterangan_spp }} ooiodisoidoisodiosiodioisodiosidosd</td>
+                        <td>{{ $data->keterangan_spp }}</td>
                     </tr>
                     <tr>
                         <td class="text-right">2. LAB : Rp. {{ $data->lab }}</td>
