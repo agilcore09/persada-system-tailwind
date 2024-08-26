@@ -17,8 +17,8 @@ class SiswaSeeder extends Seeder
     {
         DB::table('siswa')->insert(
             [
-                "gambar" => "KOBO.jpeg",
-                "nama_siswa" => "Kobo Kanaeru",
+                "gambar" => "siswa.jpg",
+                "nama_siswa" => "Achmad Dzulfikar",
                 "nis" => 222006,
                 "nisn" => 222006,
                 "kelas" => "VII A",
@@ -28,8 +28,8 @@ class SiswaSeeder extends Seeder
         );
         DB::table('siswa')->insert(
             [
-                "gambar" => "jokowi.jpg",
-                "nama_siswa" => "Joko Widodo",
+                "gambar" => "siswa.jpg",
+                "nama_siswa" => "Fahrul Gunawan",
                 "nis" => 222007,
                 "nisn" => 222007,
                 "kelas" => "VII A",
@@ -39,7 +39,7 @@ class SiswaSeeder extends Seeder
         );
         DB::table('siswa')->insert(
             [
-                "gambar" => "marsha.jpg",
+                "gambar" => "siswa.jpg",
                 "nama_siswa" => "Marsha Lanathea Lapian",
                 "nis" => 222008,
                 "nisn" => 222008,
@@ -50,8 +50,8 @@ class SiswaSeeder extends Seeder
         );
         DB::table('siswa')->insert(
             [
-                "gambar" => "bochi.jpg",
-                "nama_siswa" => "bochi",
+                "gambar" => "siswa.jpg",
+                "nama_siswa" => "Ayumi",
                 "nis" => 222009,
                 "nisn" => 222009,
                 "kelas" => "XII",

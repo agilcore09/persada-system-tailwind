@@ -54,6 +54,6 @@ class DatabaseSeeder extends Seeder
             SiswaSeeder::class,
         ]);
 
-        //PembayaranModel::factory()->count(1000)->create();
+       PembayaranModel::factory()->count(1000)->create();
     }
 }
