@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', App\Livewire\Dashboard\Homepage::class);
-    Route::resource('/data-siswa', SiswaController::class);
+    Route::get('/data-siswa', App\Livewire\Dashboard\Siswa::class);
+    // Route::resource('/data-siswa', SiswaController::class);
     Route::get('/data-siswa/profile/{nis}', [SiswaController::class, 'ShowProfile']);
     Route::get('/tagihan/{nis}', [SiswaController::class, 'ShowTagihan']);
     Route::get('/cetak/{nis}', [SiswaController::class, 'nota']);

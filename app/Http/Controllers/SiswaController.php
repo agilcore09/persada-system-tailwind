@@ -26,9 +26,6 @@ class SiswaController extends Controller
         $jurusan = CategoryModel::all();
         $kelasSiswa = TypeModel::all();
         $data = SiswaModel::with(['Category', 'Type'])->get();
-
-
-
         if ($request->all() != null) {
             $data = DB::table('siswa')
                 ->join('category', 'siswa.category_id', 'category.id')
