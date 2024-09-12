@@ -217,14 +217,12 @@
     {{-- end dashboard table view --}}
     {{-- add data modal --}}
     <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4 h-screen hidden">
-        <form method="POST" action="{{ url('data-siswa') }}" enctype="multipart/form-data" id="form-add">
+        <form method="POST" id="form-add" wire:submit="save" wire:ignore.self>
             @csrf
-            @method('POST')
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-base font-semibold leading-7 text-gray-900">Tambah Data data-siswa</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Tambahkan data siswa jika sudah fix menjadi siswa</p>
-
                     {{-- alert section --}}
                     <div class="error-page">
 
@@ -236,7 +234,8 @@
                             <label for="gambar" class="gambar block text-sm font-medium leading-6 text-gray-900">Foto
                                 Siswa </label>
                             <div class="mt-1">
-                                <input type="file" name="gambar" id="gambar" autocomplete="off"
+                                <input type="file" name="gambar" wire:model="gambar" id="gambar"
+                                    autocomplete="off"
                                     class="block w-full rounded-md border-0  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
@@ -244,21 +243,23 @@
                             <label for="nama-siswa" class="block text-sm font-medium leading-6 text-gray-900">Nama
                                 Siswa </label>
                             <div class="mt-1">
-                                <input type="text" name="nama_siswa" id="nama_siswa" autocomplete="off"
+                                <input type="text" name="nama_siswa" wire:model="namaSiswa" id="nama_siswa"
+                                    autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
                         <div class="col-span-full">
                             <label for="nis" class="block text-sm font-medium leading-6 text-gray-900">NIS </label>
                             <div class="mt-1">
-                                <input type="number" name="nis" id="nis" autocomplete="off"
+                                <input type="number" name="nis" wire:model="nis" id="nis" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
                         <div class="col-span-full">
                             <label for="nis" class="block text-sm font-medium leading-6 text-gray-900">NISN </label>
                             <div class="mt-1">
-                                <input type="number" name="nisn" id="nisn" autocomplete="off"
+                                <input type="number" name="nisn" id="nisn" wire:model="nisn"
+                                    autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
@@ -266,7 +267,7 @@
                         <div class="col-span-2">
                             <label for="jurusan" class="block text-sm font-medium leading-6 text-gray-900">Kelas</label>
                             <div class="mt-2">
-                                <select id="kelas" name="kelas" autocomplete="off"
+                                <select id="kelas" wire:model="kelas" name="kelas" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                     <option>Pilih Kelas</option>
 
@@ -287,7 +288,7 @@
                             <label for="jurusan"
                                 class="block text-sm font-medium leading-6 text-gray-900">Jurusan</label>
                             <div class="mt-2">
-                                <select id="category_id" name="category_id" autocomplete="off"
+                                <select id="category_id" wire:model="category" name="category_id" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                     <option>Pilih Jurusan</option>
                                     @foreach ($jurusan as $datas)
@@ -300,7 +301,7 @@
                             <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Kelas
                                 Siswa</label>
                             <div class="mt-2">
-                                <select id="type_id" name="type_id" autocomplete="off"
+                                <select id="type_id" wire:model="type" name="type_id" autocomplete="off"
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                     <option>Pilih Kelas Siswa</option>
                                     @foreach ($kelasSiswa as $datas)
