@@ -36,7 +36,7 @@ return new class extends Migration
             $table->date('tanggal_bayar')->nullable();
             $table->date('tanggal_update')->nullable();
             $table->unsignedBigInteger('siswa_id');
-            $table->foreign('siswa_id')->references('id')->on('siswa');
+            $table->foreign('siswa_id')->references('id')->on('siswa')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace App\Livewire\Dashboard;
 use App\Models\CategoryModel;
 use App\Models\SiswaModel;
 use App\Models\TypeModel;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -58,6 +59,17 @@ class Siswa extends Component
             "category_id" => $this->category,
             "type_id" => $this->type
         ]);
+    }
+
+    public function delete($nis)
+    {
+        // cek file jika tersedia
+        $file = SiswaModel::where('nis', $nis)->first();
+        if (file_exists(storage_path('app/public/siswa/' . $file->gambar))) {
+            Storage::delete('public/siswa/' . $file->gambar);
+        }
+        SiswaModel::where('nis', $nis)->delete();
+        session()->flash('menghapus', 'Berhasil Menghapus Data!');
     }
 
     public function render()

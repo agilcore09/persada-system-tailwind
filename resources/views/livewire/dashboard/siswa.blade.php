@@ -154,7 +154,7 @@
                                                 <div class="flex items-center text-sm">
                                                     <div class="relative w-8 h-8 mr-3 rounded-full md:block">
                                                         <img class="object-cover w-full h-full rounded-full"
-                                                            src="{{ asset('foto_siswa/' . $item->gambar) }}" alt=""
+                                                            src="{{ asset('siswa/' . $item->gambar) }}" alt=""
                                                             loading="lazy" />
                                                         <div class="absolute inset-0 rounded-full shadow-inner"
                                                             aria-hidden="true"></div>
@@ -179,13 +179,10 @@
                                                     <a href="{{ url('/data-siswa' . '/profile' . '/' . $item->nis) }}"><i
                                                             class="fa-solid fa-circle-info ml-1 mr-1 text-blue-500 hover:text-blue-900"></i></a>
                                                     @can('isAdmin')
-                                                        <form action="{{ url('/data-siswa' . '/' . $item->nis) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"><i
-                                                                    class="fa-solid fa-trash ml-1 mr-1 text-red-500 hover:text-red-900"></i></button>
-                                                        </form>
+                                                        <button wire:click="delete({{ $item->nis }})"
+                                                            wire:confirm="Yakin Ingin Menghapus?" type="submit"><i
+                                                                class="fa-solid fa-trash ml-1 mr-1 text-red-500 hover:text-red-900"></i></button>
+
                                                         <a href="{{ url('/data-siswa' . '/' . $item->nis) . '/edit' }}"
                                                             class="btn-update"><i
                                                                 class="fa-solid
