@@ -196,8 +196,18 @@
                                             </td>
                                         </tr>
                                     @endforeach
+
+
                                 </tbody>
                             </table>
+
+                            @if (is_null($this->search))
+                                <div class="flex justify-center">
+                                    {{ $data->links() }}
+                                </div>
+                            @endif
+
+
                         </div>
                     </div>
                 </section>

@@ -10,6 +10,7 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js",
     "./node_modules/flowbite/**/*.js"
   ],
+  darkMode: 'false',
   theme: {
     extend: {},
     fontFamily: {
