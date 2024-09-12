@@ -69,7 +69,7 @@ class Siswa extends Component
             Storage::delete('public/siswa/' . $file->gambar);
         }
         SiswaModel::where('nis', $nis)->delete();
-        session()->flash('menghapus', 'Berhasil Menghapus Data!');
+        session()->flash('hapus', 'Berhasil Menghapus Data!');
     }
 
     public function render()
