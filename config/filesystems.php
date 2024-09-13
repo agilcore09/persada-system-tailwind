@@ -34,6 +34,9 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
             'throw' => false,
+            'dir' => [
+                'public' => 0755,
+            ],
         ],
 
         'public' => [
