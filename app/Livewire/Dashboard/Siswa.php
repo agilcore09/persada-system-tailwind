@@ -36,7 +36,7 @@ class Siswa extends Component
     #[Validate('required', message: 'NISN siswa wajib di isi')]
     public $nisn;
 
-    #[Validate('required', message: 'Kategori wajib di isi')]
+    #[Validate('required', message: 'Jurusan wajib di isi')]
     public $category;
 
     #[Validate('required', message: 'Type siswa wajib di isi')]
@@ -46,6 +46,8 @@ class Siswa extends Component
 
     public function save()
     {
+        $this->validate();
+
         if ($this->gambar) {
             $this->gambar->storeAs('public/siswa/', $this->gambar->hashName());
         }
@@ -59,6 +61,8 @@ class Siswa extends Component
             "category_id" => $this->category,
             "type_id" => $this->type
         ]);
+        session()->flash('tambah', 'Berhasil Menambah Data!');
+        $this->reset('namaSiswa', 'gambar', 'kelas', 'nis', 'nisn', 'category', 'type');
     }
 
     public function delete($nis)

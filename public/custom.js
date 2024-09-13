@@ -47,11 +47,6 @@ $("#button-cancel-kategori").on("click", function () {
     $(".display-kategori").fadeOut("slow");
 });
 
-// $(".closealertbutton").click(function () {
-
-//     $("#alertbox").hide();
-// });
-
 setInterval(() => {
     $("#alertbox").hide("slow");
 }, 4000);
