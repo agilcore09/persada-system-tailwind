@@ -70,7 +70,7 @@ class Siswa extends Component
         // cek file jika tersedia
         $file = SiswaModel::where('nis', $nis)->first();
         if (file_exists(storage_path('app/public/siswa/' . $file->gambar))) {
-            Storage::delete('public/siswa/' . $file->gambar);
+            Storage::delete('app/public/siswa/' . $file->gambar);
         }
         SiswaModel::where('nis', $nis)->delete();
         session()->flash('hapus', 'Berhasil Menghapus Data!');
