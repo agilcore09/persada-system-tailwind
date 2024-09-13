@@ -61,6 +61,7 @@ class Siswa extends Component
             "category_id" => $this->category,
             "type_id" => $this->type
         ]);
+        $this->dispatch('formSubmitted');
         session()->flash('tambah', 'Berhasil Menambah Data!');
         $this->reset('namaSiswa', 'gambar', 'kelas', 'nis', 'nisn', 'category', 'type');
     }

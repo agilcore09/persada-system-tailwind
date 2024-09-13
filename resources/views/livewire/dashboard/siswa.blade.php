@@ -358,4 +358,14 @@
         </form>
     </div>
     {{-- end add data --}}
+
+    @script
+        <script>
+            $(document).ready(function() {
+                Livewire.on('formSubmitted', () => {
+                    $('.display-add').hide();
+                });
+            })
+        </script>
+    @endscript
 @endsection
