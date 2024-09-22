@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Dashboard;
 
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use App\Models\CategoryModel as Category;
 use App\Models\TypeModel as Types;
@@ -11,8 +12,9 @@ use Livewire\WithPagination;
 
 class Guru extends Component
 {
-
     use WithPagination;
+
+    #[Title('Halaman Guru')]
 
     public $search;
 
@@ -24,6 +26,8 @@ class Guru extends Component
 
     #[Validate('required', message: 'Password wajib di isi')]
     public $password;
+
+    public $token;
 
     public function save()
     {
@@ -39,6 +43,34 @@ class Guru extends Component
         $this->dispatch('formSubmitted');
         session()->flash('tambah', 'Berhasil Menambah Data!');
         $this->reset("name", "email", "password");
+    }
+
+    public function edit($id)
+    {
+        $data = User::where('id', $id)->first();
+        $this->name = $data->name;
+        $this->email = $data->email;
+        $this->token = $data->id;
+    }
+
+    public function update()
+    {
+        $this->validate();
+        $data = User::where('id', $this->token)->first();
+
+        if ($this->password) {
+            $data->password = $this->password;
+        }
+
+        $data->update([
+            "name" => $this->name,
+            "email" => $this->email,
+        ]);
+    }
+
+    public function buttonReset()
+    {
+        $this->reset('name', 'email', 'password', 'token');
     }
 
     public function render()

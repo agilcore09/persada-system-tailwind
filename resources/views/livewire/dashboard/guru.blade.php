@@ -134,8 +134,8 @@
                                              <td class="px-4 py-3 text-ms border">{{ $item->email }}</td>
                                              <td class="px-4 py-3 text-ms border">
                                                  <div class="flex justify-center">
-                                                     <a href="{{ url('/data-guru' . '/' . $item->id . '/edit') }}"><i
-                                                             class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                     <button class="tombol-edit" wire:click="edit({{ $item->id }})"><i
+                                                             class="fa-solid fa-circle-info text-green-500 mr-1  "></i></button>
                                                      <form action="{{ url('/data-guru' . '/' . $item->id) }}"
                                                          method="POST">
                                                          @csrf
@@ -228,8 +228,8 @@
              </div>
 
              <div class="mt-6 flex items-center justify-end gap-x-6">
-                 <button type="button" id="button-cancel"
-                     class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+                 <button type="button" id="button-cancel" class="text-sm font-semibold leading-6 text-gray-900"
+                     wire:click="buttonReset">Cancel</button>
                  <button type="submit" wire:click="$refresh"
                      class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit
                  </button>

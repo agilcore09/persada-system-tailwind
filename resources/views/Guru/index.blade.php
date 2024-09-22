@@ -133,8 +133,8 @@
                                             <td class="px-4 py-3 text-ms border">{{ $item->email }}</td>
                                             <td class="px-4 py-3 text-ms border">
                                                 <div class="flex justify-center">
-                                                    <a href="{{ url('/data-guru' . '/' . $item->id . '/edit') }}"><i
-                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></a>
+                                                    <button class="tombol-edit"><i
+                                                            class="fa-solid fa-circle-info text-green-500 mr-1  "></i></button>
                                                     <form action="{{ url('/data-guru' . '/' . $item->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')

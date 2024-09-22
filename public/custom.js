@@ -15,7 +15,7 @@ $("#tombol-add").on("click", function (event) {
 
 $(".tombol-edit").on("click", function (event) {
     event.preventDefault();
-    $(".display-edit").fadeIn("slow");
+    $(".display-add").fadeIn("slow");
 });
 
 $("#tombol-guru").on("click", function (event) {
