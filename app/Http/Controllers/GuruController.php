@@ -41,9 +41,7 @@ class GuruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
-    {
-    }
+    public function create(Request $request) {}
 
     /**
      * Store a newly created resource in storage.
