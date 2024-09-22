@@ -1,11 +1,11 @@
 /node_modules
 /public/build
-/public/siswa
 /public/hot
 /public/storage/*
 /storage/*.key
 /vendor
-/public/foto_siswa
+/public/siswa
+/public/inventaris
 /public/pendaftar
 keuangan-system-tailwind-master.zip
 .env
@@ -20,7 +20,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-
 mysql.session.sql
 agil.txt
 app.js
