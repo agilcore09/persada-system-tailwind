@@ -16,7 +16,7 @@ class PembayaranController extends Controller
      */
     public function index(Request $request)
     {
-        //
+
         $nama_siswa = DB::table('siswa')->get();
         $nama_jurusan = DB::table('category')->get();
         $kelas_siswa = DB::table('type')->get();
@@ -66,9 +66,7 @@ class PembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-    }
+    public function create() {}
 
     /**
      * Store a newly created resource in storage.
@@ -132,9 +130,7 @@ class PembayaranController extends Controller
      * @param  \App\Models\PembayaranModel  $pembayaranModel
      * @return \Illuminate\Http\Response
      */
-    public function show(PembayaranModel $pembayaranModel)
-    {
-    }
+    public function show(PembayaranModel $pembayaranModel) {}
 
     /**
      * Show the form for editing the specified resource.
