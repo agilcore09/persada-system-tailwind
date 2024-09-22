@@ -45,7 +45,6 @@ class Guru extends Component
             "name" => $this->name,
             "email" => $this->email,
             "password" => bcrypt($this->password),
-            "role_id" => 2,
         ]);
 
         $this->dispatch('formSubmitted');

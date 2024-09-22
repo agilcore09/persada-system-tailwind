@@ -165,7 +165,7 @@
      </div>
      {{-- end dashboard table view --}}
      {{-- add data modal --}}
-     <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4 h-screen hidden" wire:ignore.self>
+     <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4 h-full hidden" wire:ignore.self>
          <form wire:submit="save">
              @csrf
              <div class="space-y-12">
