@@ -3,11 +3,13 @@
 namespace App\Livewire\Dashboard;
 
 use Livewire\Component;
+use App\Models\PembayaranModel as Pembayaran;
 
 class Pembayaran extends Component
 {
     public function render()
     {
-        return view('livewire.dashboard.pembayaran');
+        $data = Pembayaran::all();
+        return view('livewire.dashboard.pembayaran', compact("data"));
     }
 }

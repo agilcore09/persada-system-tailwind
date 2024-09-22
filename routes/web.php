@@ -15,16 +15,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', App\Livewire\Dashboard\Homepage::class);
     Route::get('/data-siswa', App\Livewire\Dashboard\Siswa::class);
     Route::get('/data-guru', App\Livewire\Dashboard\Guru::class);
+    Route::get('/pembayaran', App\Livewire\Dashboard\Pembayaran::class);
 
     Route::get('/data-siswa/profile/{nis}', [SiswaController::class, 'ShowProfile']);
     Route::get('/tagihan/{nis}', [SiswaController::class, 'ShowTagihan']);
     Route::get('/cetak/{nis}', [SiswaController::class, 'nota']);
-    Route::resource('/pembayaran', PembayaranController::class);
+    // Route::resource('/pembayaran', PembayaranController::class);
     Route::resource('/kelola-inventaris', InventarisController::class);
     Route::get('/show-pendaftar', [PendaftaranController::class, 'index']);
     Route::delete('/pendaftar/{id}', [PendaftaranController::class, 'destroy']);
-
-    Route::resource('/kategori', KategoriController::class);
     Route::resource('/kelola-peminjaman', PeminjamanController::class);
 });
 
@@ -40,8 +39,6 @@ Route::get('/peminjaman', [PeminjamanController::class, 'formPeminjaman']);
 Route::post('/peminjaman', [PeminjamanController::class, 'prosesFormPeminjaman']);
 Route::get('/about', [LandingPageController::class, 'aboutPage']);
 Route::get('/contact-us', [LandingPageController::class, 'contactPage']);
-
-
 
 Route::get('/daftarsmk', function () {
     $title = " SMK PERSADA MAKASSAR";
