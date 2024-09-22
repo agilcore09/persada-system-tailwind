@@ -23,7 +23,7 @@ class Siswa extends Component
 
     #[Validate('required', message: 'Nama siswa wajib di isi')]
     public $namaSiswa;
-    #[Validate('image', message: 'Harus Format Gambar')]
+
     #[Validate('max:2048', message: 'Maksimal 2mb')]
     public $gambar;
 
@@ -41,6 +41,9 @@ class Siswa extends Component
 
     #[Validate('required', message: 'Type siswa wajib di isi')]
     public $type;
+
+    // for update token
+    public $token;
 
 
 
@@ -70,7 +73,50 @@ class Siswa extends Component
     {
         $data = SiswaModel::where('nis', $nis)->first();
         $this->namaSiswa = $data->nama_siswa;
+        $this->kelas = $data->kelas;
+        $this->kelas = $data->kelas;
+        $this->nis = $data->nis;
+        $this->nisn = $data->nisn;
+        $this->category = $data->category_id;
+        $this->type = $data->type_id;
+        $this->token = $data->id;
     }
+
+    public function update()
+    {
+        // Validasi data
+        $this->validate();
+
+        // Temukan model Siswa berdasarkan ID
+        $siswa = SiswaModel::where('id', $this->token)->first();
+
+        if ($this->gambar) {
+
+            if (file_exists(storage_path('app/public/siswa/' . $siswa->gambar))) {
+                Storage::delete('public/siswa/' . $siswa->gambar);
+            }
+
+            $this->gambar->storeAs('public/siswa/', $this->gambar->hashName());
+            $siswa->gambar = $this->gambar->hashName();
+        }
+
+        $siswa->update([
+            "nama_siswa" => $this->namaSiswa,
+            "kelas" => $this->kelas,
+            "nis" => $this->nis,
+            "nisn" => $this->nisn,
+            "category_id" => $this->category,
+            "type_id" => $this->type
+        ]);
+
+        // Dispatc event dan beri flash message
+        $this->dispatch('formEditSubmitted');
+        session()->flash('update', 'Berhasil Memperbarui Data!');
+
+        // Reset semua field
+        $this->reset('namaSiswa', 'gambar', 'kelas', 'nis', 'nisn', 'category', 'type', 'token');
+    }
+
 
     public function delete($nis)
     {

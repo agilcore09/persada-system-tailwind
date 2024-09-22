@@ -22,6 +22,8 @@
         </div>
     @endif
 
+
+
     <div class="container">
         <div class="mt-14 px-5">
             <nav class="block w-full max-w-full bg-transparent text-white shadow-none rounded-xl transition-all px-0 py-1">
@@ -510,6 +512,9 @@
             $(document).ready(function() {
                 Livewire.on('formSubmitted', () => {
                     $('.display-add').hide();
+                });
+                Livewire.on('formEditSubmitted', () => {
+                    $('.display-edit').hide();
                 });
             })
         </script>
