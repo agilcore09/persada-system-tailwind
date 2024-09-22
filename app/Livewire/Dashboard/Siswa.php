@@ -66,6 +66,12 @@ class Siswa extends Component
         $this->reset('namaSiswa', 'gambar', 'kelas', 'nis', 'nisn', 'category', 'type');
     }
 
+    public function edit($nis)
+    {
+        $data = SiswaModel::where('nis', $nis)->first();
+        $this->namaSiswa = $data->nama_siswa;
+    }
+
     public function delete($nis)
     {
         // cek file jika tersedia

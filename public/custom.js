@@ -13,6 +13,11 @@ $("#tombol-add").on("click", function (event) {
     $(".display-add").fadeIn("slow");
 });
 
+$(".tombol-edit").on("click", function (event) {
+    event.preventDefault();
+    $(".display-edit").fadeIn("slow");
+});
+
 $("#tombol-guru").on("click", function (event) {
     event.preventDefault();
     $(".display-add").fadeIn("slow");
@@ -32,6 +37,9 @@ $("#btn-add-pembayaran").on("click", function (event) {
 
 $("#button-cancel").on("click", function () {
     $(".display-add").fadeOut("slow");
+});
+$("#button-cancel-edit").on("click", function () {
+    $(".display-edit").fadeOut("slow");
 });
 
 $("#button-cancel-pembayaran").on("click", function () {
