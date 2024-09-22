@@ -10,5 +10,5 @@ class GuruModel extends Model
     use HasFactory;
 
     protected $table = "guru";
-    protected $guarded = ["id"];
+    protected $fillable = ["id"];
 }

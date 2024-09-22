@@ -19,7 +19,7 @@ npm-debug.log
 yarn-error.log
 /.fleet
 /.idea
-/.vscode
+/.vscode    
 mysql.session.sql
 agil.txt
 app.js
