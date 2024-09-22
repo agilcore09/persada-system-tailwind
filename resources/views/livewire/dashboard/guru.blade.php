@@ -165,34 +165,40 @@
      </div>
      {{-- end dashboard table view --}}
      {{-- add data modal --}}
-     <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4 h-screen hidden">
-         <form method="POST">
+     <div class="container display-add bg-white shadow-xl p-9 absolute top-10 w-3/4 h-screen hidden" wire:ignore.self>
+         <form wire:submit="save">
              @csrf
-             @method('POST')
              <div class="space-y-12">
                  <div class="border-b border-gray-900/10 pb-12">
-                     <h2 class="text-base font-semibold leading-7 text-gray-900">Tambah Data data-siswa</h2>
-                     <p class="mt-1 text-sm leading-6 text-gray-600">Tambahkan data siswa jika sudah fix menjadi
-                         siswa
+                     <h2 class="text-base font-semibold leading-7 text-gray-900">Tambah Data Guru</h2>
+                     <p class="mt-1 text-sm leading-6 text-gray-600">Tambahkan data Guru jika sudah fix menjadi
+                         guru
                      </p>
-                     @if ($errors->any())
-                         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                         <script>
-                             Swal.fire({
-                                 title: "Gagal",
-                                 text: "Pastikan Tidak ada duplikasi",
-                                 icon: "error"
-                             });
-                         </script>
-                     @endif
-
-                     {{-- end alert section --}}
+                     <div class="error-page">
+                         @if ($errors->any())
+                             @foreach ($errors->all() as $error)
+                                 <div class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                                     role="alert">
+                                     <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
+                                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                         <path
+                                             d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                                     </svg>
+                                     <span class="sr-only">Info</span>
+                                     <div>
+                                         {{ $error }}
+                                     </div>
+                                 </div>
+                             @endforeach
+                         @endif
+                     </div>
                      <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
                          <div class="col-span-full">
                              <label for="nama_guru" class="block text-sm font-medium leading-6 text-gray-900">Nama
                                  Guru </label>
                              <div class="mt-1">
-                                 <input type="text" name="nama" id="nama_guru" autocomplete="off"
+                                 <input type="text" name="nama" wire:model="name" id="nama_guru"
+                                     autocomplete="off"
                                      class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                              </div>
                          </div>
@@ -200,7 +206,8 @@
                              <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email Guru
                              </label>
                              <div class="mt-1">
-                                 <input type="email" name="email" id="email" autocomplete="off"
+                                 <input type="email" name="email" wire:model="email" id="email"
+                                     autocomplete="off"
                                      class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                              </div>
                          </div>
@@ -208,7 +215,8 @@
                              <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password
                              </label>
                              <div class="mt-1">
-                                 <input type="password" name="password" id="password" autocomplete="off"
+                                 <input type="password" name="password" wire:model="password" id="password"
+                                     autocomplete="off"
                                      class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                              </div>
                          </div>
@@ -229,4 +237,17 @@
          </form>
      </div>
      {{-- end add data --}}
+
+     @script
+         <script>
+             $(document).ready(function() {
+                 Livewire.on('formSubmitted', () => {
+                     $('.display-add').hide();
+                 });
+                 Livewire.on('formEditSubmitted', () => {
+                     $('.display-edit').hide();
+                 });
+             })
+         </script>
+     @endscript
  @endsection

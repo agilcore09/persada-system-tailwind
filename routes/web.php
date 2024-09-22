@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::get('/home', App\Livewire\Dashboard\Homepage::class);
     Route::get('/data-siswa', App\Livewire\Dashboard\Siswa::class);
+    Route::get('/data-guru', App\Livewire\Dashboard\Guru::class);
 
     Route::get('/data-siswa/profile/{nis}', [SiswaController::class, 'ShowProfile']);
     Route::get('/tagihan/{nis}', [SiswaController::class, 'ShowTagihan']);
@@ -22,7 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/kelola-inventaris', InventarisController::class);
     Route::get('/show-pendaftar', [PendaftaranController::class, 'index']);
     Route::delete('/pendaftar/{id}', [PendaftaranController::class, 'destroy']);
-    Route::get('/data-guru', App\Livewire\Dashboard\Guru::class);
+
     Route::resource('/kategori', KategoriController::class);
     Route::resource('/kelola-peminjaman', PeminjamanController::class);
 });
